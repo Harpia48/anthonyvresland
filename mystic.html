@@ -1,92 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mystic Page — 20 Gates</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mystic — 20 Gates</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .sigil-card {
-      background: #111;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    .sigil-card img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-    .sigil-card h3 {
-      margin-top: 1rem;
-      font-size: 1.1rem;
-      color: #f9f9f9;
-    }
-    .download-link {
-      margin-top: 0.5rem;
-      display: inline-block;
-      font-size: 0.9rem;
-      color: #f0c040;
-    }
+    :root{--bg:#0b0c10;--fg:#eae6d9;--gold:#c8a86b;--muted:#9a9283;--max:1100px}
+    body{background:var(--bg);color:var(--fg);font-family:ui-serif,Georgia,serif;margin:0}
+    header,footer{border-bottom:1px solid #222}
+    .bar{max-width:var(--max);margin:0 auto;padding:1rem}
+    main{max-width:var(--max);margin:0 auto;padding:1.25rem}
+    /* ---- lock ---- */
+    .lock{max-width:420px;margin:6vh auto 0;text-align:center}
+    .hidden{display:none}
+    input[type="password"]{width:100%;padding:.6rem;border:1px solid #333;border-radius:8px;background:#0f0f0f;color:var(--fg)}
+    button{margin-top:.6rem;padding:.6rem 1rem;border:1px solid var(--gold);background:#141414;color:var(--gold);border-radius:8px;cursor:pointer}
+    .note{color:var(--muted);font-size:.9rem}
+    /* ---- grid tiles ---- */
+    .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+    .card{background:#0f0f0f;border:1px solid #222;border-radius:12px;padding:.75rem;text-align:center}
+    .thumb{width:100%;height:150px;display:flex;align-items:center;justify-content:center;background:#0a0a0a;border:1px solid #222;border-radius:8px;overflow:hidden}
+    .thumb img{max-width:100%;max-height:100%;object-fit:contain}
+    .title{margin:.6rem 0 .2rem;font-weight:700}
+    .btn{display:inline-block;margin-top:.25rem;border:1px solid var(--gold);color:var(--gold);padding:.25rem .6rem;border-radius:999px;text-decoration:none;font-size:.85rem}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Mystic Library — The 20 Gates</h1>
-      <p>Each Gate unlocks a sigil. Download individually or use in your ritual work.</p>
-    </div>
-  </header>
+  <header><div class="bar"><a href="/">← Home</a></div></header>
 
-  <main>
-    <section class="grid">
-      <!-- Generate 20 sigil cards -->
-      <!-- Gate 1 -->
-      <div class="sigil-card">
-        <img src="assets/sigils/ch01.png" alt="Gate 1 Sigil">
-        <h3>Gate 1</h3>
-        <a class="download-link" href="assets/sigils/ch01.png" download>Download</a>
-      </div>
+  <!-- Passcode gate -->
+  <section id="lock" class="lock">
+    <h1>🔑 Mystic Library — 20 Gates</h1>
+    <p class="note">Enter the passcode to unlock the sigils and links.</p>
+    <input id="code" type="password" placeholder="Passcode" />
+    <button id="enter">Enter</button>
+    <p id="err" class="note hidden">Incorrect passcode. Try again.</p>
+  </section>
 
-      <!-- Gate 2 -->
-      <div class="sigil-card">
-        <img src="assets/sigils/ch02.png" alt="Gate 2 Sigil">
-        <h3>Gate 2</h3>
-        <a class="download-link" href="assets/sigils/ch02.png" download>Download</a>
-      </div>
+  <!-- Protected content -->
+  <main id="content" class="hidden">
+    <h2>Gate Sigils</h2>
+    <div id="grid" class="grid"></div>
 
-      <!-- Gate 3 -->
-      <div class="sigil-card">
-        <img src="assets/sigils/ch03.png" alt="Gate 3 Sigil">
-        <h3>Gate 3</h3>
-        <a class="download-link" href="assets/sigils/ch03.png" download>Download</a>
-      </div>
-
-      <!-- Repeat pattern until Gate 20 -->
-      <div class="sigil-card">
-        <img src="assets/sigils/ch20.png" alt="Gate 20 Sigil">
-        <h3>Gate 20</h3>
-        <a class="download-link" href="assets/sigils/ch20.png" download>Download</a>
-      </div>
-    </section>
-
-    <section style="text-align:center; padding: 2rem;">
-      <h2>Subliminal Music</h2>
-      <p>A special subliminal track will be added here for initiates with the passcode.</p>
-      <!-- Placeholder for now -->
-    </section>
+    <h2 style="margin-top:2rem">Subliminal Music</h2>
+    <!-- Add your links or audio players here -->
+    <!-- Example:
+    <a class="btn" href="https://www.youtube.com/watch?v=XXXXXXXX" target="_blank" rel="noopener">Chapter 1 Track</a>
+    -->
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Anthony Vresland — Mystic Edition</p>
-    </div>
-  </footer>
+  <footer><div class="bar">© <span id="y"></span> Anthony Vresland</div></footer>
+
+  <script>
+    // --- simple passcode gate (keeps casual visitors out) ---
+    const PASS = "Ark259148"; // change if you like
+    document.getElementById('enter').addEventListener('click', () => {
+      const ok = document.getElementById('code').value === PASS;
+      document.getElementById('err').classList.toggle('hidden', ok);
+      if (ok) { document.getElementById('lock').classList.add('hidden'); document.getElementById('content').classList.remove('hidden'); }
+    });
+
+    // --- build 20 uniform tiles automatically ---
+    const grid = document.getElementById('grid');
+    for (let i = 1; i <= 20; i++) {
+      const id = String(i).padStart(2,'0');            // 01..20
+      const src = `assets/sigils/ch${id}.png`;
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="thumb"><img loading="lazy" src="${src}" alt="Gate ${i} Sigil" onerror="this.closest('.card').remove()"></div>
+        <div class="title">Gate ${i}</div>
+        <a class="btn" href="${src}" download>Download PNG</a>
+      `;
+      grid.appendChild(card);
+    }
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
