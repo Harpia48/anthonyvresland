@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Books — Anthony Vresland</title>
+  <meta name="description" content="Books by Anthony Vresland — historical fiction, philosophy, and mysticism." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* --- Books page hardening --- */
+    .book-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (max-width: 1000px) { .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px)  { .book-grid { grid-template-columns: 1fr; } }
+
+    .book-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.15);
+    }
+    .book-card .cover {
+      width: 100%;
+      aspect-ratio: 3/4;          /* consistent card height */
+      overflow: hidden;
+      border-radius: 10px;
+      background: #0b0f16;
+    }
+    .book-card img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;   /* <-- this makes sure the whole cover shows */
+  display: block;
+    }
+    .book-card h4 { margin: 2px 0 0 0; }
+    .book-card p  { margin: 0; opacity: .9; }
+    .book-card .cta-row { margin-top: 8px; display:flex; gap:10px; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:10px; font-weight:600; }
+    .btn-primary { background:#f7a400; color:#0b0f16; }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <div class="avatar">AV</div>
+        <div class="titles">
+          <h1>Anthony Vresland</h1>
+          <p class="subtitle">Author • Artist • Philosopher</p>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="about.html">About</a>
+        <a href="books.html" aria-current="page">Books</a>
+        <a href="index.html#music">Music</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Books -->
+  <section class="section">
+    <div class="container">
+      <h3>Books</h3>
+
+      <div class="book-grid">
+
+        <!-- Back to Salamis -->
+        <article class="book-card">
+          <div class="cover">
+            <img src="assets/salamis-cover.jpg.jpg" alt="Back to Salamis cover" loading="lazy">
+          </div>
+          <h4>Back to Salamis</h4>
+          <p>A modern man drawn into the moonlit logic of Themistocles and the Fifth Essence.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.amazon.com/s?k=Anthony+Vresland+Back+to+Salamis">Buy on Amazon</a>
+          </div>
+        </article>
+
+        <!-- Alexander the Great: Mystic -->
+        <article class="book-card">
+          <div class="cover">
+            <img src="assets/alexander-cover.jpg.jpg" alt="Alexander the Great: Mystic cover" loading="lazy">
+          </div>
+          <h4>Alexander the Great: Mystic</h4>
+          <p>“In the Shadow of Zeus: The Life and Triumphs of Alexander the Great.”</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.amazon.com/s?k=Anthony+Vresland+Alexander+the+Great+Mystic">Buy on Amazon</a>
+          </div>
+        </article>
+
+        <!-- Sacred Geometry -->
+        <article class="book-card">
+          <div class="cover">
+            <img src="assets/sacred-geometry.jpg.jpg" alt="Sacred Geometry cover" loading="lazy">
+          </div>
+          <h4>Sacred Geometry</h4>
+          <p>Ancient wisdom in modern times (“Titans Within: Awakening the Hero’s Journey”).</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.amazon.com/s?k=Anthony+Vresland+Sacred+Geometry">Buy on Amazon</a>
+          </div>
+        </article>
+
+        <!-- Leonidas The Mission -->
+        <article class="book-card">
+          <div class="cover">
+            <img src="assets/leonidas-mission.jpg.jpg" alt="Leonidas The Mission cover" loading="lazy">
+          </div>
+          <h4>Leonidas The Mission</h4>
+          <p>The Battle for Cosmic Harmony (“Titans Within”).</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.amazon.com/s?k=Anthony+Vresland+Leonidas+The+Mission">Buy on Amazon</a>
+          </div>
+        </article>
+
+      <!-- Money Repracticed -->
+<article class="book-card">
+  <div class="cover">
+    <img src="assets/money-repracticed.jpg" alt="Money Repracticed cover" loading="lazy">
+  </div>
+  <h4>Money Repracticed</h4>
+  <p>Harmonizing with Prosperity (“Titans Within — Book 2”).</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" target="_blank" rel="noopener"
+       href="https://a.co/d/3yRVQ2dd">Buy on Amazon</a>
+  </div>
+</article>
+        <!-- Abundance Repracticed -->
+        <article class="book-card">
+          <div class="cover">
+            <img src="assets/abundance-repracticed.jpg.jpg" alt="Abundance Repracticed cover" loading="lazy">
+          </div>
+          <h4>Abundance Repracticed</h4>
+          <p>Rediscover, Redefine, Renew — Your Path to Prosperity.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.amazon.com/s?k=Anthony+Vresland+Abundance+Repracticed">Buy on Amazon</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Anthony Vresland.</p>
+      <nav aria-label="Social links">
+        <a href="https://www.facebook.com/profile.php?id=61577146899500" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@antv9429" target="_blank" rel="noopener">YouTube (Author)</a>
+        <a href="https://www.youtube.com/@EchoesofPhilosophy-b5p" target="_blank" rel="noopener">YouTube (Echoes of Philosophy)</a>
+        <a href="https://www.youtube.com/@MrHarpia48" target="_blank" rel="noopener">YouTube (Mystical Harmonies)</a>
+        <a href="https://www.youtube.com/@epicon9139" target="_blank" rel="noopener">YouTube (EPICON)</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

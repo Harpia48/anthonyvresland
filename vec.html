@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VEC Library — Anthony Vresland</title>
+  <style>
+    :root{--bg:#0b0b0b;--fg:#eae6d9;--gold:#c8a86b;--muted:#9a9283;--max:900px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-serif,Georgia,serif}
+    a{color:var(--gold);text-decoration:none}
+    a:hover{text-decoration:underline}
+    main{max-width:var(--max);margin:0 auto;padding:2rem}
+    h1,h2{letter-spacing:.02em}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:800px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .card{border:1px solid #222;padding:1rem;border-radius:8px;background:#0f0f0f}
+    .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:.15rem .5rem;border-radius:999px;font-size:.8rem}
+    header,footer{border-bottom:1px solid #222}
+    footer{border-top:1px solid #222;border-bottom:0;margin-top:2rem}
+    .bar{max-width:var(--max);margin:0 auto;padding:1rem}
+  </style>
+</head>
+<body>
+  <header><div class="bar"><a href="/">← Home</a></div></header>
+
+  <main>
+    <h1>VEC Library</h1>
+    <p>Initial entries. We’ll expand later.</p>
+
+    <div class="grid">
+      <section id="1942" class="card">
+        <h3>1942 — Abundance Activator</h3>
+        <p>Magnetizes monetary flow via networks/people.</p>
+        <p><strong>Sequence:</strong> 1412 → 1942 → 864</p>
+        <span class="badge">VEC</span>
+      </section>
+
+      <section id="1077" class="card">
+        <h3>1077 — Hidden Authority / Box Range</h3>
+        <p>Containment box that stabilizes activation and protects flow.</p>
+        <p><strong>Pairs well with:</strong> 1942</p>
+        <span class="badge">VEC</span>
+      </section>
+
+      <section id="1818" class="card">
+        <h3>1818 — Heart Coherence Code</h3>
+        <p>Harmonizes the heart’s EM field with breath and mind.</p>
+        <p><strong>Practice:</strong> Inhale 5s · Exhale 5s for 3–5 minutes.</p>
+        <span class="badge">VEC</span>
+      </section>
+    </div>
+  </main>
+
+  <footer><div class="bar">© <span id="y"></span> Anthony Vresland</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
