@@ -1,13 +1,13 @@
 /* =========================================
-   RESET & VARIABLES
+   THEME VARIABLES
 ========================================= */
 :root {
   --bg: #0b0f16;
   --panel: #101725;
   --ink: #e5e7eb;
+  --muted: #99a1b3;
   --brand: #f59e0b;
   --accent: #7dd3fc;
-  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 *,
@@ -24,10 +24,14 @@ body {
   background: linear-gradient(180deg, var(--bg), #0a1321);
 }
 
-img { max-width: 100%; height: auto; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* =========================================
-   AUTHOR PHOTO – SMALLER
+   AUTHOR PHOTO – SMALL AND CENTERED
 ========================================= */
 .author-photo {
   width: 100px;
@@ -40,7 +44,7 @@ img { max-width: 100%; height: auto; }
 .author-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Crops evenly to fit */
 }
 
 /* =========================================
@@ -50,7 +54,7 @@ img { max-width: 100%; height: auto; }
   aspect-ratio: 3 / 4;
   width: 100%;
   border-radius: 12px;
-  background: #0b1320;
+  background: #0b1320; /* Dark letterbox */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,92 +68,30 @@ img { max-width: 100%; height: auto; }
   height: 100%;
   object-fit: contain;    /* Shows full image, no crop */
   object-position: center;
-/* Smaller author portrait than book covers */
-.card.profile { align-items: start; }
-.card.profile .portrait{
-  max-width: 260px;          /* smaller than book tiles */
-  aspect-ratio: 3 / 4;
-  margin: 0;                 /* keep left-aligned */
-}
-@media (min-width: 901px){
-  .card.profile .portrait{ max-width: 240px; }
-}
-@media (max-width: 700px){
-  .card.profile .portrait{ max-width: 220px; margin: 0 auto; }
-}
-/* STANDARD: image inside a .cover frame */
-.card .cover{
-  aspect-ratio: 3 / 4;
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0b1320;                /* letterbox */
-  display: flex; align-items: center; justify-content: center;
-  /* remove any inner padding that can throw off the fit */
-  padding: 0;
-  border: 1px solid rgba(255,255,255,.10);
-}
-.card .cover img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;                 /* show the whole cover */
-  object-position: center;
-  display: block;
 }
 
-/* BACK-COMPAT: if a card directly contains <img> (no .cover) */
-.grid-3 .card > img,
-.grid-3 .card a > img{
-  aspect-ratio: 3 / 4;
-  width: 100%;
-  height: auto;
-  display: block;
-  background: #0b1320;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.10);
-  /* ensure no cropping even if a parent sets fixed height */
-  max-height: none !important;
-  object-fit: contain;
-  object-position: center;
+/* =========================================
+   BASIC LAYOUT (Minimal)
+========================================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 32px);
 }
 
-/* Keep every book tile the same height, text below */
-.grid-3 .card{ display: flex; flex-direction: column; gap: 10px; }
-
-}/* --- Portrait sizing: smaller than book tiles --- */
-.card.profile{ 
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
+.section {
+  padding: 56px 0;
 }
 
-/* Make the frame a fixed, smaller width and stop it from stretching */
-.card.profile .portrait{
-  width: 220px;        /* smaller than book covers */
-  max-width: 220px;    /* hard cap so it never grows */
-  aspect-ratio: 3 / 4;
-  margin: 0;           /* keep left-aligned; use margin:0 auto; to center */
-  flex: 0 0 auto;      /* prevent flex growth */
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: #0b1320;
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 28px;
 }
 
-/* Image inside the frame */
-.card.profile .portrait img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* nice fill inside the small frame */
-  object-position: center;
-  display: block;
-}
-
-/* Responsive tweaks */
-@media (max-width: 900px){
-  .card.profile .portrait{ width: 200px; max-width: 200px; }
-}
-@media (max-width: 700px){
-  .card.profile{ align-items: center; }
-  .card.profile .portrait{ margin: 0 auto; }  /* center on narrow screens */
+.about-panel {
+  padding: 16px;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
 }
