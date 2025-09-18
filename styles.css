@@ -116,4 +116,40 @@ img { max-width: 100%; height: auto; }
 /* Keep every book tile the same height, text below */
 .grid-3 .card{ display: flex; flex-direction: column; gap: 10px; }
 
+}/* --- Portrait sizing: smaller than book tiles --- */
+.card.profile{ 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+/* Make the frame a fixed, smaller width and stop it from stretching */
+.card.profile .portrait{
+  width: 220px;        /* smaller than book covers */
+  max-width: 220px;    /* hard cap so it never grows */
+  aspect-ratio: 3 / 4;
+  margin: 0;           /* keep left-aligned; use margin:0 auto; to center */
+  flex: 0 0 auto;      /* prevent flex growth */
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0b1320;
+}
+
+/* Image inside the frame */
+.card.profile .portrait img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* nice fill inside the small frame */
+  object-position: center;
+  display: block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .card.profile .portrait{ width: 200px; max-width: 200px; }
+}
+@media (max-width: 700px){
+  .card.profile{ align-items: center; }
+  .card.profile .portrait{ margin: 0 auto; }  /* center on narrow screens */
 }
