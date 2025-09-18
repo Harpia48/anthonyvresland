@@ -64,4 +64,56 @@ img { max-width: 100%; height: auto; }
   height: 100%;
   object-fit: contain;    /* Shows full image, no crop */
   object-position: center;
+/* Smaller author portrait than book covers */
+.card.profile { align-items: start; }
+.card.profile .portrait{
+  max-width: 260px;          /* smaller than book tiles */
+  aspect-ratio: 3 / 4;
+  margin: 0;                 /* keep left-aligned */
+}
+@media (min-width: 901px){
+  .card.profile .portrait{ max-width: 240px; }
+}
+@media (max-width: 700px){
+  .card.profile .portrait{ max-width: 220px; margin: 0 auto; }
+}
+/* STANDARD: image inside a .cover frame */
+.card .cover{
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b1320;                /* letterbox */
+  display: flex; align-items: center; justify-content: center;
+  /* remove any inner padding that can throw off the fit */
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.10);
+}
+.card .cover img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                 /* show the whole cover */
+  object-position: center;
+  display: block;
+}
+
+/* BACK-COMPAT: if a card directly contains <img> (no .cover) */
+.grid-3 .card > img,
+.grid-3 .card a > img{
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0b1320;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  /* ensure no cropping even if a parent sets fixed height */
+  max-height: none !important;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Keep every book tile the same height, text below */
+.grid-3 .card{ display: flex; flex-direction: column; gap: 10px; }
+
 }
