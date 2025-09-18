@@ -1,97 +1,154 @@
-/* =========================================
-   THEME VARIABLES
-========================================= */
-:root {
-  --bg: #0b0f16;
-  --panel: #101725;
-  --ink: #e5e7eb;
-  --muted: #99a1b3;
-  --brand: #f59e0b;
-  --accent: #7dd3fc;
+/* =========================
+   THEME
+========================= */
+:root{
+  --bg:#0b0f16; --panel:#101725; --panel-2:#0f1623;
+  --ink:#e5e7eb; --muted:#99a1b3; --brand:#f59e0b; --brand-2:#f8af2e;
+  --accent:#7dd3fc; --shadow:rgba(0,0,0,.3);
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; line-height:1.6; color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg),#0a1321);
+}
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.container{ max-width:1100px; margin:0 auto; padding:clamp(16px,3vw,32px); }
+
+/* =========================
+   HEADER
+========================= */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,15,22,.7);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.brand{ display:flex; align-items:center; gap:14px; }
+.avatar{
+  width:44px; height:44px; border-radius:50%;
+  display:grid; place-items:center; font-weight:800;
+  background:linear-gradient(135deg,#334155,#0ea5e9);
+}
+.titles h1{ margin:0; font-size:1.2rem; }
+.subtitle{ margin:2px 0 0; font-size:.9rem; color:var(--muted); }
+.nav a{ margin-left:16px; color:var(--ink); opacity:.9; }
+.nav a:hover{ opacity:1; }
+
+/* =========================
+   HERO / BUTTONS
+========================= */
+.hero{
+  background:
+    radial-gradient(80% 60% at 10% 10%, rgba(125,211,252,.15), transparent 50%),
+    radial-gradient(90% 70% at 90% 20%, rgba(245,158,11,.15), transparent 50%);
+}
+.hero .container{ display:grid; gap:28px; min-height:48vh; }
+.hero-copy h2{
+  margin:.1em 0 .4em; line-height:1.15;
+  font-family:Merriweather,Georgia,serif; font-size:clamp(32px,4vw,46px);
+}
+.hero-copy p{ max-width:56ch; color:var(--muted); }
+.cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+.btn{ display:inline-block; padding:10px 16px; border-radius:12px; font-weight:600; }
+.btn-primary{ color:#111827; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 8px 20px var(--shadow); }
+.btn-ghost{ color:var(--ink); background:transparent; border:1px solid rgba(255,255,255,.15); }
+
+/* =========================
+   SECTIONS & PANELS
+========================= */
+.section{ padding:56px 0; }
+.section.alt{ background:var(--panel-2); border-block:1px solid rgba(255,255,255,.06); }
+.two-col{ display:grid; grid-template-columns:1fr .8fr; gap:28px; }
+.about-panel,.card{
+  background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:14px;
+}
+.ticks{ margin:0; padding:0; list-style:none; }
+.ticks li{ position:relative; margin:10px 0; padding-left:28px; }
+.ticks li::before{ content:'✓'; position:absolute; left:0; top:0; color:#86efac; }
+
+/* =========================
+   BOOK GRID & CARDS
+========================= */
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.card{ display:flex; flex-direction:column; gap:10px; }
+.card .meta{ margin:.3rem 0 .6rem; color:var(--muted); font-size:.95rem; }
+
+/* Book cover frame — consistent 3:4, no cropping */
+.card .cover{
+  aspect-ratio:3 / 4; width:100%;
+  border-radius:12px; overflow:hidden;
+  background:#0b1320; display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(255,255,255,.10);
+}
+.card .cover img{
+  width:100%; height:100%;
+  object-fit:contain; object-position:center; display:block;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* Back-compat if an image appears without .cover */
+.grid-3 .card > img, .grid-3 .card a > img{
+  aspect-ratio:3 / 4; width:100%; height:auto; display:block;
+  background:#0b1320; border-radius:12px; border:1px solid rgba(255,255,255,.10);
+  object-fit:contain; object-position:center;
 }
 
-body {
-  margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  line-height: 1.6;
-  color: var(--ink);
-  background: linear-gradient(180deg, var(--bg), #0a1321);
+/* Highlighted book split (optional) */
+.book-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:24px; align-items:center; }
+.book-cover .cover{ max-width:420px; }
+
+/* =========================
+   AUTHOR PORTRAIT (smaller than books)
+========================= */
+.card.profile{ display:flex; flex-direction:column; gap:12px; align-items:flex-start; }
+.card.profile .portrait{
+  width:200px; max-width:200px; aspect-ratio:3 / 4;
+  border-radius:14px; overflow:hidden; flex:0 0 auto;
+  background:#0b1320; border:1px solid rgba(255,255,255,.12);
+}
+.card.profile .portrait img{
+  width:100%; height:100%; object-fit:cover; object-position:center; display:block;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* =========================
+   FOOTER
+========================= */
+.site-footer{ background:var(--bg); border-top:1px solid rgba(255,255,255,.06); }
+.site-footer .container{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.site-footer nav a{ margin-right:12px; }
+.site-footer p{ margin:0; color:var(--muted); text-align:center; }
+.small{ font-size:.95rem; color:var(--muted); }
+
+/* =========================
+   FLOATING DECOR
+========================= */
+.sigil-floating,.sword-talisman{
+  position:fixed; bottom:16px; z-index:60; pointer-events:none;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));
+}
+.sigil-floating{ right:16px; width:64px; opacity:.7; }
+.sword-talisman{ left:16px; width:80px; opacity:.8; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:1100px){ .grid-3{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:700px){
+  .nav{ display:none; }
+  .two-col,.book-grid,.grid-3{ grid-template-columns:1fr; }
+  .card.profile{ align-items:center; }
+  .card.profile .portrait{ width:180px; max-width:180px; margin:0 auto; }
+  .sigil-floating{ right:12px; bottom:12px; width:52px; }
+  .sword-talisman{ left:12px; bottom:12px; width:60px; }
 }
 
-/* =========================================
-   AUTHOR PHOTO – SMALL AND CENTERED
-========================================= */
-.author-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  margin: 0 auto 12px;
-}
-.author-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Crops evenly to fit */
-}
-
-/* =========================================
-   BOOK COVERS – FULL IMAGE IN FRAME
-========================================= */
-.card .cover {
-  aspect-ratio: 3 / 4;
-  width: 100%;
-  border-radius: 12px;
-  background: #0b1320; /* Dark letterbox */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.card .cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;    /* Shows full image, no crop */
-  object-position: center;
-}
-
-/* =========================================
-   BASIC LAYOUT (Minimal)
-========================================= */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: clamp(16px, 3vw, 32px);
-}
-
-.section {
-  padding: 56px 0;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  gap: 28px;
-}
-
-.about-panel {
-  padding: 16px;
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-}
+/* =========================
+   ACCESSIBILITY
+========================= */
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
