@@ -147,6 +147,63 @@ a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
   .sigil-floating{ right:12px; bottom:12px; width:52px; }
   .sword-talisman{ left:12px; bottom:12px; width:60px; }
 }
+/* --- AUTHOR PORTRAIT: small, non-stretch --- */
+.card.profile{
+  width: fit-content;           /* card shrinks to content */
+  align-self: start;            /* don't stretch in the grid */
+}
+
+.card.profile .portrait{
+  width: 200px !important;      /* << adjust to 180/220 if you like */
+  max-width: 200px !important;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0b1320;
+}
+
+.card.profile .portrait img{
+  display: block;
+  width: 100%;
+  height: auto;                 /* << no forced height; keeps quality */
+  object-fit: cover;            /* tidy fill inside the small frame */
+  object-position: center;
+}/* --- BOOK COVERS: consistent 3:4, no crop --- */
+.grid-3 .card{ display:flex; flex-direction:column; gap:10px; }
+
+.grid-3 .card .cover{
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b1320;                   /* letterbox color */
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 0;                             /* no inner padding */
+}
+
+.grid-3 .card .cover > img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain !important;         /* << show whole cover */
+  object-position: center;
+}
+
+/* Back-compat if a cover is inserted directly w/o .cover wrapper */
+.grid-3 .card > img,
+.grid-3 .card a > img{
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0b1320;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  object-fit: contain !important;
+  object-position: center;
+}
+
 
 /* =========================
    ACCESSIBILITY
