@@ -161,5 +161,33 @@
 <img src="/assets/sigils/right.png?v=13" alt="" class="page-sigil right">
 
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<!-- Corner sigils (with self-diagnostic fallback) -->
+<img id="sigil-left"  class="page-sigil left"  src="/assets/sigils/left.png?v=1"  alt="">
+<img id="sigil-right" class="page-sigil right" src="/assets/sigils/right.png?v=1" alt="">
+
+<script>
+(function(){
+  const fallbackSVG = side => 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260">
+       <rect width="100%" height="100%" fill="#101725"/>
+       <rect x="10" y="10" width="240" height="240" rx="22"
+             fill="none" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
+       <text x="50%" y="54%" text-anchor="middle" fill="#f59e0b"
+             font-family="system-ui,Segoe UI,Roboto,Arial" font-size="18">Missing ${side}.png</text>
+     </svg>`);
+
+  [['sigil-left','left'],['sigil-right','right']].forEach(([id, side])=>{
+    const el = document.getElementById(id);
+    el.addEventListener('error', () => {
+      // Show a visible fallback so you know path is wrong
+      el.src = fallbackSVG(side);
+      el.style.opacity = .85;         // make it obvious
+      el.style.outline = '2px dashed #f59e0b';
+      console.warn(`[sigil] ${side}.png not found at`, el.getAttribute('src'));
+    }, { once:true });
+  });
+})();
+</script>
+
 </body>
 </html>
