@@ -12,21 +12,25 @@
   a{color:var(--ink);text-decoration:none}
   img{display:block;max-width:100%}
   .container{max-width:1100px;margin:0 auto;padding:20px}
+
+  /* Header */
   .site-header{position:sticky;top:0;background:rgba(11,15,22,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+  .site-header .container{display:flex;justify-content:space-between;align-items:center}
   .brand{display:flex;gap:12px;align-items:center}
   .avatar{width:36px;height:36px;border-radius:9999px;background:linear-gradient(135deg,#f59e0b,#f8af2e);display:grid;place-items:center;color:#0b0f16;font-weight:800}
   .titles h1{font-size:18px;margin:0} .subtitle{margin:0;color:var(--muted);font-size:13px}
-  .nav{display:flex;gap:16px} .site-header .container{display:flex;justify-content:space-between;align-items:center}
+  .nav{display:flex;gap:16px}
+
   h2{margin:18px 0 8px;font-size:clamp(24px,4vw,40px)}
   p.lead{color:var(--muted);margin-top:0}
 
-  /* GUARANTEED cover containment */
+  /* Books grid (uniform frames, no cropping) */
   .book-grid{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
   @media (max-width:1000px){.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width:640px){.book-grid{grid-template-columns:1fr}}
   .book-card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
-  .book-cover-box{position:relative;overflow:hidden;border-radius:12px;background:var(--panel2);border:1px solid rgba(255,255,255,.06);aspect-ratio:2/3}
-  .book-cover-box>img{width:100%;height:100%;object-fit:cover} /* <- makes images fill frame perfectly */
+  .book-cover-box{position:relative;overflow:hidden;border-radius:12px;background:var(--panel2);border:1px solid rgba(255,255,255,.06);aspect-ratio:2/3;display:grid;place-items:center}
+  .book-cover-box>img{width:100%;height:100%;object-fit:contain} /* <- show whole image */
   .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:600;border:1px solid rgba(255,255,255,.12)}
   .btn-primary{background:var(--brand);color:#0b0f16;border-color:transparent}
   .site-footer{border-top:1px solid rgba(255,255,255,.06);margin-top:40px}
@@ -59,35 +63,83 @@
     <p class="lead">Historical fiction, philosophy, and living symbolism.</p>
 
     <div class="book-grid">
-      <!-- SAMPLE CARDS — duplicate & change src/title/links as needed -->
+      <!-- 1 -->
       <article class="book-card">
         <div class="book-cover-box">
-          <img src="/assets/salamis-cover.jpg?v=14" alt="Back to Salamis">
+          <img src="/assets/salamis-cover.jpg?v=16" alt="Back to Salamis"
+               onerror="this.onerror=null;this.src='/assets/placeholder-cover.jpg'">
         </div>
         <h4>Back to Salamis</h4>
         <p>A modern man drawn into Themistocles’ moonlit logic and the Fifth Essence.</p>
         <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Back+to+Salamis">Buy on Amazon</a>
       </article>
 
+      <!-- 2 -->
       <article class="book-card">
         <div class="book-cover-box">
-          <img src="/assets/money-repracticed.jpg?v=14" alt="Money Repracticed">
+          <img src="/assets/money-repracticed.jpg?v=16" alt="Money Repracticed"
+               onerror="this.onerror=null;this.src='/assets/placeholder-cover.jpg'">
         </div>
         <h4>Money Repracticed</h4>
         <p>Harmonizing with Prosperity (Titans Within — Book 2).</p>
         <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/3yRVQ2dd">Buy on Amazon</a>
       </article>
 
+      <!-- 3 -->
       <article class="book-card">
         <div class="book-cover-box">
-          <img src="/assets/abundance-repracticed.jpg?v=14" alt="Abundance Repracticed">
+          <img src="/assets/abundance-repracticed.jpg?v=16" alt="Abundance Repracticed"
+               onerror="this.onerror=null;this.src='/assets/placeholder-cover.jpg'">
         </div>
         <h4>Abundance Repracticed</h4>
         <p>Rediscover, Redefine, Renew — Your Path to Prosperity.</p>
         <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Abundance+Repracticed">Buy on Amazon</a>
       </article>
 
-      <!-- Add more books below by copy/paste of the article block -->
+      <!-- 4 -->
+      <article class="book-card">
+        <div class="book-cover-box">
+          <img src="/assets/alexander-mystic.jpg?v=16" alt="Alexander the Great: Mystic"
+               onerror="this.onerror=null;this.src='/assets/placeholder-cover.jpg'">
+        </div>
+        <h4>Alexander the Great: Mystic</h4>
+        <p>Initiation, omens, and the Agathos Daimon in Alexander’s path.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Alexander+the+Great+Mystic">Buy on Amazon</a>
+      </article>
+
+      <!-- 5 -->
+      <article class="book-card">
+        <div class="book-cover-box">
+          <img src="/assets/sacred-geography.jpg?v=16" alt="Sacred Geography"
+               onerror="this.onerror=null;this.src='/assets/placeholder-cover.jpg'">
+        </div>
+        <h4>Sacred Geography</h4>
+        <p>Land, number, and the intelligence of place in the Hellenic world.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Sacred+Geography">Buy on Amazon</a>
+      </article>
+
+      <!-- 6 -->
+      <article class="book-card">
+        <div class="book-cover-box">
+          <img src="/assets/leonidas.jpg?v=16" alt="Leonidas"
+               onerror="this.onerror=null;this.src='/assets/placeholder-cover.jpg'">
+        </div>
+        <h4>Leonidas</h4>
+        <p>Thermopylae retold through discipline, honor, and inner command.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Leonidas">Buy on Amazon</a>
+      </article>
     </div>
   </section>
-</
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Anthony Vresland.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
