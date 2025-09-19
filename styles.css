@@ -259,11 +259,17 @@ img{display:block; max-width:100%}
 .hide-salamis{display:none !important}
 
 /* ==== Footer sigils at left & right (visible, not clickable) ==== */
-.page-sigil{position:fixed; bottom:24px; z-index:9999; width:110px;
-  opacity:.35; filter:drop-shadow(0 10px 24px var(--shadow)); pointer-events:none}
-.page-sigil.left{left:24px}
-.page-sigil.right{right:24px; transform:scaleX(-1)}
-@media (max-width:1024px){ .page-sigil{display:none} } /* hide on small screens */
+/* Corner sigils — always on top, never clickable */
+.page-sigil{
+  position:fixed; bottom:24px; z-index:9999;
+  width:min(12vw,120px); opacity:.38; pointer-events:none;
+  filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));
+}
+.page-sigil.left{ left:24px; }
+.page-sigil.right{ right:24px; transform:scaleX(-1); }
+/* Only hide on small phones, not laptops/tablets */
+@media (max-width: 768px){ .page-sigil{ display:none; } }
+
 
 
 /* =========================
