@@ -4,34 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anthony Vresland — Author & Artist</title>
-  <meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland." />
+  <meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Page-specific, minimal styles (safe alongside styles.css) -->
   <style>
-    /* home helpers (safe to keep or move into styles.css) */
-    .hero { padding: 72px 0 40px; background: radial-gradient(1200px 400px at 70% 0, rgba(255,200,120,.08), transparent); }
-    .hero h2 { font-size: clamp(28px, 5vw, 54px); line-height: 1.05; margin: 0 0 12px; }
-    .hero p  { max-width: 720px; opacity: .9; }
-    .cta-row { margin-top: 18px; display:flex; gap:12px; }
-    .btn { display:inline-block; padding:10px 14px; border-radius:12px; font-weight:600; }
-    .btn-primary { background:#f7a400; color:#0b0f16; }
-    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 18px; }
-    .grid-2 { display:grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
-    @media (max-width: 900px){ .grid-2 { grid-template-columns: 1fr; } }
-    .portrait { width: 100%; border-radius: 12px; display:block; }
-    .bullets { margin:0; padding:0; list-style:none; }
-    .bullets li { margin: 8px 0; }
-    /* book grid (same pattern as /books.html) */
-    .book-grid { display:grid; gap:24px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    @media (max-width: 1000px){ .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 640px) { .book-grid { grid-template-columns: 1fr; } }
-    .book-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 14px; display:flex; flex-direction:column; gap:10px; }
-    .book-card .cover { width:100%; aspect-ratio:3/4; overflow:hidden; border-radius:10px; background:#0b0f16; display:grid; place-items:center; }
-    .book-card img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
-    .section h3 { margin-bottom: 12px; }
+    .hero{padding:72px 0 40px;background:radial-gradient(1200px 400px at 70% 0,rgba(255,200,120,.08),transparent)}
+    .hero h2{font-size:clamp(28px,5vw,54px);line-height:1.05;margin:0 0 12px}
+    .cta-row{margin-top:18px;display:flex;gap:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:600}
+    .btn-primary{background:#f7a400;color:#0b0f16}
+
+    /* Author card — portrait intentionally small */
+    .author-card{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center}
+    .author-photo{width:96px;height:96px;object-fit:cover;border-radius:9999px;border:1px solid rgba(255,255,255,.12)}
+
+    /* Book grid with guaranteed containment */
+    .book-grid{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:1000px){.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.book-grid{grid-template-columns:1fr}}
+    .book-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+    .book-cover-box{position:relative;overflow:hidden;border-radius:10px;background:#0f1623;border:1px solid rgba(255,255,255,.06);aspect-ratio:2/3}
+    .book-cover-box>img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Optional small feature (currently hidden). Remove display:none to show. */
+    #salamis-feature{display:none;margin:40px 0;padding:16px;gap:18px;align-items:center}
+    #salamis-feature .feature-cover{width:220px;flex:0 0 220px;aspect-ratio:2/3;border-radius:14px;overflow:hidden}
+    #salamis-feature .feature-cover img{width:100%;height:100%;object-fit:cover}
+    @media (max-width:720px){#salamis-feature{flex-direction:column}#salamis-feature .feature-cover{width:60%;flex:none}}
+
+    /* Sigils pinned bottom-left & bottom-right */
+    .page-sigil{position:fixed;bottom:24px;z-index:9999;width:110px;opacity:.35;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));pointer-events:none}
+    .page-sigil.left{left:24px}
+    .page-sigil.right{right:24px;transform:scaleX(-1)}
+    @media (max-width:1024px){.page-sigil{display:none}}
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header class="site-header">
     <div class="container">
@@ -64,19 +75,22 @@
     </div>
   </section>
 
-  <!-- Author + quick facts -->
+  <!-- About / Highlights -->
   <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <img class="portrait" src="/assets/portrait-av.jpg" alt="Portrait of Anthony Vresland" loading="lazy" />
-        <h3 style="margin-top:12px">About</h3>
-        <p>Anthony Vresland is a writer of historical fiction grounded in Greek philosophy and mysticism. A trained architect and painter, he weaves martial history with metaphysical undercurrents—Pythagorean number, Platonic vision, and the living intelligence of place.</p>
+    <div class="container">
+      <div class="card author-card">
+        <img class="author-photo" src="/assets/portrait-av.jpg" alt="Portrait of Anthony Vresland" loading="lazy">
+        <div>
+          <h3>About</h3>
+          <p>Anthony Vresland is a writer of historical fiction grounded in Greek philosophy and mysticism. A trained architect and painter, he weaves martial history with metaphysical undercurrents—Pythagorean number, Platonic vision, and the living intelligence of place.</p>
+        </div>
       </div>
-      <div class="card">
+
+      <div class="card" style="margin-top:18px">
         <h3>Highlights</h3>
-        <ul class="bullets">
+        <ul class="bullets" style="margin:0;padding-left:18px">
           <li>11+ books published</li>
-          <li>Classical &amp; ambient composer</li>
+          <li>Classical & ambient composer</li>
           <li>Student of Pythagorean philosophy</li>
           <li>Artist: oil, watercolor, acrylic</li>
         </ul>
@@ -87,7 +101,7 @@
   <!-- Latest publications -->
   <section class="section" id="latest">
     <div class="container">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
         <h3>Latest publications</h3>
         <a class="btn" href="/books.html" aria-label="See all books">See all →</a>
       </div>
@@ -95,21 +109,20 @@
       <div class="book-grid">
         <!-- Back to Salamis -->
         <article class="book-card">
-          <div class="cover">
-            <img src="/assets/salamis-cover.jpg" alt="Back to Salamis cover" loading="lazy" />
+          <div class="book-cover-box">
+            <img src="/assets/salamis-cover.jpg" alt="Back to Salamis cover" loading="lazy">
           </div>
           <h4>Back to Salamis</h4>
           <p>A modern man drawn into the moonlit logic of Themistocles and the Fifth Essence.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" target="_blank" rel="noopener"
-               href="https://www.amazon.com/s?k=Anthony+Vresland+Back+to+Salamis">Buy on Amazon</a>
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Back+to+Salamis">Buy on Amazon</a>
           </div>
         </article>
 
         <!-- Money Repracticed -->
         <article class="book-card">
-          <div class="cover">
-            <img src="/assets/money-repracticed.jpg" alt="Money Repracticed cover" loading="lazy" />
+          <div class="book-cover-box">
+            <img src="/assets/money-repracticed.jpg" alt="Money Repracticed cover" loading="lazy">
           </div>
           <h4>Money Repracticed</h4>
           <p>Harmonizing with Prosperity (“Titans Within — Book 2”).</p>
@@ -120,26 +133,37 @@
 
         <!-- Abundance Repracticed -->
         <article class="book-card">
-          <div class="cover">
-            <img src="/assets/abundance-repracticed.jpg" alt="Abundance Repracticed cover" loading="lazy" />
+          <div class="book-cover-box">
+            <img src="/assets/abundance-repracticed.jpg" alt="Abundance Repracticed cover" loading="lazy">
           </div>
           <h4>Abundance Repracticed</h4>
           <p>Rediscover, Redefine, Renew — Your Path to Prosperity.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" target="_blank" rel="noopener"
-               href="https://www.amazon.com/s?k=Anthony+Vresland+Abundance+Repracticed">Buy on Amazon</a>
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/s?k=Anthony+Vresland+Abundance+Repracticed">Buy on Amazon</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Music + Contact anchors (preserving your existing anchors) -->
+  <!-- Optional small feature (hidden by default; enable if you want a neat, smaller Salamis block) -->
+  <section id="salamis-feature" class="container card" style="display:none">
+    <div class="feature-cover">
+      <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
+    </div>
+    <div class="feature-body">
+      <h3>Back to Salamis</h3>
+      <p>Step into the strategy and spirit that turned the tide of history.</p>
+      <a class="btn btn-primary" href="https://www.amazon.com/s?k=Anthony+Vresland+Back+to+Salamis" target="_blank" rel="noopener">Buy on Amazon</a>
+    </div>
+  </section>
+
+  <!-- Music + Contact -->
   <section class="section" id="music">
     <div class="container">
       <h3>Music</h3>
       <p>Classical, ambient, and healing compositions from <em>Mystical Harmonies</em>.</p>
-      <!-- your embeds or links -->
+      <!-- embeds/links go here -->
     </div>
   </section>
 
@@ -160,18 +184,13 @@
         <a href="https://www.youtube.com/@EchoesofPhilosophy-b5p" target="_blank" rel="noopener">YouTube (Echoes of Philosophy)</a>
         <a href="https://www.youtube.com/@MrHarpia48" target="_blank" rel="noopener">YouTube (Mystical Harmonies)</a>
         <a href="https://www.youtube.com/@epicon9139" target="_blank" rel="noopener">YouTube (EPICON)</a>
-<div class="card">
-  <div class="cover">
-    <img src="assets/books/back-to-salamis.jpg" alt="Back to Salamis">
-  </div>
-  <h4>Back to Salamis</h4>
-  <p class="meta">…</p>
-  <a class="btn btn-primary" href="…">Buy on Amazon</a>
-</div>
-
       </nav>
     </div>
   </footer>
+
+  <!-- Sigils pinned to page edges -->
+  <img src="/assets/sigils/left.png" alt="" class="page-sigil left">
+  <img src="/assets/sigils/right.png" alt="" class="page-sigil right">
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
