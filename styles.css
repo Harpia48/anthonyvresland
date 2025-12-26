@@ -269,6 +269,20 @@ img{display:block; max-width:100%}
 .page-sigil.right{ right:24px; transform:scaleX(-1); }
 /* Only hide on small phones, not laptops/tablets */
 @media (max-width: 768px){ .page-sigil{ display:none; } }
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff6b35;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 2;
+}
+.book-card { position: relative; }
+.book-cover { position: relative; }
 
 
 
