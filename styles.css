@@ -303,6 +303,25 @@ img{display:block; max-width:100%}
   position: relative;
   z-index: 999;
 }
+/* === HARD RESET FOR BOOK CARD INTERACTION === */
+
+/* Let clicks pass through everything by default */
+.book-card * {
+  pointer-events: auto;
+}
+
+/* Images must NEVER capture clicks */
+.book-card img {
+  pointer-events: none !important;
+}
+
+/* Button always wins */
+.book-card a.btn {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999;
+  margin-top: auto; /* pushes button below cover stack */
+}
 
 
 
