@@ -292,7 +292,18 @@ img{display:block; max-width:100%}
   pointer-events: auto;
   position: relative;
   z-index: 50;
+}/* FINAL FIX: allow clicks through card overlay */
+.book-card::before,
+.book-card::after {
+  pointer-events: none;
 }
+
+/* Ensure Buy button is always on top */
+.book-card a.btn {
+  position: relative;
+  z-index: 999;
+}
+
 
 
 
