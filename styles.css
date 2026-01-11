@@ -282,18 +282,18 @@ img{display:block; max-width:100%}
   z-index: 2;
 }
 .book-card { position: relative; }
-.book-cover { position: relative; }
-
-/* Ensure Buy buttons are clickable */
-.book-card {
-  position: relative;
+/* FIX: book cover blocking Buy button clicks */
+.book-cover {
+  pointer-events: none;
 }
 
-.book-card a.btn {
-  position: relative;
-  z-index: 20;
+.book-card a.btn,
+.book-card .btn {
   pointer-events: auto;
+  position: relative;
+  z-index: 50;
 }
+
 
 
 /* =========================
