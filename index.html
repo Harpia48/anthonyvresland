@@ -6,67 +6,138 @@
   <title>Anthony Vresland — Author & Artist</title>
   <meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
+
   <style>
-    :root{--bg:#0b0f16;--panel:#101725;--panel2:#0f1623;--ink:#e5e7eb;--muted:#99a1b3;--brand:#f7a400;--shadow:rgba(0,0,0,.35)}
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,Roboto,Arial}
-    a{color:var(--ink);text-decoration:none}
+    :root{
+      --bg:#0b0f16; --panel:#101725; --panel2:#0f1623;
+      --ink:#e5e7eb; --muted:#99a1b3;
+      --brand:#f7a400; --shadow:rgba(0,0,0,.35)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
     img{display:block;max-width:100%}
+    a{color:var(--ink);text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:20px}
 
     /* Header */
-    .site-header{position:sticky;top:0;background:rgba(11,15,22,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
-    .site-header .container{display:flex;justify-content:space-between;align-items:center}
-    .brand{display:flex;gap:12px;align-items:center}
-    .avatar{width:36px;height:36px;border-radius:9999px;background:linear-gradient(135deg,#f59e0b,#f8af2e);display:grid;place-items:center;color:#0b0f16;font-weight:800}
-    .titles h1{font-size:18px;margin:0} .subtitle{margin:0;color:var(--muted);font-size:13px}
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,15,22,.85);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .site-header .container{
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .brand{display:flex; gap:12px; align-items:center}
+    .avatar{
+      width:36px;height:36px;border-radius:9999px;
+      background:linear-gradient(135deg,#f59e0b,#f8af2e);
+      display:grid;place-items:center;color:#0b0f16;font-weight:800;
+    }
+    .titles h1{font-size:18px;margin:0}
+    .subtitle{margin:0;color:var(--muted);font-size:13px}
     .nav{display:flex;gap:16px}
 
     /* Hero */
-    .hero{padding:64px 20px;background:radial-gradient(1200px 420px at 70% 0,rgba(255,200,120,.08),transparent)}
-    .hero h2{font-size:clamp(28px,5vw,52px);margin:0 0 10px;line-height:1.05}
+    .hero{
+      padding:64px 20px;
+      background:radial-gradient(1200px 420px at 70% 0,rgba(255,200,120,.08),transparent);
+    }
+    .hero h2{
+      font-size:clamp(28px,5vw,52px);
+      margin:0 0 10px;
+      line-height:1.05;
+    }
     .cta-row{margin-top:16px;display:flex;gap:12px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:600;border:1px solid rgba(255,255,255,.12)}
-    .btn-primary{background:var(--brand);color:#0b0f16;border-color:transparent}
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:12px;
+      font-weight:600;border:1px solid rgba(255,255,255,.12);
+    }
+    .btn-primary{
+      background:var(--brand);color:#0b0f16;border-color:transparent;
+    }
 
     /* Cards */
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:16px;box-shadow:0 10px 30px var(--shadow);padding:16px}
-    .author-card{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center}
-    .author-photo{width:96px;height:96px;border-radius:9999px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
+    .card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:16px;
+      box-shadow:0 10px 30px var(--shadow);
+      padding:16px;
+    }
+    .author-card{
+      display:grid;grid-template-columns:96px 1fr;
+      gap:16px;align-items:center;
+    }
+    .author-photo{
+      width:96px;height:96px;border-radius:9999px;
+      object-fit:cover;border:1px solid rgba(255,255,255,.12);
+    }
 
-    /* Books preview */
-    .book-grid{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media (max-width:1000px){.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (max-width:640px){.book-grid{grid-template-columns:1fr}}
-    .book-card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
-    .book-cover{aspect-ratio:2/3;border-radius:12px;overflow:hidden;background:var(--panel2);border:1px solid rgba(255,255,255,.06)}
-    .book-cover img{width:100%;height:100%;object-fit:cover}
+    /* Books */
+    .book-grid{
+      display:grid;gap:24px;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+    @media (max-width:1000px){
+      .book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:640px){
+      .book-grid{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+    .book-card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:16px;
+      padding:14px;
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .book-cover{
+      aspect-ratio:2/3;
+      border-radius:12px;
+      overflow:hidden;
+      background:var(--panel2);
+      border:1px solid rgba(255,255,255,.06);
+      pointer-events:none;
+    }
+    .book-cover img{
+      width:100%;height:100%;object-fit:cover;
+      pointer-events:none;
+    }
+    .book-card .btn{margin-top:auto}
 
     /* Footer */
-    .site-footer{border-top:1px solid rgba(255,255,255,.06);margin-top:40px}
-
-    /* Corner sigils — SINGLE PAIR ONLY */
-    .page-sigil{
-      position:fixed; bottom:24px; z-index:9999;
-      width:min(12vw,120px); opacity:.38; pointer-events:none;
-      filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));
+    .site-footer{
+      border-top:1px solid rgba(255,255,255,.06);
+      margin-top:40px;
     }
-    .page-sigil.left{ left:24px; }
-    .page-sigil.right{ right:24px; transform:scaleX(-1); }
-    @media (max-width:768px){ .page-sigil{ display:none; } } /* hide on phones */
+
+    /* Sigils */
+    .page-sigil{
+      position:fixed; bottom:24px; z-index:200;
+      width:min(12vw,120px); opacity:.35;
+      pointer-events:none;
+    }
+    .page-sigil.left{left:24px}
+    .page-sigil.right{right:24px;transform:scaleX(-1)}
+    @media (max-width:768px){.page-sigil{display:none}}
   </style>
 </head>
+
 <body>
 
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="/" aria-label="Go to homepage">
+    <a class="brand" href="/">
       <div class="avatar">AV</div>
       <div class="titles">
         <h1>Anthony Vresland</h1>
         <p class="subtitle">Author • Artist • Philosopher</p>
       </div>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav">
       <a href="/about.html">About</a>
       <a href="/books.html">Books</a>
       <a href="#music">Music</a>
@@ -90,49 +161,63 @@
 <section class="section">
   <div class="container">
 
-    <!-- About Card -->
     <div class="card author-card">
-      <img class="author-photo" src="/assets/portrait-av.jpg?v=21" alt="Anthony Vresland">
+      <img class="author-photo" src="/assets/portrait-av.jpg" alt="Anthony Vresland">
       <div>
         <h3>About</h3>
-        <p>Writer of historical fiction grounded in Greek philosophy and mysticism. Architect and painter weaving martial history with metaphysical undercurrents.</p>
+        <p>
+          Writer of historical fiction grounded in Greek philosophy and mysticism.
+          Architect and painter weaving martial history with metaphysical undercurrents.
+        </p>
       </div>
     </div>
 
-    <!-- Latest Publications Card -->
     <div class="card" style="margin-top:18px">
       <h3>Latest Publications</h3>
+
       <div class="book-grid">
 
-        <!-- Book 1: Plato's Allegory of the Cave -->
+        <!-- Cave -->
         <article class="book-card">
           <div class="book-cover">
-            <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave by Anthony Vresland">
+            <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
           </div>
           <h4>Plato’s Allegory of the Cave</h4>
           <p>What if everything you believe is just a shadow on the wall?</p>
-          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/gM6paiM">Buy on Amazon</a>
+          <a class="btn btn-primary" target="_blank" rel="noopener"
+             href="https://www.amazon.com/dp/B0B3ZQ7X9M">
+            Buy on Amazon
+          </a>
         </article>
 
-        <!-- Book 2: Plato's Allegory of the Chariot -->
+        <!-- Chariot -->
         <article class="book-card">
           <div class="book-cover">
-            <img src="/assets/chariot-cover.jpg" alt="Plato’s Allegory of the Chariot by Anthony Vresland">
+            <img src="/assets/chariot-cover.jpg" alt="Plato’s Allegory of the Chariot">
           </div>
-          <h4>Plato’s Allegory of the Chariot:<br><em>and the Immortal Soul</em></h4>
-          <p>“The soul is immortal, for that which is ever in motion is immortal.” — <em>Phaedrus</em></p>
-         <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/8T6p1hG">Buy on Amazon</a>
+          <h4>Plato’s Allegory of the Chariot<br><em>and the Immortal Soul</em></h4>
+          <p>
+            “The soul is immortal, for that which is ever in motion is immortal.”
+            — <em>Phaedrus</em>
+          </p>
+          <a class="btn btn-primary" target="_blank" rel="noopener"
+             href="https://www.amazon.com/dp/B0G8LYBV8P">
+            Buy on Amazon
+          </a>
         </article>
 
-  <!-- Book 3: Plato's Myth of Er -->
-<article class="book-card">
-  <div class="book-cover">
-    <img src="/assets/myth-of-er-cover.jpg" alt="Plato's Myth of Er by Anthony Vresland">
-  </div>
-  <h4>Plato’s Myth of Er</h4>
-  <p>The soul’s final vision before rebirth.</p>
-  <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/5aDqtrJK">Buy on Amazon</a>
-</article>
+        <!-- Myth of Er -->
+        <article class="book-card">
+          <div class="book-cover">
+            <img src="/assets/myth-of-er-cover.jpg" alt="Plato’s Myth of Er">
+          </div>
+          <h4>Plato’s Myth of Er</h4>
+          <p>The soul’s final vision before rebirth.</p>
+          <a class="btn btn-primary" target="_blank" rel="noopener"
+             href="https://www.amazon.com/dp/B0GDQVSRHV">
+            Buy on Amazon
+          </a>
+        </article>
 
       </div>
     </div>
@@ -157,20 +242,15 @@
 <footer class="site-footer">
   <div class="container">
     <p>© <span id="year"></span> Anthony Vresland.</p>
-    <nav aria-label="Social links" style="display:flex;gap:14px;flex-wrap:wrap">
-      <a href="https://www.facebook.com/profile.php?id=61577146899500" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.youtube.com/@antv9429" target="_blank" rel="noopener">YouTube (Author)</a>
-      <a href="https://www.youtube.com/@EchoesofPhilosophy-b5p" target="_blank" rel="noopener">YouTube (Echoes of Philosophy)</a>
-      <a href="https://www.youtube.com/@MrHarpia48" target="_blank" rel="noopener">YouTube (Mystical Harmonies)</a>
-      <a href="https://www.youtube.com/@epicon9139" target="_blank" rel="noopener">YouTube (EPICON)</a>
-    </nav>
   </div>
 </footer>
 
-<!-- Corner sigils — single pair only -->
-<img src="/assets/sigils/left.png?v=21" alt="" class="page-sigil left">
-<img src="/assets/sigils/right.png?v=21" alt="" class="page-sigil right">
+<img src="/assets/sigils/left.png" alt="" class="page-sigil left">
+<img src="/assets/sigils/right.png" alt="" class="page-sigil right">
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
