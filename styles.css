@@ -66,7 +66,7 @@ a:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11,15,22,.75);
+  background: rgba(11, 15, 22, .75);
   backdrop-filter: blur(10px) saturate(140%);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
@@ -90,7 +90,8 @@ a:focus-visible {
   display: grid;
   place-items: center;
   font-weight: 800;
-  background: linear-gradient(135deg, #334155, #0ea5e9);
+  color: #0b0f16;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
 }
 
 .titles h1 {
@@ -99,6 +100,7 @@ a:focus-visible {
 }
 
 .subtitle {
+  margin: 0;
   font-size: .9rem;
   color: var(--muted);
 }
@@ -176,7 +178,7 @@ a:focus-visible {
 }
 
 /* =========================
-   BOOK GRID (ONE SYSTEM)
+   BOOK GRID
 ========================= */
 .book-grid {
   display: grid;
@@ -194,7 +196,7 @@ a:focus-visible {
   gap: 12px;
 }
 
-/* COVER — visual only, NEVER clickable */
+/* Cover is visual only — never captures clicks */
 .book-cover {
   aspect-ratio: 3 / 4;
   border-radius: 12px;
@@ -216,15 +218,14 @@ a:focus-visible {
 }
 
 .book-card p {
-  color: var(--muted);
   font-size: .95rem;
+  color: var(--muted);
 }
 
-/* Button ALWAYS clickable */
+/* Button always wins */
 .book-card .btn {
   margin-top: auto;
   pointer-events: auto;
-  z-index: 1;
 }
 
 /* =========================
@@ -243,12 +244,12 @@ a:focus-visible {
 }
 
 .site-footer p {
-  color: var(--muted);
   margin: 0;
+  color: var(--muted);
 }
 
 /* =========================
-   FLOATING SIGILS (DECOR ONLY)
+   FLOATING SIGILS
 ========================= */
 .page-sigil {
   position: fixed;
