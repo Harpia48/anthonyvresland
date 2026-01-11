@@ -1,5 +1,5 @@
 /* =========================
-   THEME VARIABLES
+   THEME
 ========================= */
 :root {
   --bg: #0b0f16;
@@ -141,13 +141,6 @@ a:focus-visible {
   color: var(--muted);
 }
 
-.cta-row {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
 /* =========================
    BUTTONS
 ========================= */
@@ -183,7 +176,7 @@ a:focus-visible {
 }
 
 /* =========================
-   BOOK GRID (SINGLE SYSTEM)
+   BOOK GRID (ONE SYSTEM)
 ========================= */
 .book-grid {
   display: grid;
@@ -201,19 +194,21 @@ a:focus-visible {
   gap: 12px;
 }
 
+/* COVER — visual only, NEVER clickable */
 .book-cover {
   aspect-ratio: 3 / 4;
   border-radius: 12px;
   overflow: hidden;
   background: #0b1320;
   border: 1px solid rgba(255,255,255,.10);
+  pointer-events: none;
 }
 
 .book-cover img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  pointer-events: none; /* CRITICAL */
+  pointer-events: none;
 }
 
 .book-card h4 {
@@ -225,6 +220,7 @@ a:focus-visible {
   font-size: .95rem;
 }
 
+/* Button ALWAYS clickable */
 .book-card .btn {
   margin-top: auto;
   pointer-events: auto;
@@ -252,7 +248,7 @@ a:focus-visible {
 }
 
 /* =========================
-   FLOATING SIGILS
+   FLOATING SIGILS (DECOR ONLY)
 ========================= */
 .page-sigil {
   position: fixed;
@@ -270,18 +266,28 @@ a:focus-visible {
    RESPONSIVE
 ========================= */
 @media (max-width: 1000px) {
-  .book-grid { grid-template-columns: repeat(2, 1fr); }
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 700px) {
-  .book-grid { grid-template-columns: 1fr; }
-  .nav { display: none; }
-  .page-sigil { display: none; }
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+  .page-sigil {
+    display: none;
+  }
 }
 
 /* =========================
    ACCESSIBILITY
 ========================= */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
