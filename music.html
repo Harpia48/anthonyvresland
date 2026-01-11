@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anthony Vresland | Music</title>
+  <title>Anthony Vresland | Music — EPICON</title>
   <style>
     :root {
       --primary: #f5a623;
@@ -66,22 +66,58 @@
       color: var(--primary);
     }
 
+    /* HERO SECTION — EPICON BANNER */
     .hero {
-      padding: 4rem 2rem;
+      position: relative;
+      height: 60vh;
+      background: url('epicon-hero.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, var(--darker), var(--dark));
+      color: white;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--secondary);
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+      letter-spacing: 2px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .hero .vec-numbers {
+      font-size: 1.1rem;
+      color: #f5a623;
+      opacity: 0.8;
+      margin-top: 0.5rem;
     }
 
     .cta-button {
@@ -93,10 +129,12 @@
       text-decoration: none;
       font-weight: bold;
       transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(245, 166, 35, 0.3);
     }
 
     .cta-button:hover {
       transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(245, 166, 35, 0.5);
     }
 
     .content {
@@ -160,8 +198,11 @@
     }
 
     @media (max-width: 768px) {
+      .hero {
+        height: 50vh;
+      }
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
       nav ul {
         gap: 1rem;
@@ -191,47 +232,56 @@
   </header>
 
   <main>
+    <!-- HERO SECTION WITH EPICON BANNER -->
     <section class="hero">
-      <h1>Soundscapes of the Soul</h1>
-      <p>Explore my musical journey through myth, mysticism, and metaphysical resonance — where sound becomes sacred geometry.</p>
-      <a href="https://www.youtube.com/@EPICON" target="_blank" class="cta-button">Visit EPICON on YouTube</a>
+      <div class="hero-content">
+        <h1>EPICON</h1>
+        <p>Mythic Cinematic Music — where sound becomes sacred geometry, and frequency awakens the soul.</p>
+        <div class="vec-numbers">Encoded with VEC: 1049 • 888 • 777</div>
+        <a href="https://www.youtube.com/@EPICON" target="_blank" class="cta-button">
+          🌀 Enter the EPICON Channel
+        </a>
+      </div>
     </section>
 
+    <!-- MUSIC CONTENT -->
     <section class="content">
       <h2 class="section-title">Welcome to EPICON</h2>
       <p>EPICON is my sonic vessel — a fusion of ambient textures, ancient frequencies, and archetypal themes. Each track is an invitation to inner exploration, designed to harmonize with the VEC numbers I weave into my writing and art.</p>
       
       <div class="music-grid">
-        <!-- Example Card 1 -->
+        <!-- Card 1 -->
         <div class="music-card">
-          <img src="https://via.placeholder.com/300x200/1a1a2e/ffffff?text=EPICON+Track+1" alt="Track 1">
+          <img src="https://via.placeholder.com/300x200/1a1a2e/ffffff?text=The+Resonant+Veil" alt="The Resonant Veil">
           <div class="card-body">
             <h3>The Resonant Veil</h3>
-            <p>A meditation on 1049 — the frequency of awakening.</p>
+            <p>A meditation on 1049 — the frequency of awakening. Dissolve illusion. Step into luminous truth.</p>
           </div>
         </div>
 
-        <!-- Example Card 2 -->
+        <!-- Card 2 -->
         <div class="music-card">
-          <img src="https://via.placeholder.com/300x200/16213e/ffffff?text=EPICON+Track+2" alt="Track 2">
+          <img src="https://via.placeholder.com/300x200/16213e/ffffff?text=Chariot+of+Soul" alt="Chariot of the Immortal Soul">
           <div class="card-body">
             <h3>Chariot of the Immortal Soul</h3>
-            <p>Synchronized with Plato’s Allegory — now in sound.</p>
+            <p>Synchronized with Plato’s Allegory — feel the soul ascend through layers of light, guided by harmonic architecture.</p>
           </div>
         </div>
 
-        <!-- Example Card 3 -->
+        <!-- Card 3 -->
         <div class="music-card">
-          <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=EPICON+Track+3" alt="Track 3">
+          <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Myth+of+Er" alt="Myth of Er: The Final Vision">
           <div class="card-body">
             <h3>Myth of Er: The Final Vision</h3>
-            <p>888 — the number of completion — echoes here.</p>
+            <p>888 echoes here — the soul’s final journey before rebirth, wrapped in celestial harmonics and sacred geometry.</p>
           </div>
         </div>
       </div>
 
       <div style="text-align: center; margin-top: 3rem;">
-        <a href="https://www.youtube.com/@EPICON" target="_blank" class="cta-button">Subscribe to EPICON on YouTube</a>
+        <a href="https://www.youtube.com/@EPICON" target="_blank" class="cta-button">
+          🔔 Subscribe to EPICON on YouTube
+        </a>
       </div>
     </section>
   </main>
