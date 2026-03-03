@@ -1,27 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anthony Vresland — Author & Philosopher</title>
-  <meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthony Vresland — Author • Artist • Philosopher</title>
+<meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
+<style>
+:root{
+  --bg:#0b0f16;
+  --panel:#101725;
+  --text:#e5e7eb;
+  --muted:#9aa4b2;
+  --accent:#f7a400;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+header{
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:18px 0;
+}
+
+.header-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#000;
+  display:grid;
+  place-items:center;
+  font-weight:700;
+}
+
+.subtitle{
+  font-size:13px;
+  color:var(--muted);
+  margin:0;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+}
+
+.hero{
+  padding:60px 0 40px 0;
+}
+
+.hero h2{
+  font-size:40px;
+  margin:0 0 10px 0;
+}
+
+.hero p{
+  color:var(--muted);
+  margin:0;
+}
+
+.section-title{
+  margin:40px 0 25px 0;
+  font-size:22px;
+}
+
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.book-card{
+  background:var(--panel);
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+  transition:.2s ease;
+}
+
+.book-card:hover{
+  transform:translateY(-4px);
+}
+
+.book-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.book-card h4{
+  margin:16px 0 8px 0;
+}
+
+.book-card p{
+  font-size:14px;
+  color:var(--muted);
+  min-height:40px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 16px;
+  background:var(--accent);
+  color:#000;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.featured{
+  border:2px solid var(--accent);
+  transform:scale(1.04);
+}
+
+footer{
+  margin-top:70px;
+  padding:25px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .book-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
-<header class="site-header">
+<header>
   <div class="container header-flex">
     <div class="brand">
       <div class="avatar">AV</div>
       <div>
-        <h1>Anthony Vresland</h1>
+        <strong>Anthony Vresland</strong>
         <p class="subtitle">Author • Artist • Philosopher</p>
       </div>
     </div>
-
     <nav>
       <a href="about.html">About</a>
       <a href="books.html">Books</a>
@@ -38,9 +181,8 @@
   </div>
 </section>
 
-<section class="section">
+<section>
   <div class="container">
-
     <h3 class="section-title">Featured Works</h3>
 
     <div class="book-grid">
@@ -53,7 +195,7 @@
         <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
       </article>
 
-      <!-- Back to Salamis -->
+      <!-- Back to Salamis (center featured) -->
       <article class="book-card featured">
         <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
         <h4>Back to Salamis</h4>
@@ -70,14 +212,11 @@
       </article>
 
     </div>
-
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2026 Anthony Vresland.</p>
-  </div>
+<footer>
+  © 2026 Anthony Vresland.
 </footer>
 
 </body>
