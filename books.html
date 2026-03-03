@@ -1,302 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Anthony Vresland</title>
 
-  <title>Books — Anthony Vresland</title>
-  <meta name="description"
-        content="Books by Anthony Vresland — historical fiction, Greek philosophy, and living symbolism." />
+<style>
+:root{
+  --bg:#0b0f16;
+  --panel:#101725;
+  --text:#e5e7eb;
+  --muted:#9aa4b2;
+  --accent:#f7a400;
+}
 
-  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+*{box-sizing:border-box}
 
-  <style>
-    :root{
-      --bg:#0b0f16;
-      --panel:#101725;
-      --panel2:#0f1623;
-      --ink:#e5e7eb;
-      --muted:#99a1b3;
-      --brand:#f7a400;
-      --shadow:rgba(0,0,0,.35);
-    }
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font:16px/1.6 system-ui,Segoe UI,Roboto,Arial;
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    a{color:var(--ink);text-decoration:none}
-    img{display:block;max-width:100%}
+h1{
+  margin-bottom:40px;
+}
 
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      padding:20px;
-    }
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:28px;
+}
 
-    /* Header */
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(11,15,22,.85);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+.book-card{
+  background:var(--panel);
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  transition:.2s ease;
+}
 
-    .site-header .container{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+.book-card:hover{
+  transform:translateY(-4px);
+}
 
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
+.book-card img{
+  width:100%;
+  border-radius:10px;
+}
 
-    .avatar{
-      width:36px;
-      height:36px;
-      border-radius:9999px;
-      background:linear-gradient(135deg,#f59e0b,#f8af2e);
-      display:grid;
-      place-items:center;
-      color:#0b0f16;
-      font-weight:800;
-    }
+.book-card h4{
+  margin:14px 0 8px;
+}
 
-    .titles h1{font-size:18px;margin:0}
-    .subtitle{margin:0;color:var(--muted);font-size:13px}
-    .nav{display:flex;gap:16px}
+.book-card p{
+  font-size:14px;
+  color:var(--muted);
+  min-height:50px;
+}
 
-    .nav a[aria-current="page"]{
-      color:var(--brand);
-    }
-
-    /* Books Grid */
-    .book-grid{
-      display:grid;
-      gap:24px;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      margin-top:30px;
-    }
-
-    @media (max-width:1000px){
-      .book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    }
-
-    @media (max-width:640px){
-      .book-grid{grid-template-columns:1fr}
-    }
-
-    .book-card{
-      background:var(--panel);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .book-cover{
-      aspect-ratio:2/3;
-      border-radius:12px;
-      overflow:hidden;
-      background:var(--panel2);
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    .book-cover img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .book-card h4{
-      margin:0 0 6px;
-      font-size:16px;
-      line-height:1.3;
-    }
-
-    .book-card p{
-      font-size:13px;
-      color:var(--muted);
-      margin:0;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:12px;
-      font-weight:600;
-      font-size:12px;
-      border:1px solid rgba(255,255,255,.12);
-    }
-
-    .btn-primary{
-      background:var(--brand);
-      color:#0b0f16;
-      border-color:transparent;
-    }
-
-    .site-footer{
-      border-top:1px solid rgba(255,255,255,.06);
-      margin-top:50px;
-      padding-top:20px;
-    }
-  </style>
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 14px;
+  background:var(--accent);
+  color:#000;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+</style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <div class="avatar">AV</div>
-      <div class="titles">
-        <h1>Anthony Vresland</h1>
-        <p class="subtitle">Author • Artist • Philosopher</p>
-      </div>
-    </a>
+<div class="container">
+<h1>Books</h1>
 
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/books.html" aria-current="page">Books</a>
-      <a href="/music.html">Music</a>
-      <a href="/#contact">Contact</a>
-      <a href="/vec.html">VEC Library</a>
-    </nav>
-  </div>
-</header>
+<div class="book-grid">
 
-<main>
-  <div class="container">
-    <h2>Books</h2>
-    <p>Historical fiction, philosophy, and living symbolism.</p>
+<!-- Allegory of the Cave -->
+<article class="book-card">
+<img src="/assets/cave-cover.jpg">
+<h4>Plato’s Allegory of the Cave</h4>
+<p>The awakening from illusion to vision.</p>
+<a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
+</article>
 
-    <div class="book-grid">
+<!-- Allegory of the Chariot -->
+<article class="book-card">
+<img src="/assets/chariot-cover.jpg">
+<h4>Plato’s Allegory of the Chariot</h4>
+<p>The immortal soul and the divine ascent.</p>
+<a class="btn" href="https://a.co/d/04fO26JI" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Back to Salamis -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/cave-cover.jpg" alt="Back to Salamis">
-        </div>
-        <h4>Back to Salamis</h4>
-        <p>A modern man drawn into Themistocles’ moonlit logic and the Fifth Essence.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://www.amazon.com/dp/B0B3ZQ7X9M">Buy on Amazon</a>
-      </article>
+<!-- Myth of Er -->
+<article class="book-card">
+<img src="/assets/myth-of-er-cover.jpg">
+<h4>Plato’s The Myth of Er</h4>
+<p>The First Recorded Near-Death Experience.</p>
+<a class="btn" href="https://a.co/d/0cBwiyV3" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Money Repracticed -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/money-repracticed.jpg" alt="Money Repracticed">
-        </div>
-        <h4>Money Repracticed</h4>
-        <p>Harmonizing with Prosperity (Titans Within — Book 2).</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://www.amazon.com/dp/B0C9K6Z7Q4">Buy on Amazon</a>
-      </article>
+<!-- Back to Salamis -->
+<article class="book-card">
+<img src="/assets/salamis-cover.jpg">
+<h4>Back to Salamis</h4>
+<p>A Modern Man in the War for Western Freedom.</p>
+<a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Abundance Repracticed -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/abundance-repracticed.jpg" alt="Abundance Repracticed">
-        </div>
-        <h4>Abundance Repracticed</h4>
-        <p>Rediscover, Redefine, Renew — Your Path to Prosperity.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://www.amazon.com/dp/B0GDQVSRHV">Buy on Amazon</a>
-      </article>
+<!-- Homer -->
+<article class="book-card">
+<img src="/assets/homer-iliad.jpg">
+<h4>Homer: The Iliad Decoded</h4>
+<p>The War of Troy as the Architecture of the Soul.</p>
+<a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Alexander The Great Mystic -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/alexander-mystic.jpg" alt="Alexander The Great Mystic">
-        </div>
-        <h4>Alexander The Great Mystic</h4>
-        <p>Initiation, omens, and the Agathos Daimon in Alexander’s path.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
-      </article>
+<!-- Alexander Mystic -->
+<article class="book-card">
+<img src="/assets/alexander-mystic.jpg">
+<h4>Alexander the Great Mystic</h4>
+<p>In the Shadow of Zeus.</p>
+<a class="btn" href="https://a.co/d/070wbFDZ" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Sacred Geography -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/sacred-geography.jpg" alt="Sacred Geography">
-        </div>
-        <h4>Sacred Geography</h4>
-        <p>Land, number, and the intelligence of place in the Hellenic world.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://www.amazon.com/dp/B0DG53Q22T">Buy on Amazon</a>
-      </article>
+<!-- Language of VEC -->
+<article class="book-card">
+<img src="/assets/the-language-of-vec.jpg">
+<h4>The Language of VEC</h4>
+<p>Vibrational–Energetic Codes and the Hidden Current of Abundance.</p>
+<a class="btn" href="https://a.co/d/04HLEzJz" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Leonidas -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/leonidas.jpg" alt="Leonidas">
-        </div>
-        <h4>Leonidas</h4>
-        <p>Thermopylae retold through discipline, honor, and inner command.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
-      </article>
+<!-- Titan Proxies -->
+<article class="book-card">
+<img src="/assets/proxies.jpg">
+<h4>The Language of VEC: The Titan Proxies</h4>
+<p>The Hidden War for Your Energy.</p>
+<a class="btn" href="https://a.co/d/04AwjkGb" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Walking Sideways -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/walking-sideways.jpg" alt="Walking Sideways">
-        </div>
-        <h4>Walking Sideways</h4>
-        <p>From the River of Order to the Parallel Current.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://a.co/d/0d988nxe">Buy on Amazon</a>
-      </article>
+<!-- Walking Sideways -->
+<article class="book-card">
+<img src="/assets/walking-sideways.jpg">
+<h4>Walking Sideways</h4>
+<p>From the River of Order to the Parallel Current.</p>
+<a class="btn" href="https://a.co/d/02j3XUws" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Homer -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
-        </div>
-        <h4>Homer: The Iliad Decoded</h4>
-        <p>Where epic war becomes inner alchemy.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://a.co/d/07kuroc4">Buy on Amazon</a>
-      </article>
+<!-- Core Myths -->
+<article class="book-card">
+<img src="/assets/plato-core-myths.jpg">
+<h4>Plato: The Core Myths</h4>
+<p>The Core Myths.</p>
+<a class="btn" href="https://a.co/d/01Dz7HrT" target="_blank">View on Amazon</a>
+</article>
 
-      <!-- Plato -->
-      <article class="book-card">
-        <div class="book-cover">
-          <img src="/assets/plato-core-myths.jpg" alt="Plato: The Core Myths">
-        </div>
-        <h4>Plato: The Core Myths</h4>
-        <p>Cave • Chariot • Myth — Unified.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://a.co/d/07DBQ3mD">Buy on Amazon</a>
-      </article>
+<!-- Sacred Geometry -->
+<article class="book-card">
+<img src="/assets/sacred-geography.jpg">
+<h4>Sacred Geometry</h4>
+<p>Ancient wisdom in modern times.</p>
+<a class="btn" href="https://a.co/d/0aPPMh0s" target="_blank">View on Amazon</a>
+</article>
 
-    </div>
-  </div>
-</main>
+<!-- Leonidas -->
+<article class="book-card">
+<img src="/assets/leonidas.jpg">
+<h4>Leonidas: The Mission</h4>
+<p>The Battle for Cosmic Harmony.</p>
+<a class="btn" href="https://a.co/d/0bhuWqzq" target="_blank">View on Amazon</a>
+</article>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>© <span id="year"></span> Anthony Vresland.</p>
-  </div>
-</footer>
+<!-- Abundance Repracticed -->
+<article class="book-card">
+<img src="/assets/abundance-repracticed.jpeg">
+<h4>Abundance Repracticed</h4>
+<p>Rediscover, Redefine, Renew.</p>
+<a class="btn" href="https://a.co/d/07cLfJzD" target="_blank">View on Amazon</a>
+</article>
 
-<script>
-  document.getElementById('year').textContent =
-    new Date().getFullYear();
-</script>
+<!-- Money Repracticed -->
+<article class="book-card">
+<img src="/assets/money-repracticed.jpg">
+<h4>Money Repracticed</h4>
+<p>Harmonizing with Prosperity.</p>
+<a class="btn" href="https://a.co/d/0enTUKwV" target="_blank">View on Amazon</a>
+</article>
+
+</div>
+</div>
 
 </body>
 </html>
