@@ -3,97 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anthony Vresland — Author • Artist • Philosopher</title>
-<meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
+<title>Anthony Vresland — Author</title>
 
 <style>
 :root{
   --bg:#0b0f16;
-  --panel:#101725;
+  --panel:#121826;
   --text:#e5e7eb;
   --muted:#9aa4b2;
   --accent:#f7a400;
 }
 
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  margin:0;
   font-family:system-ui,Segoe UI,Roboto,Arial;
   background:var(--bg);
   color:var(--text);
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+  line-height:1.6;
 }
 
 header{
-  border-bottom:1px solid rgba(255,255,255,.08);
-  padding:18px 0;
-}
-
-.header-flex{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:20px 40px;
+  border-bottom:1px solid #1f2937;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.avatar{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  background:var(--accent);
-  color:#000;
-  display:grid;
-  place-items:center;
+.logo{
   font-weight:700;
-}
-
-.subtitle{
-  font-size:13px;
-  color:var(--muted);
-  margin:0;
+  font-size:18px;
 }
 
 nav a{
-  margin-left:20px;
+  color:var(--muted);
   text-decoration:none;
-  color:var(--text);
-  font-size:14px;
+  margin-left:25px;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--accent);
 }
 
 .hero{
-  padding:60px 0 40px 0;
+  padding:80px 40px 40px;
+  max-width:1000px;
+  margin:auto;
 }
 
-.hero h2{
+.hero h1{
   font-size:40px;
-  margin:0 0 10px 0;
+  margin-bottom:15px;
 }
 
 .hero p{
   color:var(--muted);
-  margin:0;
+  font-size:18px;
 }
 
-.section-title{
-  margin:40px 0 25px 0;
-  font-size:22px;
+.section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 40px;
+}
+
+.section h2{
+  margin-bottom:30px;
 }
 
 .book-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
 }
 
 .book-card{
@@ -101,11 +84,11 @@ nav a{
   padding:20px;
   border-radius:14px;
   text-align:center;
-  transition:.2s ease;
+  transition:0.3s;
 }
 
 .book-card:hover{
-  transform:translateY(-4px);
+  transform:translateY(-6px);
 }
 
 .book-card img{
@@ -114,42 +97,31 @@ nav a{
 }
 
 .book-card h4{
-  margin:16px 0 8px 0;
+  margin:15px 0 10px;
 }
 
 .book-card p{
-  font-size:14px;
   color:var(--muted);
-  min-height:40px;
+  font-size:14px;
+  margin-bottom:15px;
 }
 
 .btn{
   display:inline-block;
-  margin-top:14px;
-  padding:10px 16px;
+  padding:10px 18px;
   background:var(--accent);
   color:#000;
-  border-radius:10px;
+  border-radius:8px;
   text-decoration:none;
   font-weight:600;
 }
 
-.featured{
-  border:2px solid var(--accent);
-  transform:scale(1.04);
-}
-
 footer{
-  margin-top:70px;
-  padding:25px 0;
-  border-top:1px solid rgba(255,255,255,.08);
   text-align:center;
+  padding:40px;
   color:var(--muted);
-  font-size:14px;
-}
-
-@media(max-width:900px){
-  .book-grid{grid-template-columns:1fr}
+  border-top:1px solid #1f2937;
+  margin-top:80px;
 }
 </style>
 </head>
@@ -157,66 +129,52 @@ footer{
 <body>
 
 <header>
-  <div class="container header-flex">
-    <div class="brand">
-      <div class="avatar">AV</div>
-      <div>
-        <strong>Anthony Vresland</strong>
-        <p class="subtitle">Author • Artist • Philosopher</p>
-      </div>
-    </div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="books.html">Books</a>
-      <a href="music.html">Music</a>
-      <a href="vec.html">VEC Library</a>
-    </nav>
-  </div>
+  <div class="logo">Anthony Vresland</div>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="books.html">Books</a>
+    <a href="homer-the-educator.html">Homer</a>
+    <a href="music.html">Music</a>
+    <a href="vec.html">VEC Library</a>
+  </nav>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h2>History, myth, and the Greek light.</h2>
-    <p>Historical fiction infused with ancient philosophy and living symbolism.</p>
-  </div>
+  <h1>History, myth, and the Greek light.</h1>
+  <p>Historical fiction infused with ancient philosophy and living symbolism.</p>
 </section>
 
-<section>
-  <div class="container">
-    <h3 class="section-title">Featured Works</h3>
+<section class="section">
+  <h2>Featured Works</h2>
 
-    <div class="book-grid">
+  <div class="book-grid">
 
-      <!-- Plato Cave -->
-      <article class="book-card">
-        <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
-        <h4>Plato’s Allegory of the Cave</h4>
-        <p>The awakening from illusion to vision.</p>
-        <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
-      </article>
-
-      <!-- Back to Salamis (center featured) -->
-      <article class="book-card featured">
-        <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
-        <h4>Back to Salamis</h4>
-        <p>A Modern Man in the War for Western Freedom.</p>
-        <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
-      </article>
-
-      <!-- Homer -->
-      <article class="book-card">
-        <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
-        <h4>Homer: The Iliad Decoded</h4>
-        <p>The War of Troy as the Architecture of the Soul.</p>
-        <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
-      </article>
-
+    <div class="book-card">
+      <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
+      <h4>Plato’s Allegory of the Cave</h4>
+      <p>The awakening from illusion to vision.</p>
+      <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
     </div>
+
+    <div class="book-card">
+      <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
+      <h4>Back to Salamis</h4>
+      <p>A Modern Man in the War for Western Freedom.</p>
+      <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
+      <h4>Homer: The Iliad Decoded</h4>
+      <p>The War of Troy as the Architecture of the Soul.</p>
+      <a class="btn" href="iliad-decoded.html">Enter the Epic</a>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  © 2026 Anthony Vresland.
+© 2026 Anthony Vresland.
 </footer>
 
 </body>
