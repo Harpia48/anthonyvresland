@@ -3,21 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<<<<<<< HEAD
-  <title>Anthony Vresland — Books</title>
-  <meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
-  <link rel="icon" href="/assets/favicon.png" type="image/png" />
-=======
 
   <title>Books — Anthony Vresland</title>
-
   <meta name="description"
         content="Books by Anthony Vresland — historical fiction, Greek philosophy, and living symbolism." />
 
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
 
   <style>
-    :root {
+    :root{
       --bg:#0b0f16;
       --panel:#101725;
       --panel2:#0f1623;
@@ -27,116 +21,136 @@
       --shadow:rgba(0,0,0,.35);
     }
 
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 16px/1.5 system-ui, Segoe UI, Roboto, Arial;
-    }
-
-    a { color: var(--ink); text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
->>>>>>> c0c5dec06a6263d50eb3f93332344b91e654ff65
-
-  <style>
-    :root{
-      --bg:#0b0f16; --panel:#101725; --panel2:#0f1623;
-      --ink:#e5e7eb; --muted:#99a1b3;
-      --brand:#f7a400; --shadow:rgba(0,0,0,.35)
-    }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
-    img{display:block;max-width:100%}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:16px/1.6 system-ui,Segoe UI,Roboto,Arial;
+    }
+
     a{color:var(--ink);text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
+    img{display:block;max-width:100%}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:20px;
+    }
 
     /* Header */
     .site-header{
-      position:sticky; top:0; z-index:50;
+      position:sticky;
+      top:0;
+      z-index:50;
       background:rgba(11,15,22,.85);
       backdrop-filter:saturate(140%) blur(8px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
+
     .site-header .container{
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .brand{display:flex; gap:12px; align-items:center}
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
     .avatar{
-      width:36px;height:36px;border-radius:9999px;
+      width:36px;
+      height:36px;
+      border-radius:9999px;
       background:linear-gradient(135deg,#f59e0b,#f8af2e);
-      display:grid;place-items:center;color:#0b0f16;font-weight:800;
+      display:grid;
+      place-items:center;
+      color:#0b0f16;
+      font-weight:800;
     }
+
     .titles h1{font-size:18px;margin:0}
     .subtitle{margin:0;color:var(--muted);font-size:13px}
     .nav{display:flex;gap:16px}
 
+    .nav a[aria-current="page"]{
+      color:var(--brand);
+    }
+
     /* Books Grid */
     .book-grid{
-      display:grid;gap:24px;
+      display:grid;
+      gap:24px;
       grid-template-columns:repeat(3,minmax(0,1fr));
+      margin-top:30px;
     }
+
     @media (max-width:1000px){
       .book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
+
     @media (max-width:640px){
       .book-grid{grid-template-columns:1fr}
     }
+
     .book-card{
       background:var(--panel);
       border:1px solid rgba(255,255,255,.06);
       border-radius:16px;
       padding:14px;
-      display:flex;flex-direction:column;gap:10px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
+
     .book-cover{
       aspect-ratio:2/3;
       border-radius:12px;
       overflow:hidden;
       background:var(--panel2);
       border:1px solid rgba(255,255,255,.06);
-      pointer-events:none;
     }
+
     .book-cover img{
-      width:100%;height:100%;object-fit:cover;
-      pointer-events:none;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
+
     .book-card h4{
       margin:0 0 6px;
       font-size:16px;
       line-height:1.3;
     }
+
     .book-card p{
       font-size:13px;
       color:var(--muted);
       margin:0;
     }
+
     .btn{
-      display:inline-block;padding:8px 12px;border-radius:12px;
-      font-weight:600;font-size:12px;
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:600;
+      font-size:12px;
       border:1px solid rgba(255,255,255,.12);
     }
+
     .btn-primary{
-      background:var(--brand);color:#0b0f16;border-color:transparent;
+      background:var(--brand);
+      color:#0b0f16;
+      border-color:transparent;
     }
 
-    /* Footer */
     .site-footer{
       border-top:1px solid rgba(255,255,255,.06);
-      margin-top:40px;
+      margin-top:50px;
+      padding-top:20px;
     }
-
-    /* Sigils */
-    .page-sigil{
-      position:fixed; bottom:24px; z-index:200;
-      width:min(12vw,120px); opacity:.35;
-      pointer-events:none;
-    }
-    .page-sigil.left{left:24px}
-    .page-sigil.right{right:24px;transform:scaleX(-1)}
-    @media (max-width:78px){.page-sigil{display:none}}
   </style>
 </head>
 
@@ -151,18 +165,13 @@
         <p class="subtitle">Author • Artist • Philosopher</p>
       </div>
     </a>
+
     <nav class="nav">
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-<<<<<<< HEAD
-      <a href="/books.html" style="color: #f7a400;">Books</a>
-      <a href="/music.html">Music</a>
-      <a href="#contact">Contact</a>
-=======
       <a href="/books.html" aria-current="page">Books</a>
       <a href="/music.html">Music</a>
       <a href="/#contact">Contact</a>
->>>>>>> c0c5dec06a6263d50eb3f93332344b91e654ff65
       <a href="/vec.html">VEC Library</a>
     </nav>
   </div>
@@ -175,109 +184,103 @@
 
     <div class="book-grid">
 
-      <!-- 1. Back to Salamis -->
+      <!-- Back to Salamis -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/cave-cover.jpg" alt="Back to Salamis">
         </div>
         <h4>Back to Salamis</h4>
         <p>A modern man drawn into Themistocles’ moonlit logic and the Fifth Essence.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B0B3ZQ7X9M">Buy on Amazon</a>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://www.amazon.com/dp/B0B3ZQ7X9M">Buy on Amazon</a>
       </article>
 
-      <!-- 2. Money Repracticed -->
+      <!-- Money Repracticed -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/money-repracticed.jpg" alt="Money Repracticed">
         </div>
         <h4>Money Repracticed</h4>
         <p>Harmonizing with Prosperity (Titans Within — Book 2).</p>
-<<<<<<< HEAD
-       a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
-=======
         <a class="btn btn-primary" target="_blank" rel="noopener"
-   href="https://www.amazon.com/dp/B0C9K6Z7Q4">Buy on Amazon</a>
->>>>>>> c0c5dec06a6263d50eb3f93332344b91e654ff65
+           href="https://www.amazon.com/dp/B0C9K6Z7Q4">Buy on Amazon</a>
       </article>
 
-      <!-- 3. Abundance Repracticed -->
+      <!-- Abundance Repracticed -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/abundance-repracticed.jpg" alt="Abundance Repracticed">
         </div>
         <h4>Abundance Repracticed</h4>
         <p>Rediscover, Redefine, Renew — Your Path to Prosperity.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B0GDQVSRHV">Buy on Amazon</a>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://www.amazon.com/dp/B0GDQVSRHV">Buy on Amazon</a>
       </article>
 
-      <!-- 4. Alexander The Great Mystic -->
+      <!-- Alexander The Great Mystic -->
       <article class="book-card">
         <div class="book-cover">
-          <img src="/assets/alexander-mystic.jpg" alt=" The Great Mystic">
+          <img src="/assets/alexander-mystic.jpg" alt="Alexander The Great Mystic">
         </div>
         <h4>Alexander The Great Mystic</h4>
         <p>Initiation, omens, and the Agathos Daimon in Alexander’s path.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
       </article>
 
-      <!-- 5. Sacred Geometry -->
+      <!-- Sacred Geography -->
       <article class="book-card">
         <div class="book-cover">
-          <img src="/assets/sacred-geography.jpg" alt="Sacred Geometry">
+          <img src="/assets/sacred-geography.jpg" alt="Sacred Geography">
         </div>
-<<<<<<< HEAD
-        <h4>Sacred Geometry</h4>
+        <h4>Sacred Geography</h4>
         <p>Land, number, and the intelligence of place in the Hellenic world.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B0GDQVSRHV">Buy on Amazon</a>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://www.amazon.com/dp/B0DG53Q22T">Buy on Amazon</a>
       </article>
-=======
-<h4>Sacred Geography</h4>
-<p>Land, number, and the intelligence of place in the Hellenic world.</p>
-<a class="btn btn-primary" target="_blank" rel="noopener"
-   href="https://www.amazon.com/dp/B0DG53Q22T">
-  Buy on Amazon
-</a>
-</article>
->>>>>>> c0c5dec06a6263d50eb3f93332344b91e654ff65
 
-      <!-- 6. Leonidas -->
+      <!-- Leonidas -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/leonidas.jpg" alt="Leonidas">
         </div>
         <h4>Leonidas</h4>
         <p>Thermopylae retold through discipline, honor, and inner command.</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://www.amazon.com/dp/B0G8LYBV8P">Buy on Amazon</a>
       </article>
 
-      <!-- 7. Walking Sideways -->
+      <!-- Walking Sideways -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/walking-sideways.jpg" alt="Walking Sideways">
         </div>
         <h4>Walking Sideways</h4>
-        <p>From the River of Order to the Parallel Current</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/0d988nxe">Buy on Amazon</a>
+        <p>From the River of Order to the Parallel Current.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://a.co/d/0d988nxe">Buy on Amazon</a>
       </article>
 
-      <!-- 8. Homer: The Iliad Decoded -->
+      <!-- Homer -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
         </div>
         <h4>Homer: The Iliad Decoded</h4>
-        <p>Where epic war becomes inner alchemy</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/07kuroc4">Buy on Amazon</a>
+        <p>Where epic war becomes inner alchemy.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://a.co/d/07kuroc4">Buy on Amazon</a>
       </article>
 
-      <!-- 9. Plato: The Core Myths -->
+      <!-- Plato -->
       <article class="book-card">
         <div class="book-cover">
           <img src="/assets/plato-core-myths.jpg" alt="Plato: The Core Myths">
         </div>
         <h4>Plato: The Core Myths</h4>
-        <p>Cave • Chariot • Myth — Unified</p>
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://a.co/d/07DBQ3mD">Buy on Amazon</a>
+        <p>Cave • Chariot • Myth — Unified.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://a.co/d/07DBQ3mD">Buy on Amazon</a>
       </article>
 
     </div>
@@ -290,11 +293,9 @@
   </div>
 </footer>
 
-<img src="/assets/sigils/left.png" alt="" class="page-sigil left">
-<img src="/assets/sigils/right.png" alt="" class="page-sigil right">
-
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
 </script>
 
 </body>
