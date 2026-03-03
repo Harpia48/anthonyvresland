@@ -1,42 +1,84 @@
-<div class="book-grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony Vresland — Author & Philosopher</title>
+  <meta name="description" content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland.">
 
-  <!-- Plato’s Allegory of the Cave -->
-  <article class="book-card">
-    <div class="book-cover">
-      <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="brand">
+      <div class="avatar">AV</div>
+      <div>
+        <h1>Anthony Vresland</h1>
+        <p class="subtitle">Author • Artist • Philosopher</p>
+      </div>
     </div>
-    <h4>Plato’s Allegory of the Cave</h4>
-    <p>The awakening from illusion to vision.</p>
-    <a class="btn btn-primary" target="_blank" rel="noopener"
-       href="https://a.co/d/04YjtUK8">
-      View on Amazon
-    </a>
-  </article>
 
-  <!-- Back to Salamis (Featured Center) -->
-  <article class="book-card featured">
-    <div class="book-cover">
-      <img src="/assets/salamis-cover.jpg?v=2" alt="Back to Salamis">
+    <nav>
+      <a href="about.html">About</a>
+      <a href="books.html">Books</a>
+      <a href="music.html">Music</a>
+      <a href="vec.html">VEC Library</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h2>History, myth, and the Greek light.</h2>
+    <p>Historical fiction infused with ancient philosophy and living symbolism.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h3 class="section-title">Featured Works</h3>
+
+    <div class="book-grid">
+
+      <!-- Plato Cave -->
+      <article class="book-card">
+        <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
+        <h4>Plato’s Allegory of the Cave</h4>
+        <p>The awakening from illusion to vision.</p>
+        <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
+      </article>
+
+      <!-- Back to Salamis -->
+      <article class="book-card featured">
+        <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
+        <h4>Back to Salamis</h4>
+        <p>A Modern Man in the War for Western Freedom.</p>
+        <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
+      </article>
+
+      <!-- Homer -->
+      <article class="book-card">
+        <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
+        <h4>Homer: The Iliad Decoded</h4>
+        <p>The War of Troy as the Architecture of the Soul.</p>
+        <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
+      </article>
+
     </div>
-    <h4>Back to Salamis</h4>
-    <p>A Modern Man in the War for Western Freedom.</p>
-    <a class="btn btn-primary" target="_blank" rel="noopener"
-       href="https://a.co/d/0iXLPmoR">
-      View on Amazon
-    </a>
-  </article>
 
-  <!-- Homer -->
-  <article class="book-card">
-    <div class="book-cover">
-      <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
-    </div>
-    <h4>Homer: The Iliad Decoded</h4>
-    <p>The War of Troy as the Architecture of the Soul.</p>
-    <a class="btn btn-primary" target="_blank" rel="noopener"
-       href="https://a.co/d/0brpMjZl">
-      View on Amazon
-    </a>
-  </article>
+  </div>
+</section>
 
-</div>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Anthony Vresland.</p>
+  </div>
+</footer>
+
+</body>
+</html>
