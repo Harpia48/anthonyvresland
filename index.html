@@ -1,318 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anthony Vresland — Author & Philosopher</title>
-  <meta name="description"
-        content="Historical fiction, Greek philosophy, and living symbolism by Anthony Vresland." />
-  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+<div class="book-grid">
 
-  <style>
-    :root{
-      --bg:#0b0f16;
-      --panel:#101725;
-      --panel2:#0f1623;
-      --ink:#e5e7eb;
-      --muted:#99a1b3;
-      --brand:#f7a400;
-      --shadow:rgba(0,0,0,.35);
-    }
-
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font:16px/1.6 system-ui,Segoe UI,Roboto,Arial;
-    }
-
-    a{color:var(--ink);text-decoration:none}
-    img{display:block;max-width:100%}
-
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      padding:20px;
-    }
-
-    /* Header */
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(11,15,22,.85);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .site-header .container{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-
-    .avatar{
-      width:36px;
-      height:36px;
-      border-radius:9999px;
-      background:linear-gradient(135deg,#f59e0b,#f8af2e);
-      display:grid;
-      place-items:center;
-      color:#0b0f16;
-      font-weight:800;
-    }
-
-    .titles h1{font-size:18px;margin:0}
-    .subtitle{margin:0;color:var(--muted);font-size:13px}
-    .nav{display:flex;gap:16px}
-
-    /* Hero */
-    .hero{
-      padding:80px 20px 60px;
-      background:radial-gradient(1200px 420px at 70% 0,rgba(255,200,120,.08),transparent);
-    }
-
-    .hero h2{
-      font-size:clamp(30px,5vw,56px);
-      margin:0 0 14px;
-      line-height:1.05;
-    }
-
-    .hero p{
-      max-width:650px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    .cta-row{
-      margin-top:22px;
-      display:flex;
-      gap:14px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:12px;
-      font-weight:600;
-      border:1px solid rgba(255,255,255,.12);
-    }
-
-    .btn-primary{
-      background:var(--brand);
-      color:#0b0f16;
-      border-color:transparent;
-    }
-
-    /* Author Card */
-    .card{
-      background:var(--panel);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
-      padding:20px;
-      margin-top:40px;
-      box-shadow:0 10px 30px var(--shadow);
-    }
-
-    .author-card{
-      display:grid;
-      grid-template-columns:100px 1fr;
-      gap:20px;
-      align-items:center;
-    }
-
-    .author-photo{
-      width:100px;
-      height:100px;
-      border-radius:9999px;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.12);
-    }
-
-    /* Featured Books */
-    .book-grid{
-      display:grid;
-      gap:24px;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      margin-top:30px;
-    }
-
-    @media (max-width:900px){
-      .book-grid{grid-template-columns:1fr 1fr}
-    }
-
-    @media (max-width:600px){
-      .book-grid{grid-template-columns:1fr}
-    }
-
-    .book-card{
-      background:var(--panel);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .book-cover{
-      aspect-ratio:2/3;
-      border-radius:12px;
-      overflow:hidden;
-      background:var(--panel2);
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    .book-cover img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .book-card h4{
-      margin:0;
-      font-size:16px;
-    }
-
-    .book-card p{
-      font-size:13px;
-      color:var(--muted);
-      margin:0;
-    }
-
-    .book-card .btn{margin-top:auto}
-
-    .section-title{
-      margin-top:60px;
-      font-size:22px;
-    }
-
-    /* Footer */
-    .site-footer{
-      border-top:1px solid rgba(255,255,255,.06);
-      margin-top:60px;
-      padding-top:20px;
-    }
-
-    /* Sigils */
-    .page-sigil{
-      position:fixed;
-      bottom:24px;
-      width:min(12vw,120px);
-      opacity:.35;
-      pointer-events:none;
-    }
-
-    .page-sigil.left{left:24px}
-    .page-sigil.right{right:24px;transform:scaleX(-1)}
-
-    @media (max-width:768px){
-      .page-sigil{display:none}
-    }
-  </style>
-</head>
-
-<body>
-
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <div class="avatar">AV</div>
-      <div class="titles">
-        <h1>Anthony Vresland</h1>
-        <p class="subtitle">Author • Artist • Philosopher</p>
-      </div>
+  <!-- Plato’s Allegory of the Cave -->
+  <article class="book-card">
+    <div class="book-cover">
+      <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
+    </div>
+    <h4>Plato’s Allegory of the Cave</h4>
+    <p>The awakening from illusion to vision.</p>
+    <a class="btn btn-primary" target="_blank" rel="noopener"
+       href="https://a.co/d/04YjtUK8">
+      View on Amazon
     </a>
+  </article>
 
-    <nav class="nav">
-      <a href="/about.html">About</a>
-      <a href="/books.html">Books</a>
-      <a href="/music.html">Music</a>
-      <a href="/#contact">Contact</a>
-      <a href="/vec.html">VEC Library</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h2>History, myth, and the Greek light.</h2>
-    <p>
-      Historical fiction and philosophical works rooted in the ancient world,
-      written for the modern seeker.
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/books.html">Explore the Books</a>
-      <a class="btn" href="/about.html">Learn More</a>
+  <!-- Back to Salamis (Featured Center) -->
+  <article class="book-card featured">
+    <div class="book-cover">
+      <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
     </div>
-  </div>
-</section>
+    <h4>Back to Salamis</h4>
+    <p>A Modern Man in the War for Western Freedom.</p>
+    <a class="btn btn-primary" target="_blank" rel="noopener"
+       href="https://a.co/d/0iXLPmoR">
+      View on Amazon
+    </a>
+  </article>
 
-<section class="container">
-  <div class="card author-card">
-    <img class="author-photo" src="/assets/portrait-av.jpg" alt="Anthony Vresland">
-    <div>
-      <h3>About the Author</h3>
-      <p>
-        Writer of historical fiction grounded in Greek philosophy and mysticism.
-        Architect and painter weaving martial history with metaphysical depth.
-      </p>
+  <!-- Homer -->
+  <article class="book-card">
+    <div class="book-cover">
+      <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
     </div>
-  </div>
+    <h4>Homer: The Iliad Decoded</h4>
+    <p>The War of Troy as the Architecture of the Soul.</p>
+    <a class="btn btn-primary" target="_blank" rel="noopener"
+       href="https://a.co/d/0brpMjZl">
+      View on Amazon
+    </a>
+  </article>
 
-  <h3 class="section-title">Featured Works</h3>
-
-  <div class="book-grid">
-
-    <article class="book-card">
-      <div class="book-cover">
-        <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
-      </div>
-      <h4>Plato’s Allegory of the Cave</h4>
-      <p>The awakening from illusion to vision.</p>
-      <a class="btn btn-primary" href="/books.html">View Details</a>
-    </article>
-
-    <article class="book-card">
-      <div class="book-cover">
-        <img src="/assets/back-to-salamis.jpg" alt="Back to Salamis">
-      </div>
-      <h4>Back to Salamis</h4>
-      <p>Strategy, destiny, and the Fifth Essence.</p>
-      <a class="btn btn-primary" href="/books.html">View Details</a>
-    </article>
-
-    <article class="book-card">
-      <div class="book-cover">
-        <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
-      </div>
-      <h4>Homer: The Iliad Decoded</h4>
-      <p>Epic war as inner alchemy.</p>
-      <a class="btn btn-primary" href="/books.html">View Details</a>
-    </article>
-
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© <span id="year"></span> Anthony Vresland.</p>
-  </div>
-</footer>
-
-<img src="/assets/sigils/left.png" alt="" class="page-sigil left">
-<img src="/assets/sigils/right.png" alt="" class="page-sigil right">
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+</div>

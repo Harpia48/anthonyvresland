@@ -195,6 +195,10 @@ a:focus-visible {
   flex-direction: column;
   gap: 12px;
 }
+.book-card.featured {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(247,164,0,.25);
+}
 
 /* Cover is visual only — never captures clicks */
 .book-cover {
