@@ -1,76 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Anthony Vresland</title>
+<meta name="description" content="Anthony Vresland — architect, philosopher, and author. Decoder of Homer, Plato, and the esoteric architecture of the ancient world. Based in Athens, Greece.">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
-  <title>About — Anthony Vresland</title>
-  <meta name="description" content="About Anthony Vresland — author, artist, and philosopher exploring history, myth, and Greek philosophy." />
+<style>
+:root {
+  --bg: #0b0f16;
+  --panel: #101725;
+  --panel-hover: #141e30;
+  --text: #e5e7eb;
+  --muted: #8a97aa;
+  --accent: #f7a400;
+  --gold-light: #ffd066;
+  --divider: rgba(247,164,0,0.15);
+  --border: rgba(255,255,255,0.06);
+}
 
-  <link rel="icon" href="/assets/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="/styles.css" />
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── Header ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: rgba(11,15,22,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.active { color: var(--accent); }
+
+/* ── Hero band ── */
+.about-hero {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #0d1520 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 32px 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(247,164,0,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-hero .eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.about-hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  animation: fadeUp 0.8s ease 0.08s both;
+}
+
+.about-hero .tagline {
+  font-size: 1.15rem;
+  color: var(--muted);
+  font-style: italic;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.75;
+  animation: fadeUp 0.8s ease 0.16s both;
+}
+
+.header-rule {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 28px auto 0;
+  animation: fadeUp 0.8s ease 0.24s both;
+}
+
+/* ── Main portrait + bio layout ── */
+.about-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* Portrait */
+.portrait-col {
+  position: sticky;
+  top: 100px;
+  animation: fadeUp 0.9s ease 0.1s both;
+}
+
+.portrait-frame {
+  position: relative;
+}
+
+.portrait-frame img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  filter: contrast(1.05) brightness(0.95);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
+
+/* Gold corner accents */
+.portrait-frame::before,
+.portrait-frame::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: var(--accent);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.portrait-frame::before {
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
+}
+
+.portrait-frame::after {
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+}
+
+.portrait-caption {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.portrait-caption h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+.portrait-caption p {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.portrait-caption .location {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 6px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* Social links under photo */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--muted);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.social-link:hover {
+  border-color: rgba(247,164,0,0.3);
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+.social-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Bio column ── */
+.bio-col {
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.bio-section {
+  margin-bottom: 52px;
+}
+
+.bio-section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bio-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
+}
+
+.bio-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.bio-section p {
+  font-size: 1.12rem;
+  line-height: 1.9;
+  color: #c0cad8;
+  margin-bottom: 18px;
+}
+
+.bio-section p:last-child { margin-bottom: 0; }
+
+.bio-section p strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Pull quote */
+.pull-quote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: rgba(247,164,0,0.04);
+  border-radius: 0 10px 10px 0;
+}
+
+.pull-quote p {
+  font-size: 1.2rem !important;
+  font-style: italic;
+  color: #d4dbe6 !important;
+  line-height: 1.75 !important;
+  margin: 0 !important;
+}
+
+/* Credentials grid */
+.credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.credential-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.credential-item:hover {
+  border-color: rgba(247,164,0,0.2);
+  transform: translateY(-2px);
+}
+
+.credential-item .ci-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.credential-item p {
+  font-size: 0.95rem !important;
+  color: var(--text) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+/* CTA */
+.bio-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 13px 28px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 48px 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+footer nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer nav a:hover { color: var(--accent); }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-main {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .portrait-col {
+    position: static;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .credentials {
+    grid-template-columns: 1fr;
+  }
+  header { padding: 16px 20px; }
+  nav { gap: 16px; }
+  nav a { font-size: 0.6rem; }
+}
+</style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
 
-      <a href="/" class="brand">
-        <div class="avatar">AV</div>
-        <div class="titles">
-          <h1>Anthony Vresland</h1>
-          <p class="subtitle">Author • Artist • Philosopher</p>
-        </div>
+<!-- ── Header ── -->
+<header>
+  <a class="logo" href="index.html">Anthony Vresland</a>
+  <nav>
+    <a href="about.html" class="active">About</a>
+    <a href="books.html">Books</a>
+    <a href="homer-the-educator.html">Homer</a>
+    <a href="music.html">Music</a>
+    <a href="vec.html">VEC Library</a>
+  </nav>
+</header>
+
+<!-- ── Hero band ── -->
+<div class="about-hero">
+  <p class="eyebrow">About the Author</p>
+  <h1>Anthony Vresland</h1>
+  <p class="tagline">Architect. Philosopher. Decoder of the ancient world's hidden language.</p>
+  <div class="header-rule"></div>
+</div>
+
+<!-- ── Main content ── -->
+<div class="about-main">
+
+  <!-- Portrait column -->
+  <div class="portrait-col">
+    <div class="portrait-frame">
+      <img src="/assets/author-photo.jpg" alt="Anthony Vresland — Author and Philosopher">
+    </div>
+    <div class="portrait-caption">
+      <h3>Anthony Vresland</h3>
+      <p>Author · Philosopher · Architect</p>
+      <p class="location">⚡ Athens, Greece</p>
+    </div>
+    <div class="social-links">
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=61577146899500" target="_blank" rel="noopener">
+        <span class="social-icon">📘</span> Facebook
       </a>
-
-      <nav class="nav" aria-label="Main">
-        <a href="/about.html" aria-current="page">About</a>
-        <a href="/books.html">Books</a>
-        <a href="/music.html">Music</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-
+      <a class="social-link" href="https://www.youtube.com/@antv9429" target="_blank" rel="noopener">
+        <span class="social-icon">▶️</span> YouTube — Author
+      </a>
+      <a class="social-link" href="https://www.youtube.com/@EchoesofPhilosophy-b5p" target="_blank" rel="noopener">
+        <span class="social-icon">▶️</span> Echoes of Philosophy
+      </a>
+      <a class="social-link" href="https://www.youtube.com/@MrHarpia48" target="_blank" rel="noopener">
+        <span class="social-icon">▶️</span> Mystical Harmonies
+      </a>
     </div>
-  </header>
-  </header>
-
-<section class="section">
-  <div class="container">
-    <h2>About</h2>
-
-    <p>
-      Anthony Vresland is an architect turned philosopher and author, whose work
-      explores the hidden structures of history, myth, and human consciousness.
-      Trained in architecture and Fine Arts in New York, he brings structural
-      precision and symbolic depth to historical fiction and philosophical writing.
-    </p>
-
-    <p>
-      Now residing in Athens, Greece — the cradle of Western civilization —
-      Vresland draws inspiration from ancient ruins, Greek philosophy, and the
-      enduring myths that shaped civilizations and leaders across time.
-    </p>
-
-    <p>
-      Blending history, adventure, and esoteric insight, his books invite readers
-      on a journey of inner and outer transformation, revealing the timeless
-      principles that govern power, destiny, and the soul.
-    </p>
   </div>
-</section>
 
-  <img src="/assets/sigil-gold.png" class="sigil-floating" alt="" aria-hidden="true" />
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Anthony Vresland.</p>
-      <nav aria-label="Social links">
-        <a href="https://www.facebook.com/profile.php?id=61577146899500" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.youtube.com/@antv9429" target="_blank" rel="noopener">YouTube (Author)</a>
-        <a href="https://www.youtube.com/@EchoesofPhilosophy-b5p" target="_blank" rel="noopener">YouTube (Echoes of Philosophy)</a>
-        <a href="https://www.youtube.com/@MrHarpia48" target="_blank" rel="noopener">YouTube (Mystical Harmonies)</a>
-      </nav>
+  <!-- Bio column -->
+  <div class="bio-col">
+
+    <div class="bio-section">
+      <p class="bio-section-label">The Man</p>
+      <h2>Architect of Space.<br>Philosopher of the Soul.</h2>
+      <p>
+        Anthony Vresland was trained as an architect and in the Fine Arts in New York —
+        disciplines that taught him to read <strong>structure beneath surface</strong>,
+        to find the hidden geometry that makes a thing stand. It is precisely this eye
+        that he brought to the ancient texts: not the eye of a literary scholar,
+        but the eye of a builder who recognises a blueprint.
+      </p>
+      <p>
+        Now living in Athens, Greece — where the stones themselves remember Plato,
+        Socrates, and the great initiates of the Western tradition — he writes in the
+        shadow of the Acropolis, surrounded by the living ruins of the civilisation
+        whose esoteric inheritance he decodes.
+      </p>
     </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <div class="pull-quote">
+      <p>"The ancient world did not leave us myths. It left us instructions —
+      encoded in the only language that could survive three thousand years intact: story."</p>
+    </div>
+
+    <div class="bio-section">
+      <p class="bio-section-label">The Work</p>
+      <h2>Decoding the Hidden Architecture of Myth.</h2>
+      <p>
+        Homer, Plato, and the great philosophers of antiquity were not entertainers.
+        They were <strong>initiates</strong>, transmitting a precise science of consciousness
+        through allegory, number, and symbol — using myth as a vessel that could carry
+        esoteric knowledge across centuries without being destroyed by it.
+      </p>
+      <p>
+        Vresland's work is the decoding of that transmission. Layer by layer — from the
+        literal narrative down through the Hermetic, Kabbalistic, Orphic, and Pythagorean
+        structures beneath — he reveals what the ancients actually meant:
+        the soul's civil war, the charioteer and the two horses, the man who escapes the
+        cave and returns to free the others.
+      </p>
+      <p>
+        These are not metaphors. They are <strong>maps</strong>. And fourteen books into
+        the project, the map is still being drawn.
+      </p>
+    </div>
+
+    <div class="bio-section">
+      <p class="bio-section-label">The Range</p>
+      <h2>Fourteen Books. One Unified Vision.</h2>
+      <div class="credentials">
+        <div class="credential-item">
+          <p class="ci-label">Homer Series</p>
+          <p>The Iliad decoded as the soul's civil war. The Odyssey — in preparation.</p>
+        </div>
+        <div class="credential-item">
+          <p class="ci-label">Plato Series</p>
+          <p>Four books decoding the Cave, the Chariot, the Myth of Er, and the Core Myths.</p>
+        </div>
+        <div class="credential-item">
+          <p class="ci-label">History &amp; Heroes</p>
+          <p>Alexander, Leonidas, and the warriors of Salamis as cosmic initiates.</p>
+        </div>
+        <div class="credential-item">
+          <p class="ci-label">Living Wisdom</p>
+          <p>Sacred geometry, vibrational codes, and the ancient science of abundance.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-ctas">
+      <a class="btn-primary" href="books.html">Explore All 14 Books</a>
+      <a class="btn-ghost" href="homer-the-educator.html">Enter the Homer Series →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="books.html">Books</a>
+    <a href="homer-the-educator.html">Homer</a>
+    <a href="music.html">Music</a>
+    <a href="vec.html">VEC Library</a>
+  </nav>
+  <p>© 2026 Anthony Vresland. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
