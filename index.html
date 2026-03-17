@@ -4,132 +4,600 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anthony Vresland — Author</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#0b0f16;
-  --panel:#121826;
-  --text:#e5e7eb;
-  --muted:#9aa4b2;
-  --accent:#f7a400;
+:root {
+  --bg: #0b0f16;
+  --panel: #101725;
+  --panel-hover: #141e30;
+  --text: #e5e7eb;
+  --muted: #8a97aa;
+  --accent: #f7a400;
+  --gold-light: #ffd066;
+  --divider: rgba(247,164,0,0.15);
+  --border: rgba(255,255,255,0.06);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
-  font-family:system-ui,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-  border-bottom:1px solid #1f2937;
+/* ── Noise texture ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
 }
 
-.logo{
-  font-weight:700;
-  font-size:18px;
+/* ── Header / Nav ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: rgba(11,15,22,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
-nav a{
-  color:var(--muted);
-  text-decoration:none;
-  margin-left:25px;
-  font-weight:500;
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-decoration: none;
 }
 
-nav a:hover{
-  color:var(--accent);
+nav {
+  display: flex;
+  gap: 32px;
 }
 
-.hero{
-  padding:80px 40px 40px;
-  max-width:1000px;
-  margin:auto;
+nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.hero h1{
-  font-size:40px;
-  margin-bottom:15px;
+nav a:hover { color: var(--accent); }
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 32px;
+  overflow: hidden;
 }
 
-.hero p{
-  color:var(--muted);
-  font-size:18px;
+/* Radial glow behind hero text */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(247,164,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.section{
-  max-width:1100px;
-  margin:60px auto;
-  padding:0 40px;
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease both;
 }
 
-.section h2{
-  margin-bottom:30px;
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  max-width: 900px;
+  margin-bottom: 12px;
+  animation: fadeUp 0.9s ease 0.1s both;
 }
 
-.book-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+.hero h1 em {
+  color: var(--accent);
+  font-style: normal;
 }
 
-.book-card{
-  background:var(--panel);
-  padding:20px;
-  border-radius:14px;
-  text-align:center;
-  transition:0.3s;
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--muted);
+  font-style: italic;
+  max-width: 620px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+  animation: fadeUp 0.9s ease 0.2s both;
 }
 
-.book-card:hover{
-  transform:translateY(-6px);
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.9s ease 0.3s both;
 }
 
-.book-card img{
-  width:100%;
-  border-radius:10px;
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
 }
 
-.book-card h4{
-  margin:15px 0 10px;
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
 }
 
-.book-card p{
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:15px;
+.btn-ghost {
+  display: inline-block;
+  padding: 13px 32px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.btn{
-  display:inline-block;
-  padding:10px 18px;
-  background:var(--accent);
-  color:#000;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:600;
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
-footer{
-  text-align:center;
-  padding:40px;
-  color:var(--muted);
-  border-top:1px solid #1f2937;
-  margin-top:80px;
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeUp 1s ease 0.6s both;
+}
+
+.hero-scroll span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ── Divider ── */
+.gold-divider {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.gold-divider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 0 auto;
+}
+
+/* ── Sections ── */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.section-label::before, .section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
+}
+
+.section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--muted);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto 52px;
+  line-height: 1.75;
+}
+
+/* ── Author Statement ── */
+.author-statement {
+  position: relative;
+  z-index: 1;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.author-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.author-name-block {
+  text-align: center;
+}
+
+.author-name-block .big-initial {
+  font-family: 'Cinzel', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: -20px;
+}
+
+.author-name-block h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.author-name-block p {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.author-text p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #c8d0da;
+  margin-bottom: 20px;
+}
+
+.author-text p:last-child { margin-bottom: 0; }
+
+/* ── Featured books ── */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.book-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+  border-color: rgba(247,164,0,0.2);
+  background: var(--panel-hover);
+}
+
+.book-card img {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.book-card h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 14px 0 8px;
+  line-height: 1.35;
+}
+
+.book-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 9px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.view-all-wrap {
+  text-align: center;
+  margin-top: 44px;
+}
+
+/* ── Pillars ── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.pillar {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.pillar:hover {
+  border-color: rgba(247,164,0,0.25);
+  transform: translateY(-4px);
+}
+
+.pillar-glyph {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.pillar h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+}
+
+.pillar p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ── Homer spotlight ── */
+.homer-spotlight {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #0d1520 0%, #111d2e 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.homer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.homer-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 0% 50%, rgba(247,164,0,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.homer-cover {
+  position: relative;
+}
+
+.homer-cover img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.7);
+  display: block;
+  margin: 0 auto;
+}
+
+.homer-body .tag {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(247,164,0,0.08);
+  border: 1px solid rgba(247,164,0,0.2);
+  border-radius: 4px;
+  padding: 4px 12px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.homer-body h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.homer-body .subtitle {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 22px;
+}
+
+.homer-body p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #b8c4d4;
+  margin-bottom: 30px;
+}
+
+/* ── Footer ── */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 48px 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+footer nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer nav a:hover { color: var(--accent); }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  header { padding: 16px 20px; }
+  nav { gap: 16px; }
+  nav a { font-size: 0.6rem; }
+  .author-inner, .homer-inner { grid-template-columns: 1fr; text-align: center; }
+  .author-name-block .big-initial { font-size: 5rem; }
+  .hero { min-height: 80vh; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ── Header ── -->
 <header>
-  <div class="logo">Anthony Vresland</div>
+  <a class="logo" href="index.html">Anthony Vresland</a>
   <nav>
     <a href="about.html">About</a>
     <a href="books.html">Books</a>
@@ -139,42 +607,164 @@ footer{
   </nav>
 </header>
 
+<!-- ── Hero ── -->
 <section class="hero">
-  <h1>History, myth, and the Greek light.</h1>
-  <p>Historical fiction infused with ancient philosophy and living symbolism.</p>
+  <p class="hero-eyebrow">Author · Philosopher · Decoder of the Ancient World</p>
+  <h1>The Ancient Texts<br>Were Never <em>Just Stories.</em></h1>
+  <p class="hero-subtitle">
+    Homer, Plato, Alexander — decoded. The esoteric architecture hidden within the West's
+    greatest myths, revealed for the modern reader.
+  </p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="books.html">Explore the Books</a>
+    <a class="btn-ghost" href="homer-the-educator.html">Enter the Homer Series</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Featured Works</h2>
+<div class="gold-divider"></div>
 
+<!-- ── What this work is ── -->
+<section class="section">
+  <p class="section-label">The Work</p>
+  <h2>Four Traditions. One Hidden Architecture.</h2>
+  <p class="section-intro">
+    Every book by Anthony Vresland opens a different door into the same ancient knowledge —
+    the esoteric system encoded in myth, philosophy, and history by the masters of the ancient world.
+  </p>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="pillar-glyph">⚔️</span>
+      <h3>Homer Decoded</h3>
+      <p>The Iliad and Odyssey as precise maps of the soul's war and return — not epic poetry, but encoded instruction.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-glyph">🏛️</span>
+      <h3>Plato Decoded</h3>
+      <p>The Cave, the Chariot, the Myth of Er — Plato's myths as the West's most sophisticated esoteric transmission.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-glyph">🌿</span>
+      <h3>Heroes of History</h3>
+      <p>Alexander, Leonidas, the warriors of Salamis — great figures as initiates enacting cosmic programmes in history.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-glyph">⚡</span>
+      <h3>Living Wisdom</h3>
+      <p>Sacred geometry, vibrational codes, and the ancient science of abundance — applied to the life you are living now.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Homer Spotlight ── -->
+<div class="homer-spotlight">
+  <div class="homer-inner">
+    <div class="homer-cover">
+      <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
+    </div>
+    <div class="homer-body">
+      <span class="tag">Flagship Work · Homer Series Book I</span>
+      <h2>Homer: The Iliad Decoded</h2>
+      <p class="subtitle">The War of Troy as the Architecture of the Soul</p>
+      <p>
+        The Iliad is not a war story. It is a precise esoteric manual — a map of the soul's
+        civil war, encoded in myth and transmitted across three thousand years. Every warrior,
+        every god, every wound is a force within the human psyche. Vresland decodes the poem
+        layer by layer, from the literal battlefield to the Hermetic, Kabbalistic, and
+        Pythagorean structures beneath — revealing Homer not as a poet of Bronze Age violence,
+        but as a master of the ancient mystery schools.
+      </p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a class="btn-primary" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
+        <a class="btn-ghost" href="homer-the-educator.html">Enter the Series</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Featured Books ── -->
+<section class="section">
+  <p class="section-label">Selected Works</p>
+  <h2>From the Complete Catalogue</h2>
+  <p class="section-intro">
+    Fourteen books spanning Homer, Plato, ancient history, sacred geometry,
+    and the vibrational codes of abundance.
+  </p>
   <div class="book-grid">
 
     <div class="book-card">
-      <img src="/assets/cave-cover.jpg" alt="Plato’s Allegory of the Cave">
-      <h4>Plato’s Allegory of the Cave</h4>
-      <p>The awakening from illusion to vision.</p>
+      <img src="/assets/cave-cover.jpg" alt="Plato's Allegory of the Cave">
+      <h4>Plato's Allegory of the Cave</h4>
+      <p>We live in shadow, mistaking reflections for reality. The cave is the world. The fire is the false light. The philosopher is the one who turns.</p>
       <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="/assets/alexander-mystic.jpg" alt="Alexander the Great Mystic">
+      <h4>Alexander the Great Mystic</h4>
+      <p>Initiated into the deepest mystery schools of his age, Alexander did not conquer the world for glory — he was enacting a cosmic programme.</p>
+      <a class="btn" href="https://a.co/d/070wbFDZ" target="_blank">View on Amazon</a>
     </div>
 
     <div class="book-card">
       <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
       <h4>Back to Salamis</h4>
-      <p>A Modern Man in the War for Western Freedom.</p>
+      <p>A modern man crosses time to stand at the battle that saved Western civilisation. Where past and present collapse into a single truth.</p>
       <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
     </div>
 
     <div class="book-card">
-      <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
-      <h4>Homer: The Iliad Decoded</h4>
-      <p>The War of Troy as the Architecture of the Soul.</p>
-      <a class="btn" href="iliad-decoded.html">Enter the Epic</a>
+      <img src="/assets/the-language-of-vec.jpg" alt="The Language of VEC">
+      <h4>The Language of VEC</h4>
+      <p>Beneath everyday life runs a vibrational current that governs prosperity and flow. This book decodes its language and shows how to align with it.</p>
+      <a class="btn" href="https://a.co/d/04HLEzJz" target="_blank">View on Amazon</a>
     </div>
 
   </div>
+  <div class="view-all-wrap">
+    <a class="btn-ghost" href="books.html">View All 14 Books →</a>
+  </div>
 </section>
 
+<!-- ── Author Statement ── -->
+<div class="author-statement">
+  <div class="author-inner">
+    <div class="author-name-block">
+      <div class="big-initial">AV</div>
+      <h3>Anthony Vresland</h3>
+      <p>Author · Philosopher</p>
+    </div>
+    <div class="author-text">
+      <p>
+        The ancient world did not leave us myths. It left us instructions — encoded in the
+        only language that could survive three thousand years intact: story. Homer, Plato,
+        and the great philosophers of antiquity were not entertainers. They were initiates,
+        transmitting a precise science of consciousness through allegory, number, and symbol.
+      </p>
+      <p>
+        My work is the decoding of that transmission — layer by layer, from the literal
+        narrative to the Hermetic, Kabbalistic, Orphic, and Pythagorean structures beneath.
+        The soul's civil war. The charioteer and the two horses. The man who escapes the cave
+        and returns to free the others. These are not metaphors. They are maps.
+      </p>
+      <a class="btn-ghost" href="about.html">About the Author →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
 <footer>
-© 2026 Anthony Vresland.
+  <nav>
+    <a href="about.html">About</a>
+    <a href="books.html">Books</a>
+    <a href="homer-the-educator.html">Homer</a>
+    <a href="music.html">Music</a>
+    <a href="vec.html">VEC Library</a>
+  </nav>
+  <p>© 2026 Anthony Vresland. All rights reserved.</p>
 </footer>
 
 </body>
