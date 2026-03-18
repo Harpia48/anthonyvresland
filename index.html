@@ -6,6 +6,15 @@
 <title>Anthony Vresland — Author</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1J8YCYENMQ');
+</script>
+
 <style>
 :root {
   --bg: #0b0f16;
@@ -31,7 +40,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Noise texture ── */
 body::before {
   content: '';
   position: fixed;
@@ -42,7 +50,6 @@ body::before {
   opacity: 0.4;
 }
 
-/* ── Header / Nav ── */
 header {
   position: sticky;
   top: 0;
@@ -65,10 +72,7 @@ header {
   text-decoration: none;
 }
 
-nav {
-  display: flex;
-  gap: 32px;
-}
+nav { display: flex; gap: 32px; }
 
 nav a {
   font-family: 'Cinzel', serif;
@@ -82,7 +86,6 @@ nav a {
 
 nav a:hover { color: var(--accent); }
 
-/* ── Hero ── */
 .hero {
   position: relative;
   z-index: 1;
@@ -96,7 +99,6 @@ nav a:hover { color: var(--accent); }
   overflow: hidden;
 }
 
-/* Radial glow behind hero text */
 .hero::before {
   content: '';
   position: absolute;
@@ -130,10 +132,7 @@ nav a:hover { color: var(--accent); }
   animation: fadeUp 0.9s ease 0.1s both;
 }
 
-.hero h1 em {
-  color: var(--accent);
-  font-style: normal;
-}
+.hero h1 em { color: var(--accent); font-style: normal; }
 
 .hero-subtitle {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -168,10 +167,7 @@ nav a:hover { color: var(--accent); }
   transition: background 0.2s, transform 0.2s;
 }
 
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .btn-ghost {
   display: inline-block;
@@ -189,11 +185,7 @@ nav a:hover { color: var(--accent); }
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
 .hero-scroll {
   position: absolute;
@@ -227,12 +219,9 @@ nav a:hover { color: var(--accent); }
   50% { opacity: 1; }
 }
 
-/* ── Divider ── */
 .gold-divider {
   position: relative;
   z-index: 1;
-  text-align: center;
-  margin: 0 auto;
   padding: 0 32px;
 }
 
@@ -246,7 +235,6 @@ nav a:hover { color: var(--accent); }
   margin: 0 auto;
 }
 
-/* ── Sections ── */
 .section {
   position: relative;
   z-index: 1;
@@ -293,7 +281,6 @@ nav a:hover { color: var(--accent); }
   line-height: 1.75;
 }
 
-/* ── Author Statement ── */
 .author-statement {
   position: relative;
   z-index: 1;
@@ -312,9 +299,7 @@ nav a:hover { color: var(--accent); }
   align-items: center;
 }
 
-.author-name-block {
-  text-align: center;
-}
+.author-name-block { text-align: center; }
 
 .author-name-block .big-initial {
   font-family: 'Cinzel', serif;
@@ -348,9 +333,6 @@ nav a:hover { color: var(--accent); }
   margin-bottom: 20px;
 }
 
-.author-text p:last-child { margin-bottom: 0; }
-
-/* ── Featured books ── */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -414,17 +396,10 @@ nav a:hover { color: var(--accent); }
   transition: background 0.2s, transform 0.2s;
 }
 
-.btn:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
+.btn:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-.view-all-wrap {
-  text-align: center;
-  margin-top: 44px;
-}
+.view-all-wrap { text-align: center; margin-top: 44px; }
 
-/* ── Pillars ── */
 .pillars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -440,16 +415,9 @@ nav a:hover { color: var(--accent); }
   transition: border-color 0.25s, transform 0.25s;
 }
 
-.pillar:hover {
-  border-color: rgba(247,164,0,0.25);
-  transform: translateY(-4px);
-}
+.pillar:hover { border-color: rgba(247,164,0,0.25); transform: translateY(-4px); }
 
-.pillar-glyph {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
-  display: block;
-}
+.pillar-glyph { font-size: 2.2rem; margin-bottom: 16px; display: block; }
 
 .pillar h3 {
   font-family: 'Cinzel', serif;
@@ -460,14 +428,8 @@ nav a:hover { color: var(--accent); }
   letter-spacing: 0.08em;
 }
 
-.pillar p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.65;
-  font-style: italic;
-}
+.pillar p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; font-style: italic; }
 
-/* ── Homer spotlight ── */
 .homer-spotlight {
   position: relative;
   z-index: 1;
@@ -484,18 +446,6 @@ nav a:hover { color: var(--accent); }
   grid-template-columns: 1fr 2fr;
   gap: 60px;
   align-items: center;
-}
-
-.homer-inner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 0% 50%, rgba(247,164,0,0.04) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.homer-cover {
-  position: relative;
 }
 
 .homer-cover img {
@@ -530,21 +480,9 @@ nav a:hover { color: var(--accent); }
   margin-bottom: 8px;
 }
 
-.homer-body .subtitle {
-  font-size: 1.05rem;
-  color: var(--accent);
-  font-style: italic;
-  margin-bottom: 22px;
-}
+.homer-body .subtitle { font-size: 1.05rem; color: var(--accent); font-style: italic; margin-bottom: 22px; }
+.homer-body p { font-size: 1.08rem; line-height: 1.85; color: #b8c4d4; margin-bottom: 30px; }
 
-.homer-body p {
-  font-size: 1.08rem;
-  line-height: 1.85;
-  color: #b8c4d4;
-  margin-bottom: 30px;
-}
-
-/* ── Footer ── */
 footer {
   position: relative;
   z-index: 1;
@@ -575,13 +513,11 @@ footer nav a {
 
 footer nav a:hover { color: var(--accent); }
 
-/* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   header { padding: 16px 20px; }
   nav { gap: 16px; }
@@ -595,7 +531,6 @@ footer nav a:hover { color: var(--accent); }
 
 <body>
 
-<!-- ── Header ── -->
 <header>
   <a class="logo" href="index.html">Anthony Vresland</a>
   <nav>
@@ -607,7 +542,6 @@ footer nav a:hover { color: var(--accent); }
   </nav>
 </header>
 
-<!-- ── Hero ── -->
 <section class="hero">
   <p class="hero-eyebrow">Author · Philosopher · Decoder of the Ancient World</p>
   <h1>The Ancient Texts<br>Were Never <em>Just Stories.</em></h1>
@@ -627,7 +561,6 @@ footer nav a:hover { color: var(--accent); }
 
 <div class="gold-divider"></div>
 
-<!-- ── What this work is ── -->
 <section class="section">
   <p class="section-label">The Work</p>
   <h2>Four Traditions. One Hidden Architecture.</h2>
@@ -659,7 +592,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </section>
 
-<!-- ── Homer Spotlight ── -->
 <div class="homer-spotlight">
   <div class="homer-inner">
     <div class="homer-cover">
@@ -685,7 +617,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Featured Books ── -->
 <section class="section">
   <p class="section-label">Selected Works</p>
   <h2>From the Complete Catalogue</h2>
@@ -694,42 +625,36 @@ footer nav a:hover { color: var(--accent); }
     and the vibrational codes of abundance.
   </p>
   <div class="book-grid">
-
     <div class="book-card">
       <img src="/assets/cave-cover.jpg" alt="Plato's Allegory of the Cave">
       <h4>Plato's Allegory of the Cave</h4>
       <p>We live in shadow, mistaking reflections for reality. The cave is the world. The fire is the false light. The philosopher is the one who turns.</p>
       <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
     </div>
-
     <div class="book-card">
       <img src="/assets/alexander-mystic.jpg" alt="Alexander the Great Mystic">
       <h4>Alexander the Great Mystic</h4>
       <p>Initiated into the deepest mystery schools of his age, Alexander did not conquer the world for glory — he was enacting a cosmic programme.</p>
       <a class="btn" href="https://a.co/d/070wbFDZ" target="_blank">View on Amazon</a>
     </div>
-
     <div class="book-card">
       <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
       <h4>Back to Salamis</h4>
       <p>A modern man crosses time to stand at the battle that saved Western civilisation. Where past and present collapse into a single truth.</p>
       <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
     </div>
-
     <div class="book-card">
       <img src="/assets/the-language-of-vec.jpg" alt="The Language of VEC">
       <h4>The Language of VEC</h4>
       <p>Beneath everyday life runs a vibrational current that governs prosperity and flow. This book decodes its language and shows how to align with it.</p>
       <a class="btn" href="https://a.co/d/04HLEzJz" target="_blank">View on Amazon</a>
     </div>
-
   </div>
   <div class="view-all-wrap">
     <a class="btn-ghost" href="books.html">View All 14 Books →</a>
   </div>
 </section>
 
-<!-- ── Author Statement ── -->
 <div class="author-statement">
   <div class="author-inner">
     <div class="author-name-block">
@@ -755,7 +680,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Footer ── -->
 <footer>
   <nav>
     <a href="about.html">About</a>
