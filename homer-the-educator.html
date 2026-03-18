@@ -8,6 +8,15 @@
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1J8YCYENMQ');
+</script>
+
 <style>
 :root {
   --bg: #0b0f16;
@@ -42,7 +51,6 @@ body::before {
   opacity: 0.4;
 }
 
-/* ── Header ── */
 header {
   position: sticky;
   top: 0;
@@ -79,7 +87,6 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--accent); }
 
-/* ── Hero ── */
 .hero {
   position: relative;
   z-index: 1;
@@ -153,7 +160,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   max-width: 520px;
 }
 
-/* ── Opening statement ── */
 .opening {
   position: relative;
   z-index: 1;
@@ -171,11 +177,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   align-items: center;
 }
 
-.opening-statements {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+.opening-statements { display: flex; flex-direction: column; gap: 20px; }
 
 .statement {
   font-family: 'Cinzel', serif;
@@ -199,14 +201,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   border-radius: 50%;
 }
 
-.opening-prose p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: #b8c4d4;
-  margin-bottom: 16px;
-}
+.opening-prose p { font-size: 1.1rem; line-height: 1.9; color: #b8c4d4; margin-bottom: 16px; }
 
-/* ── Main essay ── */
 .essay-wrap {
   position: relative;
   z-index: 1;
@@ -215,10 +211,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   padding: 80px 32px;
 }
 
-/* Section breaks within essay */
-.essay-section {
-  margin-bottom: 64px;
-}
+.essay-section { margin-bottom: 64px; }
 
 .essay-label {
   font-family: 'Cinzel', serif;
@@ -232,23 +225,11 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin-bottom: 28px;
 }
 
-.essay-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--divider);
-}
+.essay-label::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
 
-.essay-section p {
-  font-size: 1.18rem;
-  line-height: 2;
-  color: #c8d2de;
-  margin-bottom: 22px;
-}
-
+.essay-section p { font-size: 1.18rem; line-height: 2; color: #c8d2de; margin-bottom: 22px; }
 .essay-section p:last-child { margin-bottom: 0; }
 
-/* Pull quotes */
 .pull-quote {
   border-left: 3px solid var(--accent);
   padding: 20px 28px;
@@ -276,23 +257,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   font-style: normal;
 }
 
-/* Greek text */
-.greek {
-  font-size: 1.4rem;
-  color: var(--accent);
-  font-style: italic;
-  display: block;
-  margin: 8px 0 4px;
-}
-
-.greek-trans {
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-style: italic;
-  letter-spacing: 0.05em;
-}
-
-/* Name list */
 .name-list {
   list-style: none;
   margin: 28px 0;
@@ -301,13 +265,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   gap: 14px;
 }
 
-.name-list li {
-  display: flex;
-  gap: 16px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #c8d2de;
-}
+.name-list li { display: flex; gap: 16px; font-size: 1.1rem; line-height: 1.6; color: #c8d2de; }
 
 .name-list li strong {
   color: var(--accent);
@@ -318,7 +276,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   padding-top: 2px;
 }
 
-/* Schiller quote block */
 .featured-quote {
   background: linear-gradient(135deg, #0e1a2b 0%, #111d2e 100%);
   border: 1px solid rgba(247,164,0,0.2);
@@ -357,7 +314,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   font-style: normal;
 }
 
-/* Lineage list */
 .lineage-list {
   list-style: none;
   margin: 24px 0;
@@ -375,14 +331,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   color: #b8c4d4;
 }
 
-.lineage-list li::before {
-  content: '—';
-  color: var(--accent);
-  flex-shrink: 0;
-  margin-top: 1px;
-}
+.lineage-list li::before { content: '—'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
 
-/* Call to action imperative lines */
 .imperatives {
   text-align: center;
   padding: 60px 0 40px;
@@ -408,12 +358,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin-bottom: 40px;
 }
 
-.imperative-trio {
-  display: flex;
-  gap: 0;
-  justify-content: center;
-  margin-bottom: 48px;
-}
+.imperative-trio { display: flex; gap: 0; justify-content: center; margin-bottom: 48px; }
 
 .imperative-trio span {
   font-family: 'Cinzel', serif;
@@ -426,7 +371,6 @@ nav a:hover, nav a.active { color: var(--accent); }
 
 .imperative-trio span:last-child { border-right: none; }
 
-/* ── Homer + Book side by side ── */
 .book-callout {
   position: relative;
   z-index: 1;
@@ -473,19 +417,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin-bottom: 8px;
 }
 
-.book-callout-body .subtitle {
-  font-size: 1rem;
-  color: var(--accent);
-  font-style: italic;
-  margin-bottom: 18px;
-}
-
-.book-callout-body p {
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: #b8c4d4;
-  margin-bottom: 24px;
-}
+.book-callout-body .subtitle { font-size: 1rem; color: var(--accent); font-style: italic; margin-bottom: 18px; }
+.book-callout-body p { font-size: 1.05rem; line-height: 1.85; color: #b8c4d4; margin-bottom: 24px; }
 
 .btn-primary {
   display: inline-block;
@@ -503,10 +436,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin-right: 12px;
 }
 
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .btn-ghost {
   display: inline-block;
@@ -524,13 +454,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-/* ── Footer ── */
 footer {
   position: relative;
   z-index: 1;
@@ -561,13 +486,11 @@ footer nav a {
 
 footer nav a:hover { color: var(--accent); }
 
-/* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   header { padding: 16px 20px; }
   nav { gap: 16px; }
@@ -584,7 +507,6 @@ footer nav a:hover { color: var(--accent); }
 
 <body>
 
-<!-- ── Header ── -->
 <header>
   <a class="logo" href="index.html">Anthony Vresland</a>
   <nav>
@@ -596,7 +518,6 @@ footer nav a:hover { color: var(--accent); }
   </nav>
 </header>
 
-<!-- ── Hero ── */
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -611,7 +532,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </section>
 
-<!-- ── Opening three statements ── -->
 <div class="opening">
   <div class="opening-inner">
     <div class="opening-statements">
@@ -633,10 +553,8 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Main Essay ── -->
 <div class="essay-wrap">
 
-  <!-- Section 1: The Living Vessels -->
   <div class="essay-section">
     <p class="essay-label">The Living Vessels</p>
     <p>
@@ -662,37 +580,25 @@ footer nav a:hover { color: var(--accent); }
     </p>
   </div>
 
-  <!-- Section 2: Schiller's Challenge -->
   <div class="essay-section">
     <p class="essay-label">Schiller's Challenge</p>
     <div class="featured-quote">
       <p>"I have decided for the next decade not to read any author. I will read nothing except Homer."</p>
       <cite>— Schiller</cite>
     </div>
-    <p>
-      Take his challenge. Dedicate even a few weeks — not to study, but to commune.
-    </p>
-    <p>
-      Read the Iliad. Not once. Not silently.
-    </p>
-    <p style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.08em;color:#fff;">
-      Speak its lines aloud.
-    </p>
-    <p>
-      Let the ancient names pass through your lips like sacred mantras:
-    </p>
+    <p>Take his challenge. Dedicate even a few weeks — not to study, but to commune.</p>
+    <p>Read the Iliad. Not once. Not silently.</p>
+    <p style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.08em;color:#fff;">Speak its lines aloud.</p>
+    <p>Let the ancient names pass through your lips like sacred mantras:</p>
     <ul class="name-list">
       <li><strong>Achilles</strong> the divine spark in mortal flesh,</li>
       <li><strong>Hector</strong> the noble defender of what must be loved,</li>
       <li><strong>Thetis</strong> the sea-deep mother who hears the howl of her son,</li>
       <li><strong>Priam</strong> the king who kneels in the dark to kiss the hands of his son's killer.</li>
     </ul>
-    <p>
-      Their sounds are not arbitrary. They are vibrations tuned to the architecture of the soul.
-    </p>
+    <p>Their sounds are not arbitrary. They are vibrations tuned to the architecture of the soul.</p>
   </div>
 
-  <!-- Section 3: When Distress Rises -->
   <div class="essay-section">
     <p class="essay-label">When Distress Rises</p>
     <p>
@@ -713,13 +619,9 @@ footer nav a:hover { color: var(--accent); }
       They carry timeless resonance — frequencies that awaken dormant chambers of the soul,
       that realign you with the cosmic order beneath the chaos.
     </p>
-    <p>
-      This is not reading. It is remembrance.<br>
-      You are not learning a story. You are remembering yourself.
-    </p>
+    <p>This is not reading. It is remembrance.<br>You are not learning a story. You are remembering yourself.</p>
   </div>
 
-  <!-- Section 4: Do Not Doubt -->
   <div class="essay-section">
     <p class="essay-label">Do Not Doubt</p>
     <p>
@@ -748,7 +650,6 @@ footer nav a:hover { color: var(--accent); }
     </div>
   </div>
 
-  <!-- Section 5: The Ancient Current -->
   <div class="essay-section">
     <p class="essay-label">The Ancient Current</p>
     <p>
@@ -787,7 +688,6 @@ footer nav a:hover { color: var(--accent); }
     </p>
   </div>
 
-  <!-- Final imperatives -->
   <div class="imperatives">
     <span class="greek-final">Μῆνιν ἄειδε, θεά…</span>
     <span class="greek-final-trans">Sing, Goddess, of the rage…</span>
@@ -807,7 +707,6 @@ footer nav a:hover { color: var(--accent); }
 
 </div>
 
-<!-- ── Book Callout ── -->
 <div class="book-callout">
   <div class="book-callout-inner">
     <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
@@ -828,7 +727,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Footer ── -->
 <footer>
   <nav>
     <a href="about.html">About</a>
