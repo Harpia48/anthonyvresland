@@ -8,6 +8,15 @@
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1J8YCYENMQ');
+</script>
+
 <style>
 :root {
   --bg: #0b0f16;
@@ -41,7 +50,6 @@ body::before {
   opacity: 0.4;
 }
 
-/* ── Header ── */
 header {
   position: sticky;
   top: 0;
@@ -64,10 +72,7 @@ header {
   text-decoration: none;
 }
 
-nav {
-  display: flex;
-  gap: 32px;
-}
+nav { display: flex; gap: 32px; }
 
 nav a {
   font-family: 'Cinzel', serif;
@@ -81,7 +86,6 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--accent); }
 
-/* ── Hero band ── */
 .about-hero {
   position: relative;
   z-index: 1;
@@ -142,7 +146,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   animation: fadeUp 0.8s ease 0.24s both;
 }
 
-/* ── Main portrait + bio layout ── */
 .about-main {
   position: relative;
   z-index: 1;
@@ -155,16 +158,13 @@ nav a:hover, nav a.active { color: var(--accent); }
   align-items: start;
 }
 
-/* Portrait */
 .portrait-col {
   position: sticky;
   top: 100px;
   animation: fadeUp 0.9s ease 0.1s both;
 }
 
-.portrait-frame {
-  position: relative;
-}
+.portrait-frame { position: relative; }
 
 .portrait-frame img {
   width: 100%;
@@ -174,7 +174,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   box-shadow: 0 30px 80px rgba(0,0,0,0.7);
 }
 
-/* Gold corner accents */
 .portrait-frame::before,
 .portrait-frame::after {
   content: '';
@@ -200,10 +199,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   border-radius: 0 0 4px 0;
 }
 
-.portrait-caption {
-  margin-top: 20px;
-  text-align: center;
-}
+.portrait-caption { margin-top: 20px; text-align: center; }
 
 .portrait-caption h3 {
   font-family: 'Cinzel', serif;
@@ -230,7 +226,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   font-style: normal;
 }
 
-/* Social links under photo */
 .social-links {
   display: flex;
   flex-direction: column;
@@ -261,19 +256,11 @@ nav a:hover, nav a.active { color: var(--accent); }
   transform: translateX(4px);
 }
 
-.social-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-}
+.social-icon { font-size: 1rem; flex-shrink: 0; }
 
-/* ── Bio column ── */
-.bio-col {
-  animation: fadeUp 0.9s ease 0.2s both;
-}
+.bio-col { animation: fadeUp 0.9s ease 0.2s both; }
 
-.bio-section {
-  margin-bottom: 52px;
-}
+.bio-section { margin-bottom: 52px; }
 
 .bio-section-label {
   font-family: 'Cinzel', serif;
@@ -311,13 +298,8 @@ nav a:hover, nav a.active { color: var(--accent); }
 }
 
 .bio-section p:last-child { margin-bottom: 0; }
+.bio-section p strong { color: #fff; font-weight: 600; }
 
-.bio-section p strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-/* Pull quote */
 .pull-quote {
   border-left: 3px solid var(--accent);
   padding: 16px 24px;
@@ -334,7 +316,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin: 0 !important;
 }
 
-/* Credentials grid */
 .credentials {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -371,13 +352,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin: 0 !important;
 }
 
-/* CTA */
-.bio-ctas {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 36px;
-}
+.bio-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
 
 .btn-primary {
   display: inline-block;
@@ -394,10 +369,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   transition: background 0.2s, transform 0.2s;
 }
 
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .btn-ghost {
   display: inline-block;
@@ -415,13 +387,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-/* ── Footer ── */
 footer {
   position: relative;
   z-index: 1;
@@ -453,26 +420,15 @@ footer nav a {
 
 footer nav a:hover { color: var(--accent); }
 
-/* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
-  .about-main {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .portrait-col {
-    position: static;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-  .credentials {
-    grid-template-columns: 1fr;
-  }
+  .about-main { grid-template-columns: 1fr; gap: 48px; }
+  .portrait-col { position: static; max-width: 340px; margin: 0 auto; }
+  .credentials { grid-template-columns: 1fr; }
   header { padding: 16px 20px; }
   nav { gap: 16px; }
   nav a { font-size: 0.6rem; }
@@ -482,7 +438,6 @@ footer nav a:hover { color: var(--accent); }
 
 <body>
 
-<!-- ── Header ── -->
 <header>
   <a class="logo" href="index.html">Anthony Vresland</a>
   <nav>
@@ -494,7 +449,6 @@ footer nav a:hover { color: var(--accent); }
   </nav>
 </header>
 
-<!-- ── Hero band ── -->
 <div class="about-hero">
   <p class="eyebrow">About the Author</p>
   <h1>Anthony Vresland</h1>
@@ -502,10 +456,8 @@ footer nav a:hover { color: var(--accent); }
   <div class="header-rule"></div>
 </div>
 
-<!-- ── Main content ── -->
 <div class="about-main">
 
-  <!-- Portrait column -->
   <div class="portrait-col">
     <div class="portrait-frame">
       <img src="/assets/author-photo.jpg" alt="Anthony Vresland — Author and Philosopher">
@@ -531,7 +483,6 @@ footer nav a:hover { color: var(--accent); }
     </div>
   </div>
 
-  <!-- Bio column -->
   <div class="bio-col">
 
     <div class="bio-section">
@@ -610,7 +561,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Footer ── -->
 <footer>
   <nav>
     <a href="about.html">About</a>
