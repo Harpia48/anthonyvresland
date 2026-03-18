@@ -6,6 +6,15 @@
 <title>Books — Anthony Vresland</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1J8YCYENMQ');
+</script>
+
 <style>
 :root {
   --bg: #0b0f16;
@@ -29,7 +38,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── Subtle texture overlay ── */
 body::before {
   content: '';
   position: fixed;
@@ -48,7 +56,6 @@ body::before {
   padding: 60px 24px 100px;
 }
 
-/* ── Page header ── */
 .page-header {
   text-align: center;
   margin-bottom: 70px;
@@ -73,9 +80,7 @@ body::before {
   margin-bottom: 24px;
 }
 
-.page-header h1 span {
-  color: var(--accent);
-}
+.page-header h1 span { color: var(--accent); }
 
 .page-header .author-bio {
   max-width: 680px;
@@ -93,7 +98,6 @@ body::before {
   margin: 30px auto 0;
 }
 
-/* ── Featured book ── */
 .featured-section {
   margin-bottom: 80px;
   animation: fadeUp 0.9s ease 0.1s both;
@@ -206,15 +210,12 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* ── Coming soon card ── */
 .coming-soon-banner {
   margin-bottom: 80px;
   animation: fadeUp 0.9s ease 0.15s both;
 }
 
 .coming-soon-card {
-  display: grid;
-  grid-template-columns: 1fr;
   background: linear-gradient(135deg, #0e1a2b 0%, #101f35 100%);
   border: 1px solid rgba(100, 160, 255, 0.2);
   border-radius: 20px;
@@ -268,11 +269,7 @@ body::before {
   color: var(--muted);
 }
 
-/* ── Section headers ── */
-.section-header {
-  margin-bottom: 30px;
-  animation: fadeUp 0.8s ease both;
-}
+.section-header { margin-bottom: 30px; animation: fadeUp 0.8s ease both; }
 
 .section-header-inner {
   display: flex;
@@ -291,11 +288,7 @@ body::before {
   white-space: nowrap;
 }
 
-.section-header-line {
-  flex: 1;
-  height: 1px;
-  background: var(--divider);
-}
+.section-header-line { flex: 1; height: 1px; background: var(--divider); }
 
 .section-header p {
   font-size: 0.95rem;
@@ -304,12 +297,8 @@ body::before {
   padding-left: 2px;
 }
 
-.section {
-  margin-bottom: 72px;
-  animation: fadeUp 0.8s ease both;
-}
+.section { margin-bottom: 72px; animation: fadeUp 0.8s ease both; }
 
-/* ── Book grid ── */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -374,31 +363,17 @@ body::before {
   transition: background 0.2s, transform 0.2s;
 }
 
-.btn:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
+.btn:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-/* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 720px) {
-  .featured-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .featured-card img {
-    max-width: 220px;
-    margin: 0 auto;
-  }
-  .book-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
-  }
+  .featured-card { grid-template-columns: 1fr; text-align: center; }
+  .featured-card img { max-width: 220px; margin: 0 auto; }
+  .book-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
 }
 </style>
 </head>
@@ -406,7 +381,6 @@ body::before {
 <body>
 <div class="container">
 
-  <!-- ── Page Header ── -->
   <header class="page-header">
     <p class="eyebrow">The Complete Works</p>
     <h1>Books by <span>Anthony Vresland</span></h1>
@@ -418,7 +392,6 @@ body::before {
     <div class="header-rule"></div>
   </header>
 
-  <!-- ── Featured Book ── -->
   <section class="featured-section">
     <p class="featured-label">Flagship Work</p>
     <div class="featured-card">
@@ -440,7 +413,6 @@ body::before {
     </div>
   </section>
 
-  <!-- ── Coming Soon ── -->
   <section class="coming-soon-banner">
     <div class="coming-soon-card">
       <span class="coming-soon-tag">Coming Soon</span>
@@ -455,7 +427,6 @@ body::before {
     </div>
   </section>
 
-  <!-- ── Homer Series ── -->
   <section class="section">
     <div class="section-header">
       <div class="section-header-inner">
@@ -465,18 +436,15 @@ body::before {
       <p>Homer's epics as esoteric manuals of the soul — decoded for the modern reader.</p>
     </div>
     <div class="book-grid">
-
       <article class="book-card">
         <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
         <h4>Homer: The Iliad Decoded</h4>
         <p>The War of Troy as the Architecture of the Soul.</p>
         <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
       </article>
-
     </div>
   </section>
 
-  <!-- ── Plato Series ── -->
   <section class="section">
     <div class="section-header">
       <div class="section-header-inner">
@@ -486,39 +454,33 @@ body::before {
       <p>Four books decoding Plato's most profound myths — the soul's journey from shadow to light.</p>
     </div>
     <div class="book-grid">
-
       <article class="book-card">
         <img src="/assets/cave-cover.jpg" alt="Plato's Allegory of the Cave">
         <h4>Plato's Allegory of the Cave</h4>
         <p>We live in shadow, mistaking reflections for reality. The Cave is Plato's master metaphor for awakening — and the price the philosopher pays for returning to those who refuse to see.</p>
         <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/chariot-cover.jpg" alt="Plato's Allegory of the Chariot">
         <h4>Plato's Allegory of the Chariot</h4>
         <p>The soul is a charioteer driving two winged horses — one noble, one wild. This is Plato's most precise map of the tripartite soul and its ascent toward the divine.</p>
         <a class="btn" href="https://a.co/d/04fO26JI" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/myth-of-er-cover.jpg" alt="Plato's The Myth of Er">
         <h4>Plato's The Myth of Er</h4>
         <p>A soldier dies in battle, passes through the afterlife, and returns to tell humanity what awaits. The West's first recorded near-death experience — and a blueprint for the soul's choices between lives.</p>
         <a class="btn" href="https://a.co/d/0cBwiyV3" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/plato-core-myths.jpg" alt="Plato: The Core Myths">
         <h4>Plato: The Core Myths</h4>
         <p>Plato did not write philosophy — he encoded it in myth. This volume gathers and decodes his most essential mythological teachings, revealing the unified esoteric system beneath.</p>
         <a class="btn" href="https://a.co/d/01Dz7HrT" target="_blank">View on Amazon</a>
       </article>
-
     </div>
   </section>
 
-  <!-- ── VEC Series ── -->
   <section class="section">
     <div class="section-header">
       <div class="section-header-inner">
@@ -528,25 +490,21 @@ body::before {
       <p>Vibrational-Energetic Codes — the hidden current that shapes abundance and the forces that drain it.</p>
     </div>
     <div class="book-grid">
-
       <article class="book-card">
         <img src="/assets/the-language-of-vec.jpg" alt="The Language of VEC">
         <h4>The Language of VEC</h4>
         <p>Beneath the surface of everyday life runs a vibrational current that governs prosperity, energy, and flow. This book decodes its language and shows how to align with — rather than against — it.</p>
         <a class="btn" href="https://a.co/d/04HLEzJz" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/proxies.jpg" alt="The Language of VEC: The Titan Proxies">
         <h4>The Language of VEC: The Titan Proxies</h4>
         <p>The Titans were not myths — they were forces. This sequel maps the ancient war for human energy still being fought invisibly today, and names the proxies that drain us without our knowledge.</p>
         <a class="btn" href="https://a.co/d/04AwjkGb" target="_blank">View on Amazon</a>
       </article>
-
     </div>
   </section>
 
-  <!-- ── History & Heroes ── -->
   <section class="section">
     <div class="section-header">
       <div class="section-header-inner">
@@ -556,32 +514,27 @@ body::before {
       <p>The great figures of the ancient world — Alexander, Leonidas, the warriors of Salamis — as esoteric and historical revelation.</p>
     </div>
     <div class="book-grid">
-
       <article class="book-card">
         <img src="/assets/alexander-mystic.jpg" alt="Alexander the Great Mystic">
         <h4>Alexander the Great Mystic</h4>
         <p>Alexander did not conquer the world for glory alone. Initiated into the deepest mystery schools of his age, he was enacting a cosmic programme — the shadow of Zeus made manifest in history.</p>
         <a class="btn" href="https://a.co/d/070wbFDZ" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/leonidas.jpg" alt="Leonidas: The Mission">
         <h4>Leonidas: The Mission</h4>
         <p>Three hundred men held the Gates of Fire not merely for Sparta — but for the preservation of a cosmic order. The stand at Thermopylae decoded as a sacred act, a battle for harmonic balance itself.</p>
         <a class="btn" href="https://a.co/d/0bhuWqzq" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
         <h4>Back to Salamis</h4>
         <p>What would a modern man make of the battle that saved Western civilisation? A vivid crossing of time and consciousness — the battle of Salamis experienced from within, where past and present collapse into a single truth.</p>
         <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
       </article>
-
     </div>
   </section>
 
-  <!-- ── Wisdom & Practice ── -->
   <section class="section">
     <div class="section-header">
       <div class="section-header-inner">
@@ -591,35 +544,30 @@ body::before {
       <p>Ancient wisdom applied — sacred geometry, parallel currents, and the alchemy of prosperity.</p>
     </div>
     <div class="book-grid">
-
       <article class="book-card">
         <img src="/assets/sacred-geography.jpg" alt="Sacred Geometry">
         <h4>Sacred Geometry</h4>
         <p>The universe is written in number, ratio, and form. Sacred geometry is not decoration — it is the operating code of creation, applied by every great civilisation that sought alignment with the divine order.</p>
         <a class="btn" href="https://a.co/d/0aPPMh0s" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/walking-sideways.jpg" alt="Walking Sideways">
         <h4>Walking Sideways</h4>
         <p>Most people walk the river of order — the current of consensus, expectation, and conditioned reality. Walking sideways means finding the parallel current where different laws apply and different outcomes become possible.</p>
         <a class="btn" href="https://a.co/d/02j3XUws" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/abundance-repracticed.jpeg" alt="Abundance Repracticed">
         <h4>Abundance Repracticed</h4>
         <p>Abundance is not a destination — it is a practice. This book strips away the conditioning that blocks it and offers a clear, principled framework for rediscovering what was always already yours.</p>
         <a class="btn" href="https://a.co/d/07cLfJzD" target="_blank">View on Amazon</a>
       </article>
-
       <article class="book-card">
         <img src="/assets/money-repracticed.jpg" alt="Money Repracticed">
         <h4>Money Repracticed</h4>
         <p>Money is a frequency before it is a fact. This book rewrites the relationship between consciousness and currency — dissolving the hidden beliefs that keep prosperity at arm's length.</p>
         <a class="btn" href="https://a.co/d/0enTUKwV" target="_blank">View on Amazon</a>
       </article>
-
     </div>
   </section>
 
