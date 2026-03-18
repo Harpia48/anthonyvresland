@@ -8,6 +8,15 @@
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1J8YCYENMQ');
+</script>
+
 <style>
 :root {
   --bg: #0b0f16;
@@ -41,7 +50,6 @@ body::before {
   opacity: 0.4;
 }
 
-/* ── Header ── */
 header {
   position: sticky;
   top: 0;
@@ -78,7 +86,6 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--accent); }
 
-/* ── Hero ── */
 .hero {
   position: relative;
   z-index: 1;
@@ -104,7 +111,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse at 50% 40%, rgba(247,164,0,0.08) 0%, transparent 60%),
     linear-gradient(180deg, rgba(11,15,22,0.3) 0%, rgba(11,15,22,0.85) 100%);
   z-index: 1;
@@ -179,7 +186,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   animation: fadeUp 0.8s ease 0.35s both;
 }
 
-/* ── Buttons ── */
 .btn-primary {
   display: inline-block;
   padding: 13px 28px;
@@ -195,10 +201,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   transition: background 0.2s, transform 0.2s;
 }
 
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .btn-ghost {
   display: inline-block;
@@ -216,13 +219,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-/* ── What is EPICON ── */
 .epicon-about {
   position: relative;
   z-index: 1;
@@ -276,7 +274,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin-right: auto;
 }
 
-/* ── Video grid ── */
 .videos-section {
   position: relative;
   z-index: 1;
@@ -285,9 +282,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   padding: 80px 32px;
 }
 
-.section-header {
-  margin-bottom: 48px;
-}
+.section-header { margin-bottom: 48px; }
 
 .section-header-inner {
   display: flex;
@@ -306,17 +301,9 @@ nav a:hover, nav a.active { color: var(--accent); }
   white-space: nowrap;
 }
 
-.section-header-line {
-  flex: 1;
-  height: 1px;
-  background: var(--divider);
-}
+.section-header-line { flex: 1; height: 1px; background: var(--divider); }
 
-.section-header p {
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-style: italic;
-}
+.section-header p { font-size: 0.95rem; color: var(--muted); font-style: italic; }
 
 .video-grid {
   display: grid;
@@ -340,7 +327,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   border-color: rgba(247,164,0,0.2);
 }
 
-/* Thumbnail wrapper with play overlay */
 .thumb-wrap {
   position: relative;
   overflow: hidden;
@@ -357,10 +343,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   filter: brightness(0.85);
 }
 
-.video-card:hover .thumb-wrap img {
-  transform: scale(1.04);
-  filter: brightness(1);
-}
+.video-card:hover .thumb-wrap img { transform: scale(1.04); filter: brightness(1); }
 
 .play-btn {
   position: absolute;
@@ -434,7 +417,6 @@ nav a:hover, nav a.active { color: var(--accent); }
 
 .video-link:hover { color: var(--gold-light); }
 
-/* ── Channels section ── */
 .channels-section {
   position: relative;
   z-index: 1;
@@ -466,16 +448,9 @@ nav a:hover, nav a.active { color: var(--accent); }
   display: block;
 }
 
-.channel-card:hover {
-  border-color: rgba(247,164,0,0.3);
-  transform: translateY(-4px);
-}
+.channel-card:hover { border-color: rgba(247,164,0,0.3); transform: translateY(-4px); }
 
-.channel-icon {
-  font-size: 2rem;
-  margin-bottom: 14px;
-  display: block;
-}
+.channel-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
 
 .channel-card h3 {
   font-family: 'Cinzel', serif;
@@ -486,12 +461,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   letter-spacing: 0.05em;
 }
 
-.channel-card p {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.6;
-  font-style: italic;
-}
+.channel-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; font-style: italic; }
 
 .channel-card .ch-link {
   display: inline-block;
@@ -503,7 +473,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   color: var(--accent);
 }
 
-/* ── CTA strip ── */
 .cta-strip {
   position: relative;
   z-index: 1;
@@ -518,14 +487,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   margin-bottom: 12px;
 }
 
-.cta-strip p {
-  font-size: 1.05rem;
-  color: var(--muted);
-  font-style: italic;
-  margin-bottom: 32px;
-}
+.cta-strip p { font-size: 1.05rem; color: var(--muted); font-style: italic; margin-bottom: 32px; }
 
-/* ── Footer ── */
 footer {
   position: relative;
   z-index: 1;
@@ -556,13 +519,11 @@ footer nav a {
 
 footer nav a:hover { color: var(--accent); }
 
-/* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   header { padding: 16px 20px; }
   nav { gap: 16px; }
@@ -575,7 +536,6 @@ footer nav a:hover { color: var(--accent); }
 
 <body>
 
-<!-- ── Header ── -->
 <header>
   <a class="logo" href="index.html">Anthony Vresland</a>
   <nav>
@@ -587,7 +547,6 @@ footer nav a:hover { color: var(--accent); }
   </nav>
 </header>
 
-<!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -610,7 +569,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </section>
 
-<!-- ── What is EPICON ── -->
 <div class="epicon-about">
   <div class="epicon-about-inner">
     <p class="section-label">What is EPICON</p>
@@ -628,7 +586,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Featured Videos ── -->
 <section class="videos-section">
   <div class="section-header">
     <div class="section-header-inner">
@@ -640,7 +597,6 @@ footer nav a:hover { color: var(--accent); }
 
   <div class="video-grid">
 
-    <!-- Poseidon 1 -->
     <div class="video-card">
       <a href="https://www.youtube.com/watch?v=rW6hxuAtGyY" target="_blank" rel="noopener">
         <div class="thumb-wrap">
@@ -656,7 +612,6 @@ footer nav a:hover { color: var(--accent); }
       </div>
     </div>
 
-    <!-- Demeter -->
     <div class="video-card">
       <a href="https://www.youtube.com/watch?v=rW6hxuAtGyY&t=353s" target="_blank" rel="noopener">
         <div class="thumb-wrap">
@@ -672,7 +627,6 @@ footer nav a:hover { color: var(--accent); }
       </div>
     </div>
 
-    <!-- Give Me Eyes to See Beyond -->
     <div class="video-card">
       <a href="https://www.youtube.com/watch?v=PYKN9gyk_PQ" target="_blank" rel="noopener">
         <div class="thumb-wrap">
@@ -688,7 +642,6 @@ footer nav a:hover { color: var(--accent); }
       </div>
     </div>
 
-    <!-- My Friend Pan -->
     <div class="video-card">
       <a href="https://www.youtube.com/watch?v=LFhVitsLuYI" target="_blank" rel="noopener">
         <div class="thumb-wrap">
@@ -707,7 +660,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </section>
 
-<!-- ── All Channels ── -->
 <div class="channels-section">
   <div class="channels-inner">
     <p class="section-label">The Channels</p>
@@ -716,40 +668,34 @@ footer nav a:hover { color: var(--accent); }
       The musical work is distributed across three YouTube channels, each exploring a different dimension of the same esoteric tradition.
     </p>
     <div class="channels-grid">
-
       <a class="channel-card" href="https://www.youtube.com/@epicon9139" target="_blank" rel="noopener">
         <span class="channel-icon">⚡</span>
         <h3>EPICON</h3>
         <p>Mythic cinematic music. Epic orchestral compositions and Orphic hymns encoded with VEC frequencies.</p>
         <span class="ch-link">Visit Channel →</span>
       </a>
-
       <a class="channel-card" href="https://www.youtube.com/@EchoesofPhilosophy-b5p" target="_blank" rel="noopener">
         <span class="channel-icon">🏛️</span>
         <h3>Echoes of Philosophy</h3>
         <p>The philosophical dimension — ancient texts, esoteric teachings, and the decoded wisdom of the mystery schools.</p>
         <span class="ch-link">Visit Channel →</span>
       </a>
-
       <a class="channel-card" href="https://www.youtube.com/@MrHarpia48" target="_blank" rel="noopener">
         <span class="channel-icon">🌙</span>
         <h3>Mystical Harmonies</h3>
         <p>Ambient and meditative music — frequencies for inner exploration, sacred geometry, and the stillness between thoughts.</p>
         <span class="ch-link">Visit Channel →</span>
       </a>
-
       <a class="channel-card" href="https://www.youtube.com/@antv9429" target="_blank" rel="noopener">
         <span class="channel-icon">📖</span>
         <h3>Anthony Vresland — Author</h3>
         <p>The author channel — book presentations, philosophical discussions, and the story behind the decoded texts.</p>
         <span class="ch-link">Visit Channel →</span>
       </a>
-
     </div>
   </div>
 </div>
 
-<!-- ── CTA strip ── -->
 <div class="cta-strip">
   <h2>The Books and the Music Are One Work.</h2>
   <p>Read the decoded text. Then let the music carry you deeper into it.</p>
@@ -759,7 +705,6 @@ footer nav a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- ── Footer ── -->
 <footer>
   <nav>
     <a href="about.html">About</a>
