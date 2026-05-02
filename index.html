@@ -7,7 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
-<!-- Google Analytics (SAFE placement) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -20,129 +20,176 @@ gtag('config', 'G-1J8YCYENMQ');
 :root {
   --bg: #0b0f16;
   --panel: #101725;
+  --panel-hover: #141e30;
   --text: #e5e7eb;
   --muted: #8a97aa;
   --accent: #f7a400;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Crimson Pro', serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family:'Crimson Pro', serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
-/* NAV */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 48px;
-  background: rgba(11,15,22,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 48px;
+  background:rgba(11,15,22,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-.logo {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.12em;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
+.logo{
+  font-family:'Cinzel',serif;
+  letter-spacing:0.12em;
+  font-weight:600;
+  color:#fff;
+  text-decoration:none;
 }
 
-nav {
-  display: flex;
-  gap: 28px;
+nav{
+  display:flex;
+  gap:28px;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 0.9rem;
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:0.9rem;
 }
 
-nav a:hover {
-  color: var(--accent);
+nav a:hover{
+  color:var(--accent);
 }
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 120px 20px 80px;
+.hero{
+  text-align:center;
+  padding:120px 20px 80px;
 }
 
-.hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2.5rem,5vw,4rem);
+.hero h1{
+  font-family:'Cinzel',serif;
+  font-size:clamp(2.5rem,5vw,4rem);
 }
 
-.hero span {
-  color: var(--accent);
+.hero span{
+  color:var(--accent);
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 25px auto 0;
-  color: var(--muted);
-  font-size: 1.2rem;
-  line-height: 1.7;
+.hero p{
+  max-width:700px;
+  margin:25px auto 0;
+  color:var(--muted);
+  font-size:1.2rem;
+  line-height:1.7;
 }
 
 /* SECTION */
-.section {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
+.section{
+  max-width:1100px;
+  margin:80px auto;
+  padding:0 20px;
 }
 
-/* BOOK GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 24px;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
 }
 
-.card {
-  background: var(--panel);
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
+/* CARD */
+.card{
+  background:var(--panel);
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+  transition:all 0.25s ease;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
+.card:hover{
+  transform:translateY(-6px);
+  background:var(--panel-hover);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
-.card h3 {
-  font-family: 'Cinzel', serif;
-  margin: 12px 0;
-  font-size: 0.9rem;
+.card img{
+  width:100%;
+  border-radius:8px;
+}
+
+.card h3{
+  font-family:'Cinzel',serif;
+  margin:12px 0;
+  font-size:0.9rem;
 }
 
 /* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: var(--accent);
-  color: black;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.8rem;
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 16px;
+  background:var(--accent);
+  color:#000;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:0.8rem;
+}
+
+/* EXPLORE (UPGRADED) */
+.explore-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+
+.explore-card{
+  display:block;
+  padding:32px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  background:linear-gradient(145deg,#0f1725,#0b111c);
+  border:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s ease;
+}
+
+.explore-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(247,164,0,0.4);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+.explore-title{
+  font-family:'Cinzel',serif;
+  font-size:1.1rem;
+  letter-spacing:0.12em;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.explore-sub{
+  font-size:0.9rem;
+  color:var(--muted);
+  font-style:italic;
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-  font-size: 0.8rem;
+footer{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--muted);
+  font-size:0.8rem;
 }
 </style>
 </head>
@@ -169,6 +216,7 @@ footer {
 
 <section class="section">
   <h2 style="margin-bottom:20px;font-family:Cinzel;">Featured Books</h2>
+
   <div class="grid">
 
     <div class="card">
@@ -188,10 +236,24 @@ footer {
 
 <section class="section">
   <h2 style="margin-bottom:20px;font-family:Cinzel;">Explore</h2>
-  <div class="grid">
-    <div class="card"><a href="books.html">📚 All Books</a></div>
-    <div class="card"><a href="about.html">👤 About</a></div>
-    <div class="card"><a href="music.html">🎵 Music</a></div>
+
+  <div class="explore-grid">
+
+    <a href="books.html" class="explore-card">
+      <div class="explore-title">All Books</div>
+      <div class="explore-sub">The complete body of work</div>
+    </a>
+
+    <a href="about.html" class="explore-card">
+      <div class="explore-title">About</div>
+      <div class="explore-sub">The philosophy & the man</div>
+    </a>
+
+    <a href="music.html" class="explore-card">
+      <div class="explore-title">Music</div>
+      <div class="explore-sub">Sound as extension of thought</div>
+    </a>
+
   </div>
 </section>
 
