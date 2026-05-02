@@ -189,4 +189,38 @@ nav a {
 .hero-btn.secondary:hover {
   border-color: var(--accent);
   color: var(--accent);
+/* ===== EXPLORE CARDS ===== */
+
+.explore-grid {
+  margin-top: 20px;
+}
+
+.explore-card {
+  display: block;
+  background: var(--panel);
+  padding: 26px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.25s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(247,164,0,0.3);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.explore-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.explore-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 }
