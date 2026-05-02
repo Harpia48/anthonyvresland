@@ -40,7 +40,7 @@ body::before {
   z-index: 0;
   opacity: 0.4;
 }
-header.site-header {
+.site-nav {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -48,11 +48,11 @@ header.site-header {
   justify-content: space-between;
   align-items: center;
   padding: 18px 48px;
-  background: rgba(11,15,22,0.92);
+  background: rgba(11,15,22,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
-header.site-header .logo {
+.site-nav .logo {
   font-family: 'Cinzel', serif;
   font-size: 1rem;
   font-weight: 600;
@@ -60,8 +60,12 @@ header.site-header .logo {
   color: #fff;
   text-decoration: none;
 }
-header.site-header nav { display: flex; gap: 32px; }
-header.site-header nav a {
+.site-nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.site-nav ul a {
   font-family: 'Cinzel', serif;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
@@ -70,8 +74,8 @@ header.site-header nav a {
   text-decoration: none;
   transition: color 0.2s;
 }
-header.site-header nav a:hover { color: var(--accent); }
-header.site-header nav a.active { color: var(--accent); }
+.site-nav ul a:hover { color: var(--accent); }
+.site-nav ul a.active { color: var(--accent); }
 .container {
   position: relative;
   z-index: 1;
@@ -252,7 +256,7 @@ header.site-header nav a.active { color: var(--accent); }
   transition: background 0.2s, transform 0.2s;
 }
 .btn:hover { background: var(--gold-light); transform: translateY(-2px); }
-footer {
+.site-footer {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -261,8 +265,15 @@ footer {
   color: var(--muted);
   font-size: 0.9rem;
 }
-footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-bottom: 20px; }
-footer nav a {
+.site-footer ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+.site-footer ul a {
   font-family: 'Cinzel', serif;
   font-size: 0.68rem;
   letter-spacing: 0.15em;
@@ -271,57 +282,42 @@ footer nav a {
   text-decoration: none;
   transition: color 0.2s;
 }
-footer nav a:hover { color: var(--accent); }
+.site-footer ul a:hover { color: var(--accent); }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 720px) {
-  header.site-header { padding: 16px 20px; }
-  header.site-header nav { gap: 16px; }
-  header.site-header nav a { font-size: 0.6rem; }
+  .site-nav { padding: 16px 20px; }
+  .site-nav ul { gap: 16px; }
+  .site-nav ul a { font-size: 0.6rem; }
   .featured-card { grid-template-columns: 1fr; text-align: center; }
   .featured-card img { max-width: 220px; margin: 0 auto; }
   .book-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
 }
 </style>
 </head>
-
 <body>
-  <header class="site-header">
-  <a class="logo" href="index.html">Anthony Vresland</a>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="books.html" class="active">Books</a>
-    <a href="homer-the-educator.html">Homer</a>
-    <a href="music.html">Music</a>
-    <a href="vec.html">VEC Library</a>
-  </nav>
-</header>
 
-<header class="site-header">
+<nav class="site-nav">
   <a class="logo" href="index.html">Anthony Vresland</a>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="books.html" class="active">Books</a>
-    <a href="homer-the-educator.html">Homer</a>
-    <a href="music.html">Music</a>
-    <a href="vec.html">VEC Library</a>
-  </nav>
-</header>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="books.html" class="active">Books</a></li>
+    <li><a href="homer-the-educator.html">Homer</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="vec.html">VEC Library</a></li>
+  </ul>
+</nav>
 
 <div class="container">
 
-  <header class="page-header">
+  <div class="page-header">
     <p class="eyebrow">The Complete Works</p>
     <h1>Books by <span>Anthony Vresland</span></h1>
-    <p class="author-bio">
-      Anthony Vresland decodes the ancient world's greatest texts — Homer, Plato, Alexander —
-      revealing the esoteric architecture hidden within them: maps of the soul, blueprints of consciousness,
-      and instructions for the inner war that every human being must fight.
-    </p>
+    <p class="author-bio">Anthony Vresland decodes the ancient world's greatest texts — Homer, Plato, Alexander — revealing the esoteric architecture hidden within them: maps of the soul, blueprints of consciousness, and instructions for the inner war that every human being must fight.</p>
     <div class="header-rule"></div>
-  </header>
+  </div>
 
   <section class="featured-section">
     <p class="featured-label">Homer Series · Book I</p>
@@ -393,19 +389,19 @@ footer nav a:hover { color: var(--accent); }
       <article class="book-card">
         <img src="/assets/chariot-cover.jpg" alt="Plato's Allegory of the Chariot">
         <h4>Plato's Allegory of the Chariot</h4>
-        <p>The soul is a charioteer driving two winged horses — one noble, one wild. This is Plato's most precise map of the tripartite soul and its ascent toward the divine.</p>
+        <p>The soul is a charioteer driving two winged horses — one noble, one wild. Plato's most precise map of the tripartite soul and its ascent toward the divine.</p>
         <a class="btn" href="https://a.co/d/04fO26JI" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/myth-of-er-cover.jpg" alt="Plato's The Myth of Er">
         <h4>Plato's The Myth of Er</h4>
-        <p>A soldier dies in battle, passes through the afterlife, and returns to tell humanity what awaits. The West's first recorded near-death experience — and a blueprint for the soul's choices between lives.</p>
+        <p>A soldier dies in battle, passes through the afterlife, and returns to tell humanity what awaits. The West's first recorded near-death experience.</p>
         <a class="btn" href="https://a.co/d/0cBwiyV3" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/plato-core-myths.jpg" alt="Plato: The Core Myths">
         <h4>Plato: The Core Myths</h4>
-        <p>Plato did not write philosophy — he encoded it in myth. This volume gathers and decodes his most essential mythological teachings, revealing the unified esoteric system beneath.</p>
+        <p>Plato did not write philosophy — he encoded it in myth. This volume gathers and decodes his most essential mythological teachings.</p>
         <a class="btn" href="https://a.co/d/01Dz7HrT" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -423,13 +419,13 @@ footer nav a:hover { color: var(--accent); }
       <article class="book-card">
         <img src="/assets/the-language-of-vec.jpg" alt="The Language of VEC">
         <h4>The Language of VEC</h4>
-        <p>Beneath the surface of everyday life runs a vibrational current that governs prosperity, energy, and flow. This book decodes its language and shows how to align with — rather than against — it.</p>
+        <p>Beneath the surface of everyday life runs a vibrational current that governs prosperity, energy, and flow. This book decodes its language and shows how to align with it.</p>
         <a class="btn" href="https://a.co/d/04HLEzJz" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/proxies.jpg" alt="The Language of VEC: The Titan Proxies">
         <h4>The Language of VEC: The Titan Proxies</h4>
-        <p>The Titans were not myths — they were forces. This sequel maps the ancient war for human energy still being fought invisibly today, and names the proxies that drain us without our knowledge.</p>
+        <p>The Titans were not myths — they were forces. This sequel maps the ancient war for human energy still being fought invisibly today.</p>
         <a class="btn" href="https://a.co/d/04AwjkGb" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -447,19 +443,19 @@ footer nav a:hover { color: var(--accent); }
       <article class="book-card">
         <img src="/assets/alexander-mystic.jpg" alt="Alexander the Great Mystic">
         <h4>Alexander the Great Mystic</h4>
-        <p>Alexander did not conquer the world for glory alone. Initiated into the deepest mystery schools of his age, he was enacting a cosmic programme — the shadow of Zeus made manifest in history.</p>
+        <p>Alexander did not conquer the world for glory alone. Initiated into the deepest mystery schools of his age, he was enacting a cosmic programme.</p>
         <a class="btn" href="https://a.co/d/070wbFDZ" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/leonidas.jpg" alt="Leonidas: The Mission">
         <h4>Leonidas: The Mission</h4>
-        <p>Three hundred men held the Gates of Fire not merely for Sparta — but for the preservation of a cosmic order. The stand at Thermopylae decoded as a sacred act, a battle for harmonic balance itself.</p>
+        <p>Three hundred men held the Gates of Fire not merely for Sparta — but for the preservation of a cosmic order. Thermopylae decoded as a sacred act.</p>
         <a class="btn" href="https://a.co/d/0bhuWqzq" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
         <h4>Back to Salamis</h4>
-        <p>What would a modern man make of the battle that saved Western civilisation? A vivid crossing of time and consciousness — where past and present collapse into a single truth.</p>
+        <p>What would a modern man make of the battle that saved Western civilisation? Where past and present collapse into a single truth.</p>
         <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -477,25 +473,25 @@ footer nav a:hover { color: var(--accent); }
       <article class="book-card">
         <img src="/assets/sacred-geography.jpg" alt="Sacred Geometry">
         <h4>Sacred Geometry</h4>
-        <p>The universe is written in number, ratio, and form. Sacred geometry is not decoration — it is the operating code of creation, applied by every great civilisation that sought alignment with the divine order.</p>
+        <p>The universe is written in number, ratio, and form. Sacred geometry is the operating code of creation, applied by every great civilisation that sought alignment with the divine order.</p>
         <a class="btn" href="https://a.co/d/0aPPMh0s" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/walking-sideways.jpg" alt="Walking Sideways">
         <h4>Walking Sideways</h4>
-        <p>Most people walk the river of order — the current of consensus, expectation, and conditioned reality. Walking sideways means finding the parallel current where different laws apply.</p>
+        <p>Most people walk the river of order. Walking sideways means finding the parallel current where different laws apply and different outcomes become possible.</p>
         <a class="btn" href="https://a.co/d/02j3XUws" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/abundance-repracticed.jpeg" alt="Abundance Repracticed">
         <h4>Abundance Repracticed</h4>
-        <p>Abundance is not a destination — it is a practice. This book strips away the conditioning that blocks it and offers a clear, principled framework for rediscovering what was always already yours.</p>
+        <p>Abundance is not a destination — it is a practice. This book strips away the conditioning that blocks it and offers a clear framework for rediscovering what was always already yours.</p>
         <a class="btn" href="https://a.co/d/07cLfJzD" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/money-repracticed.jpg" alt="Money Repracticed">
         <h4>Money Repracticed</h4>
-        <p>Money is a frequency before it is a fact. This book rewrites the relationship between consciousness and currency — dissolving the hidden beliefs that keep prosperity at arm's length.</p>
+        <p>Money is a frequency before it is a fact. This book rewrites the relationship between consciousness and currency.</p>
         <a class="btn" href="https://a.co/d/0enTUKwV" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -503,14 +499,14 @@ footer nav a:hover { color: var(--accent); }
 
 </div>
 
-<footer>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="books.html">Books</a>
-    <a href="homer-the-educator.html">Homer</a>
-    <a href="music.html">Music</a>
-    <a href="vec.html">VEC Library</a>
-  </nav>
+<footer class="site-footer">
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="homer-the-educator.html">Homer</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="vec.html">VEC Library</a></li>
+  </ul>
   <p>© 2026 Anthony Vresland. All rights reserved.</p>
 </footer>
 
