@@ -31,7 +31,30 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
+body 
+<header style="position:sticky;top:0;z-index:100;
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 48px;background:rgba(11,15,22,0.92);
+backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);">
+
+  <a href="index.html" style="
+    font-family:'Cinzel',serif;
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:0.12em;
+    color:#fff;
+    text-decoration:none;">
+    Anthony Vresland
+  </a>
+
+  <nav style="display:flex;gap:28px;">
+    <a href="index.html">Home</a>
+    <a href="books.html" style="color:#f7a400;">Books</a>
+    <a href="about.html">About</a>
+    <a href="music.html">Music</a>
+  </nav>
+
+</header>{
   font-family: 'Crimson Pro', Georgia, serif;
   background: var(--bg);
   color: var(--text);
