@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Books — Anthony Vresland</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,6 +14,7 @@
   gtag('js', new Date());
   gtag('config', 'G-1J8YCYENMQ');
 </script>
+
 <style>
 :root {
   --bg: #0b0f16;
@@ -20,17 +23,21 @@
   --text: #e5e7eb;
   --muted: #8a97aa;
   --accent: #f7a400;
+  --accent-dim: #c47f00;
   --gold-light: #ffd066;
   --divider: rgba(247,164,0,0.15);
   --border: rgba(255,255,255,0.06);
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
   font-family: 'Crimson Pro', Georgia, serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
 }
+
 body::before {
   content: '';
   position: fixed;
@@ -40,42 +47,7 @@ body::before {
   z-index: 0;
   opacity: 0.4;
 }
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 48px;
-  background: rgba(11,15,22,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-.site-nav .logo {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: #fff;
-  text-decoration: none;
-}
-.site-nav ul {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-.site-nav ul a {
-  font-family: 'Cinzel', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.site-nav ul a:hover { color: var(--accent); }
-.site-nav ul a.active { color: var(--accent); }
+
 .container {
   position: relative;
   z-index: 1;
@@ -83,11 +55,13 @@ body::before {
   margin: auto;
   padding: 60px 24px 100px;
 }
+
 .page-header {
   text-align: center;
   margin-bottom: 70px;
   animation: fadeUp 0.8s ease both;
 }
+
 .page-header .eyebrow {
   font-family: 'Cinzel', serif;
   font-size: 11px;
@@ -96,6 +70,7 @@ body::before {
   color: var(--accent);
   margin-bottom: 18px;
 }
+
 .page-header h1 {
   font-family: 'Cinzel', serif;
   font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -104,7 +79,9 @@ body::before {
   line-height: 1.1;
   margin-bottom: 24px;
 }
+
 .page-header h1 span { color: var(--accent); }
+
 .page-header .author-bio {
   max-width: 680px;
   margin: 0 auto;
@@ -113,13 +90,19 @@ body::before {
   color: var(--muted);
   font-style: italic;
 }
+
 .header-rule {
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
   margin: 30px auto 0;
 }
-.featured-section { margin-bottom: 50px; animation: fadeUp 0.9s ease 0.1s both; }
+
+.featured-section {
+  margin-bottom: 80px;
+  animation: fadeUp 0.9s ease 0.1s both;
+}
+
 .featured-label {
   font-family: 'Cinzel', serif;
   font-size: 10px;
@@ -137,6 +120,7 @@ body::before {
   height: 1px;
   background: var(--divider);
 }
+
 .featured-card {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -150,6 +134,7 @@ body::before {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .featured-card::before {
   content: '';
   position: absolute;
@@ -157,8 +142,18 @@ body::before {
   background: radial-gradient(ellipse at 0% 50%, rgba(247,164,0,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
-.featured-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.featured-card img { width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.featured-card img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
 .featured-body .series-tag {
   font-family: 'Cinzel', serif;
   font-size: 10px;
@@ -172,6 +167,7 @@ body::before {
   display: inline-block;
   margin-bottom: 18px;
 }
+
 .featured-body h2 {
   font-family: 'Cinzel', serif;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
@@ -180,8 +176,21 @@ body::before {
   line-height: 1.2;
   margin-bottom: 8px;
 }
-.featured-body .subtitle { font-size: 1.05rem; color: var(--accent); font-style: italic; margin-bottom: 20px; }
-.featured-body .description { font-size: 1.1rem; line-height: 1.8; color: #c8d0da; margin-bottom: 28px; }
+
+.featured-body .subtitle {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.featured-body .description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c8d0da;
+  margin-bottom: 28px;
+}
+
 .btn-primary {
   display: inline-block;
   padding: 13px 28px;
@@ -195,10 +204,80 @@ body::before {
   letter-spacing: 0.1em;
   transition: background 0.2s, transform 0.2s;
 }
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-.section { margin-bottom: 72px; animation: fadeUp 0.8s ease both; }
-.section-header { margin-bottom: 30px; }
-.section-header-inner { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.coming-soon-banner {
+  margin-bottom: 80px;
+  animation: fadeUp 0.9s ease 0.15s both;
+}
+
+.coming-soon-card {
+  background: linear-gradient(135deg, #0e1a2b 0%, #101f35 100%);
+  border: 1px solid rgba(100, 160, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(80,130,220,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.coming-soon-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #7ab0ff;
+  background: rgba(100,160,255,0.08);
+  border: 1px solid rgba(100,160,255,0.2);
+  border-radius: 4px;
+  padding: 4px 12px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.coming-soon-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.coming-soon-card .subtitle {
+  font-size: 1rem;
+  color: #7ab0ff;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.coming-soon-card p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.section-header { margin-bottom: 30px; animation: fadeUp 0.8s ease both; }
+
+.section-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
 .section-header h2 {
   font-family: 'Cinzel', serif;
   font-size: 1rem;
@@ -208,13 +287,24 @@ body::before {
   color: var(--accent);
   white-space: nowrap;
 }
+
 .section-header-line { flex: 1; height: 1px; background: var(--divider); }
-.section-header p { font-size: 0.95rem; color: var(--muted); font-style: italic; padding-left: 2px; }
+
+.section-header p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+  padding-left: 2px;
+}
+
+.section { margin-bottom: 72px; animation: fadeUp 0.8s ease both; }
+
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 24px;
 }
+
 .book-card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -225,13 +315,22 @@ body::before {
   display: flex;
   flex-direction: column;
 }
+
 .book-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.45);
   border-color: rgba(247,164,0,0.2);
   background: var(--panel-hover);
 }
-.book-card img { width: 100%; border-radius: 10px; display: block; aspect-ratio: 2/3; object-fit: cover; }
+
+.book-card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
 .book-card h4 {
   font-family: 'Cinzel', serif;
   font-size: 0.85rem;
@@ -240,7 +339,15 @@ body::before {
   margin: 14px 0 8px;
   line-height: 1.35;
 }
-.book-card p { font-size: 0.9rem; line-height: 1.6; color: var(--muted); flex: 1; font-style: italic; }
+
+.book-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+  flex: 1;
+  font-style: italic;
+}
+
 .btn {
   display: inline-block;
   margin-top: 14px;
@@ -255,93 +362,35 @@ body::before {
   letter-spacing: 0.08em;
   transition: background 0.2s, transform 0.2s;
 }
+
 .btn:hover { background: var(--gold-light); transform: translateY(-2px); }
-.site-footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 48px 32px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-.site-footer ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  list-style: none;
-  margin-bottom: 20px;
-}
-.site-footer ul a {
-  font-family: 'Cinzel', serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.site-footer ul a:hover { color: var(--accent); }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
 @media (max-width: 720px) {
-  .site-nav { padding: 16px 20px; }
-  .site-nav ul { gap: 16px; }
-  .site-nav ul a { font-size: 0.6rem; }
   .featured-card { grid-template-columns: 1fr; text-align: center; }
   .featured-card img { max-width: 220px; margin: 0 auto; }
   .book-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
 }
 </style>
 </head>
-<nav class="site-nav">
-  <a class="logo" href="index.html">Anthony Vresland</a>
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="books.html" class="active">Books</a></li>
-    <li><a href="homer-the-educator.html">Homer</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="vec.html">VEC Library</a></li>
-  </ul>
-</nav>
+
 <body>
-
-<nav class="site-nav">
-  <a class="logo" href="index.html">Anthony Vresland</a>
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="books.html" class="active">Books</a></li>
-    <li><a href="homer-the-educator.html">Homer</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="vec.html">VEC Library</a></li>
-  </ul>
-</nav>
-
 <div class="container">
 
-  <div class="page-header">
+  <header class="page-header">
     <p class="eyebrow">The Complete Works</p>
     <h1>Books by <span>Anthony Vresland</span></h1>
-    <p class="author-bio">Anthony Vresland decodes the ancient world's greatest texts — Homer, Plato, Alexander — revealing the esoteric architecture hidden within them: maps of the soul, blueprints of consciousness, and instructions for the inner war that every human being must fight.</p>
+    <p class="author-bio">
+      Anthony Vresland decodes the ancient world's greatest texts — Homer, Plato, Alexander —
+      revealing the esoteric architecture hidden within them: maps of the soul, blueprints of consciousness,
+      and instructions for the inner war that every human being must fight.
+    </p>
     <div class="header-rule"></div>
-  </div>
-
-  <section class="featured-section">
-    <p class="featured-label">Homer Series · Book I</p>
-    <div class="featured-card">
-      <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
-      <div class="featured-body">
-        <span class="series-tag">Homer Series · Book I</span>
-        <h2>Homer: The Iliad Decoded</h2>
-        <p class="subtitle">The War of Troy as the Architecture of the Soul</p>
-        <p class="description">The Iliad is not a war story. It is a precise esoteric manual — a map of the soul's civil war, encoded in myth and transmitted across three thousand years. Every warrior, every god, every wound is a force within the human psyche. Vresland decodes the poem layer by layer, from the literal battlefield to the Hermetic, Kabbalistic, and Pythagorean structures beneath — revealing Homer not as a poet of Bronze Age violence, but as a master of the ancient mystery schools.</p>
-        <a class="btn-primary" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
-      </div>
-    </div>
-  </section>
+  </header>
 
   <section class="featured-section">
     <p class="featured-label">Homer Series · Book II</p>
@@ -351,9 +400,29 @@ body::before {
         <span class="series-tag">Now Live on Amazon</span>
         <h2>Homer: The Odyssey Decoded</h2>
         <p class="subtitle">The Soul's Return</p>
-        <p class="description">After the civil war comes the voyage home. The Odyssey is Homer's second esoteric masterwork — the soul's passage through illusion, temptation, and dissolution toward its final reintegration. The Cyclops, Circe, the Sirens, the Descent to Hades — decoded layer by layer, from the literal narrative to the Neoplatonic structures beneath. The second volume in the Homer Decoded series.</p>
+        <p class="description">
+          After the civil war comes the voyage home. The Odyssey is Homer's second esoteric
+          masterwork — the soul's passage through illusion, temptation, and dissolution toward
+          its final reintegration. The Cyclops, Circe, the Sirens, the Descent to Hades —
+          decoded layer by layer, from the literal narrative to the Neoplatonic structures
+          beneath. The second volume in the Homer Decoded series.
+        </p>
         <a class="btn-primary" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank">View on Amazon</a>
       </div>
+    </div>
+  </section>
+
+  <section class="coming-soon-banner">
+    <div class="coming-soon-card">
+      <span class="coming-soon-tag">Coming Soon</span>
+      <h3>Homer: The Odyssey Decoded</h3>
+      <p class="subtitle">The Soul's Return Journey</p>
+      <p>
+        After the civil war comes the voyage home. The Odyssey is the second great chapter
+        of Homer's esoteric masterwork — the soul's passage through illusion, temptation,
+        and dissolution toward its final reintegration. The sequel to <em>The Iliad Decoded</em>
+        is in preparation now.
+      </p>
     </div>
   </section>
 
@@ -372,12 +441,6 @@ body::before {
         <p>The War of Troy as the Architecture of the Soul.</p>
         <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
       </article>
-      <article class="book-card">
-        <img src="/assets/homer-odyssey.png" alt="Homer: The Odyssey Decoded">
-        <h4>Homer: The Odyssey Decoded</h4>
-        <p>The Soul's Return — the Wanderings, the Descent, the Homecoming, decoded.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank">View on Amazon</a>
-      </article>
     </div>
   </section>
 
@@ -389,29 +452,30 @@ body::before {
       </div>
       <p>Four books decoding Plato's most profound myths — the soul's journey from shadow to light.</p>
     </div>
-    <div class="book-grid">
+  <div class="book-grid">
       <article class="book-card">
-        <img src="/assets/cave-cover.jpg" alt="Plato's Allegory of the Cave">
-        <h4>Plato's Allegory of the Cave</h4>
-        <p>We live in shadow, mistaking reflections for reality. The Cave is Plato's master metaphor for awakening — and the price the philosopher pays for returning to those who refuse to see.</p>
-        <a class="btn" href="https://a.co/d/04YjtUK8" target="_blank">View on Amazon</a>
+        <img src="/assets/homer-iliad.jpg" alt="Homer: The Iliad Decoded">
+        <h4>Homer: The Iliad Decoded</h4>
+        <p>The War of Troy as the Architecture of the Soul.</p>
+        <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
-        <img src="/assets/chariot-cover.jpg" alt="Plato's Allegory of the Chariot">
-        <h4>Plato's Allegory of the Chariot</h4>
-        <p>The soul is a charioteer driving two winged horses — one noble, one wild. Plato's most precise map of the tripartite soul and its ascent toward the divine.</p>
-        <a class="btn" href="https://a.co/d/04fO26JI" target="_blank">View on Amazon</a>
+        <img src="/assets/homer-odyssey.png" alt="Homer: The Odyssey Decoded">
+        <h4>Homer: The Odyssey Decoded</h4>
+        <p>The Soul's Return — the Wanderings, the Descent, the Homecoming, decoded.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank">View on Amazon</a>
       </article>
+    </div>
       <article class="book-card">
         <img src="/assets/myth-of-er-cover.jpg" alt="Plato's The Myth of Er">
         <h4>Plato's The Myth of Er</h4>
-        <p>A soldier dies in battle, passes through the afterlife, and returns to tell humanity what awaits. The West's first recorded near-death experience.</p>
+        <p>A soldier dies in battle, passes through the afterlife, and returns to tell humanity what awaits. The West's first recorded near-death experience — and a blueprint for the soul's choices between lives.</p>
         <a class="btn" href="https://a.co/d/0cBwiyV3" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/plato-core-myths.jpg" alt="Plato: The Core Myths">
         <h4>Plato: The Core Myths</h4>
-        <p>Plato did not write philosophy — he encoded it in myth. This volume gathers and decodes his most essential mythological teachings.</p>
+        <p>Plato did not write philosophy — he encoded it in myth. This volume gathers and decodes his most essential mythological teachings, revealing the unified esoteric system beneath.</p>
         <a class="btn" href="https://a.co/d/01Dz7HrT" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -429,13 +493,13 @@ body::before {
       <article class="book-card">
         <img src="/assets/the-language-of-vec.jpg" alt="The Language of VEC">
         <h4>The Language of VEC</h4>
-        <p>Beneath the surface of everyday life runs a vibrational current that governs prosperity, energy, and flow. This book decodes its language and shows how to align with it.</p>
+        <p>Beneath the surface of everyday life runs a vibrational current that governs prosperity, energy, and flow. This book decodes its language and shows how to align with — rather than against — it.</p>
         <a class="btn" href="https://a.co/d/04HLEzJz" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/proxies.jpg" alt="The Language of VEC: The Titan Proxies">
         <h4>The Language of VEC: The Titan Proxies</h4>
-        <p>The Titans were not myths — they were forces. This sequel maps the ancient war for human energy still being fought invisibly today.</p>
+        <p>The Titans were not myths — they were forces. This sequel maps the ancient war for human energy still being fought invisibly today, and names the proxies that drain us without our knowledge.</p>
         <a class="btn" href="https://a.co/d/04AwjkGb" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -453,19 +517,19 @@ body::before {
       <article class="book-card">
         <img src="/assets/alexander-mystic.jpg" alt="Alexander the Great Mystic">
         <h4>Alexander the Great Mystic</h4>
-        <p>Alexander did not conquer the world for glory alone. Initiated into the deepest mystery schools of his age, he was enacting a cosmic programme.</p>
+        <p>Alexander did not conquer the world for glory alone. Initiated into the deepest mystery schools of his age, he was enacting a cosmic programme — the shadow of Zeus made manifest in history.</p>
         <a class="btn" href="https://a.co/d/070wbFDZ" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/leonidas.jpg" alt="Leonidas: The Mission">
         <h4>Leonidas: The Mission</h4>
-        <p>Three hundred men held the Gates of Fire not merely for Sparta — but for the preservation of a cosmic order. Thermopylae decoded as a sacred act.</p>
+        <p>Three hundred men held the Gates of Fire not merely for Sparta — but for the preservation of a cosmic order. The stand at Thermopylae decoded as a sacred act, a battle for harmonic balance itself.</p>
         <a class="btn" href="https://a.co/d/0bhuWqzq" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/salamis-cover.jpg" alt="Back to Salamis">
         <h4>Back to Salamis</h4>
-        <p>What would a modern man make of the battle that saved Western civilisation? Where past and present collapse into a single truth.</p>
+        <p>What would a modern man make of the battle that saved Western civilisation? A vivid crossing of time and consciousness — the battle of Salamis experienced from within, where past and present collapse into a single truth.</p>
         <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank">View on Amazon</a>
       </article>
     </div>
@@ -483,42 +547,30 @@ body::before {
       <article class="book-card">
         <img src="/assets/sacred-geography.jpg" alt="Sacred Geometry">
         <h4>Sacred Geometry</h4>
-        <p>The universe is written in number, ratio, and form. Sacred geometry is the operating code of creation, applied by every great civilisation that sought alignment with the divine order.</p>
+        <p>The universe is written in number, ratio, and form. Sacred geometry is not decoration — it is the operating code of creation, applied by every great civilisation that sought alignment with the divine order.</p>
         <a class="btn" href="https://a.co/d/0aPPMh0s" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/walking-sideways.jpg" alt="Walking Sideways">
         <h4>Walking Sideways</h4>
-        <p>Most people walk the river of order. Walking sideways means finding the parallel current where different laws apply and different outcomes become possible.</p>
+        <p>Most people walk the river of order — the current of consensus, expectation, and conditioned reality. Walking sideways means finding the parallel current where different laws apply and different outcomes become possible.</p>
         <a class="btn" href="https://a.co/d/02j3XUws" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/abundance-repracticed.jpeg" alt="Abundance Repracticed">
         <h4>Abundance Repracticed</h4>
-        <p>Abundance is not a destination — it is a practice. This book strips away the conditioning that blocks it and offers a clear framework for rediscovering what was always already yours.</p>
+        <p>Abundance is not a destination — it is a practice. This book strips away the conditioning that blocks it and offers a clear, principled framework for rediscovering what was always already yours.</p>
         <a class="btn" href="https://a.co/d/07cLfJzD" target="_blank">View on Amazon</a>
       </article>
       <article class="book-card">
         <img src="/assets/money-repracticed.jpg" alt="Money Repracticed">
         <h4>Money Repracticed</h4>
-        <p>Money is a frequency before it is a fact. This book rewrites the relationship between consciousness and currency.</p>
+        <p>Money is a frequency before it is a fact. This book rewrites the relationship between consciousness and currency — dissolving the hidden beliefs that keep prosperity at arm's length.</p>
         <a class="btn" href="https://a.co/d/0enTUKwV" target="_blank">View on Amazon</a>
       </article>
     </div>
   </section>
 
 </div>
-
-<footer class="site-footer">
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="books.html">Books</a></li>
-    <li><a href="homer-the-educator.html">Homer</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="vec.html">VEC Library</a></li>
-  </ul>
-  <p>© 2026 Anthony Vresland. All rights reserved.</p>
-</footer>
-
 </body>
 </html>
