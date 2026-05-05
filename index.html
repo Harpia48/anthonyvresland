@@ -117,6 +117,12 @@ nav a:hover {
   padding: 16px;
   border-radius: 12px;
   text-align: center;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
 .card img {
@@ -140,6 +146,36 @@ nav a:hover {
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.8rem;
+}
+
+/* EXPLORE CARDS */
+.explore-card {
+  display: block;
+  background: var(--panel);
+  padding: 26px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.25s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(247,164,0,0.3);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.explore-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.explore-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 /* FOOTER */
@@ -171,29 +207,21 @@ footer {
     the inner war, and the path of return.
   </p>
 </section>
+
+<!-- FEATURED -->
 <section class="section">
-<section class="section">
-  <h2 style="margin-bottom:20px;font-family:Cinzel;">Explore</h2>
+  <h2 style="margin-bottom:20px;font-family:Cinzel;">Featured Books</h2>
 
-  <div class="grid explore-grid">
+  <div class="grid">
 
-    <a href="books.html" class="explore-card">
-      <div class="explore-title">All Books</div>
-      <div class="explore-sub">The complete body of work</div>
-    </a>
-
-    <a href="about.html" class="explore-card">
-      <div class="explore-title">About</div>
-      <div class="explore-sub">The philosophy & the man</div>
-    </a>
-
-    <a href="music.html" class="explore-card">
-      <div class="explore-title">Music</div>
-      <div class="explore-sub">Sound as extension of thought</div>
-    </a>
-
-  </div>
-</section>
+    <div class="card">
+      <img src="/assets/homer-iliad.jpg">
+      <h3>The Iliad Decoded</h3>
+      <p style="color:var(--muted);font-size:0.9rem;">
+        The war of Troy as the architecture of the soul.
+      </p>
+      <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">Amazon</a>
+    </div>
 
     <div class="card">
       <img src="/assets/homer-odyssey.png">
@@ -207,11 +235,11 @@ footer {
   </div>
 </section>
 
+<!-- EXPLORE -->
 <section class="section">
- <section class="section">
   <h2 style="margin-bottom:20px;font-family:Cinzel;">Explore</h2>
 
-  <div class="grid explore-grid">
+  <div class="grid">
 
     <a href="books.html" class="explore-card">
       <div class="explore-title">All Books</div>
@@ -230,6 +258,7 @@ footer {
 
   </div>
 </section>
+
 <footer>
   © 2026 Anthony Vresland — All rights reserved
 </footer>
