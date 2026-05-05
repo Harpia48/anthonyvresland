@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Anthony Vresland — Decoding the ancient world. Homer, Plato, Alexander — revealing the hidden architecture of the soul.">
 <title>Anthony Vresland</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
@@ -15,253 +20,145 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-1J8YCYENMQ');
 </script>
-
-<style>
-:root {
-  --bg: #0b0f16;
-  --panel: #101725;
-  --text: #e5e7eb;
-  --muted: #8a97aa;
-  --accent: #f7a400;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Crimson Pro', serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* NAV */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 48px;
-  background: rgba(11,15,22,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.logo {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.12em;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 28px;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 0.9rem;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 120px 20px 80px;
-}
-
-.hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2.5rem,5vw,4rem);
-}
-
-.hero span {
-  color: var(--accent);
-}
-
-.hero p {
-  max-width: 700px;
-  margin: 25px auto 0;
-  color: var(--muted);
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
-
-/* SECTION */
-.section {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 24px;
-}
-
-/* CARDS */
-.card {
-  background: var(--panel);
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
-  transition: 0.25s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.card h3 {
-  font-family: 'Cinzel', serif;
-  margin: 12px 0;
-  font-size: 0.9rem;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: var(--accent);
-  color: black;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.8rem;
-}
-
-/* EXPLORE CARDS */
-.explore-card {
-  display: block;
-  background: var(--panel);
-  padding: 26px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.25s ease;
-}
-
-.explore-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(247,164,0,0.3);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-}
-
-.explore-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 8px;
-}
-
-.explore-sub {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-</style>
 </head>
 
 <body>
 
-<header>
-  <a href="index.html" class="logo">Anthony Vresland</a>
-  <nav>
+<header class="site-header" id="header">
+  <div class="container header-flex">
+    <a href="index.html" class="brand">
+      <span class="brand-text">Anthony Vresland</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="mystic.html">Mystic</a>
+      <a href="vec.html">VEC</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
     <a href="books.html">Books</a>
     <a href="about.html">About</a>
     <a href="music.html">Music</a>
+    <a href="mystic.html">Mystic</a>
+    <a href="vec.html">VEC</a>
   </nav>
 </header>
 
+<main>
+
 <section class="hero">
-  <h1>Anthony <span>Vresland</span></h1>
-  <p>
-    Decoding the ancient world — Homer, Plato, Alexander — revealing the hidden architecture of the soul,
-    the inner war, and the path of return.
-  </p>
-</section>
-
-<!-- FEATURED -->
-<section class="section">
-  <h2 style="margin-bottom:20px;font-family:Cinzel;">Featured Books</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="/assets/homer-iliad.jpg">
-      <h3>The Iliad Decoded</h3>
-      <p style="color:var(--muted);font-size:0.9rem;">
-        The war of Troy as the architecture of the soul.
-      </p>
-      <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank">Amazon</a>
-    </div>
-
-    <div class="card">
-      <img src="/assets/homer-odyssey.png">
-      <h3>The Odyssey Decoded</h3>
-      <p style="color:var(--muted);font-size:0.9rem;">
-        The soul’s return — the journey through illusion to home.
-      </p>
-      <a class="btn" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank">Amazon</a>
-    </div>
-
+  <div class="hero-orb"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <h1>Anthony <span class="accent">Vresland</span></h1>
+    <p class="hero-tagline">
+      Decoding the ancient world — Homer, Plato, Alexander — revealing the hidden architecture of the soul,
+      the inner war, and the path of return.
+    </p>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
   </div>
 </section>
 
-<!-- EXPLORE -->
-<section class="section">
-  <h2 style="margin-bottom:20px;font-family:Cinzel;">Explore</h2>
+<section class="section" id="books">
+  <div class="container">
+    <h2 style="margin-bottom:28px;font-family:Cinzel,serif;">Featured Books</h2>
+    <div class="grid grid-2">
 
-  <div class="grid">
+      <article class="card animate-on-scroll">
+        <img src="assets/homer-iliad.jpg" alt="The Iliad Decoded book cover" class="card-img" loading="lazy">
+        <div class="card-body">
+          <h3>The Iliad Decoded</h3>
+          <p style="color:var(--muted);font-size:0.9rem;">
+            The war of Troy as the architecture of the soul.
+          </p>
+          <a class="btn btn-primary btn-sm" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener">Amazon</a>
+        </div>
+      </article>
 
-    <a href="books.html" class="explore-card">
-      <div class="explore-title">All Books</div>
-      <div class="explore-sub">The complete body of work</div>
-    </a>
+      <article class="card animate-on-scroll stagger-1">
+        <img src="assets/homer-odyssey.png" alt="The Odyssey Decoded book cover" class="card-img" loading="lazy">
+        <div class="card-body">
+          <h3>The Odyssey Decoded</h3>
+          <p style="color:var(--muted);font-size:0.9rem;">
+            The soul's return — the journey through illusion to home.
+          </p>
+          <a class="btn btn-primary btn-sm" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">Amazon</a>
+        </div>
+      </article>
 
-    <a href="about.html" class="explore-card">
-      <div class="explore-title">About</div>
-      <div class="explore-sub">The philosophy & the man</div>
-    </a>
-
-    <a href="music.html" class="explore-card">
-      <div class="explore-title">Music</div>
-      <div class="explore-sub">Sound as extension of thought</div>
-    </a>
-
+    </div>
   </div>
 </section>
 
-<footer>
-  © 2026 Anthony Vresland — All rights reserved
+<section class="section" style="background: var(--bg-elevated);">
+  <div class="container">
+    <h2 style="margin-bottom:28px;font-family:Cinzel,serif;">Explore</h2>
+    <div class="explore-grid">
+
+      <a href="books.html" class="explore-card animate-on-scroll">
+        <div class="explore-title">All Books</div>
+        <div class="explore-sub">The complete body of work</div>
+      </a>
+
+      <a href="about.html" class="explore-card animate-on-scroll stagger-1">
+        <div class="explore-title">About</div>
+        <div class="explore-sub">The philosophy & the man</div>
+      </a>
+
+      <a href="music.html" class="explore-card animate-on-scroll stagger-2">
+        <div class="explore-title">Music</div>
+        <div class="explore-sub">Sound as extension of thought</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Anthony Vresland — All rights reserved</p>
+  </div>
 </footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
