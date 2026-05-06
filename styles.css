@@ -72,12 +72,12 @@ a:hover { color: #ffc94d; }
 }
 
 .section {
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .section-header h2 {
@@ -215,15 +215,15 @@ a:hover { color: #ffc94d; }
   color: var(--accent);
 }
 
-/* ===== HERO ===== */
+/* ===== HERO - COMPACT ===== */
 .hero {
   position: relative;
-  min-height: 60vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 24px 50px;
+  padding: 100px 24px 40px;
   overflow: hidden;
 }
 
@@ -247,11 +247,11 @@ a:hover { color: #ffc94d; }
 
 .hero-orb {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(247,164,0,0.05) 0%, transparent 70%);
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   filter: blur(60px);
@@ -272,7 +272,7 @@ a:hover { color: #ffc94d; }
 
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 3.5rem);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.15;
   font-weight: 700;
 }
@@ -282,11 +282,11 @@ a:hover { color: #ffc94d; }
 }
 
 .hero-tagline {
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
   color: var(--text-dim);
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.6;
   font-style: italic;
 }
 
@@ -501,11 +501,11 @@ a:hover { color: #ffc94d; }
   .grid-2 { grid-template-columns: 1fr; }
   .explore-grid { grid-template-columns: 1fr; }
   
-  .hero { min-height: auto; padding: 100px 20px 50px; }
+  .hero { padding: 90px 20px 30px; }
   .hero h1 { font-size: 2rem; }
   
-  .section { padding: 40px 0; }
-  .section-header { margin-bottom: 30px; }
+  .section { padding: 35px 0; }
+  .section-header { margin-bottom: 25px; }
   
   .card-img-wrap { max-height: 280px; }
   .card-img { max-height: 280px; }
@@ -528,4 +528,3 @@ a:hover { color: #ffc94d; }
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
-}
