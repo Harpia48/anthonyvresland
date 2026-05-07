@@ -83,7 +83,14 @@ gtag('config', 'G-1J8YCYENMQ');
         <div class="card-body">
           <h3>The Iliad Decoded</h3>
           <p>The war of Troy as the architecture of the soul.</p>
-          <a class="btn btn-primary btn-sm" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener">Amazon</a>
+          <div class="button-group">
+            <a class="btn btn-primary btn-sm" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener">
+              Unlock the Hidden Meaning →
+            </a>
+            <a class="btn btn-secondary btn-sm" href="#" onclick="openEmailModal('iliad'); return false;">
+              Read Chapter 1 Free
+            </a>
+          </div>
         </div>
       </article>
 
@@ -94,7 +101,14 @@ gtag('config', 'G-1J8YCYENMQ');
         <div class="card-body">
           <h3>The Odyssey Decoded</h3>
           <p>The soul's return — the journey through illusion to home.</p>
-          <a class="btn btn-primary btn-sm" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">Amazon</a>
+          <div class="button-group">
+            <a class="btn btn-primary btn-sm" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">
+              Begin the Return Journey →
+            </a>
+            <a class="btn btn-secondary btn-sm" href="#" onclick="openEmailModal('odyssey'); return false;">
+              Read Chapter 1 Free
+            </a>
+          </div>
         </div>
       </article>
 
@@ -136,6 +150,21 @@ gtag('config', 'G-1J8YCYENMQ');
   </div>
 </footer>
 
+<!-- Email Capture Modal -->
+<div id="emailModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeEmailModal()">&times;</span>
+    <h2>Get Your Free Chapter</h2>
+    <p id="modalBookTitle">Enter your email to receive the first chapter instantly.</p>
+    <form id="emailForm" class="email-form">
+      <input type="email" id="emailInput" placeholder="Your email address" required>
+      <input type="hidden" id="bookType" value="">
+      <button type="submit" class="btn btn-primary">Send Me the Chapter →</button>
+    </form>
+    <p class="modal-note">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
 <script>
 function toggleMenu() {
   const nav = document.getElementById('mobileNav');
@@ -156,6 +185,59 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Email Modal Functions
+function openEmailModal(bookType) {
+  const modal = document.getElementById('emailModal');
+  const bookTitle = document.getElementById('modalBookTitle');
+  const bookInput = document.getElementById('bookType');
+  
+  if (bookType === 'iliad') {
+    bookTitle.textContent = 'The Iliad Decoded — Chapter 1 Free';
+    bookInput.value = 'iliad';
+  } else if (bookType === 'odyssey') {
+    bookTitle.textContent = 'The Odyssey Decoded — Chapter 1 Free';
+    bookInput.value = 'odyssey';
+  }
+  
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEmailModal() {
+  const modal = document.getElementById('emailModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('emailModal');
+  if (event.target === modal) {
+    closeEmailModal();
+  }
+}
+
+// Handle form submission
+document.getElementById('emailForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('emailInput').value;
+  const bookType = document.getElementById('bookType').value;
+  
+  // TODO: Connect to your email service (ConvertKit, Mailchimp, etc.)
+  // For now, just show success message
+  alert(`Thank you! Your free chapter will be sent to ${email}. (Email integration coming soon)`);
+  closeEmailModal();
+  
+  // Track conversion in Google Analytics
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'email_capture', {
+      'event_category': 'engagement',
+      'event_label': bookType,
+      'value': 1
+    });
+  }
+});
 </script>
 
 </body>
