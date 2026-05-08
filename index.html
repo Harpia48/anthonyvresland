@@ -20,6 +20,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-1J8YCYENMQ');
 </script>
+
+<!-- ConvertKit -->
+<script async data-uid="ca8cf4363e" src="https://anthony-vresland.kit.com/ca8cf4363e/index.js"></script>
 </head>
 
 <body>
@@ -150,17 +153,16 @@ gtag('config', 'G-1J8YCYENMQ');
   </div>
 </footer>
 
-<!-- Email Capture Modal -->
+<!-- Email Capture Modal (ConvertKit) -->
 <div id="emailModal" class="modal">
   <div class="modal-content">
     <span class="modal-close" onclick="closeEmailModal()">&times;</span>
     <h2>Get Your Free Chapter</h2>
     <p id="modalBookTitle">Enter your email to receive the first chapter instantly.</p>
-    <form id="emailForm" class="email-form">
-      <input type="email" id="emailInput" placeholder="Your email address" required>
-      <input type="hidden" id="bookType" value="">
-      <button type="submit" class="btn btn-primary">Send Me the Chapter →</button>
-    </form>
+    
+    <!-- ConvertKit Form -->
+    <div data-ck-form="ca8cf4363e"></div>
+    
     <p class="modal-note">No spam. Unsubscribe anytime.</p>
   </div>
 </div>
@@ -190,14 +192,11 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(e
 function openEmailModal(bookType) {
   const modal = document.getElementById('emailModal');
   const bookTitle = document.getElementById('modalBookTitle');
-  const bookInput = document.getElementById('bookType');
   
   if (bookType === 'iliad') {
     bookTitle.textContent = 'The Iliad Decoded — Chapter 1 Free';
-    bookInput.value = 'iliad';
   } else if (bookType === 'odyssey') {
     bookTitle.textContent = 'The Odyssey Decoded — Chapter 1 Free';
-    bookInput.value = 'odyssey';
   }
   
   modal.style.display = 'flex';
@@ -217,27 +216,6 @@ window.onclick = function(event) {
     closeEmailModal();
   }
 }
-
-// Handle form submission
-document.getElementById('emailForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('emailInput').value;
-  const bookType = document.getElementById('bookType').value;
-  
-  // TODO: Connect to your email service (ConvertKit, Mailchimp, etc.)
-  // For now, just show success message
-  alert(`Thank you! Your free chapter will be sent to ${email}. (Email integration coming soon)`);
-  closeEmailModal();
-  
-  // Track conversion in Google Analytics
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'email_capture', {
-      'event_category': 'engagement',
-      'event_label': bookType,
-      'value': 1
-    });
-  }
-});
 </script>
 
 </body>
