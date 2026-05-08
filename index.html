@@ -20,9 +20,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-1J8YCYENMQ');
 </script>
-
-<!-- ConvertKit -->
-<script async data-uid="ca8cf4363e" src="https://anthony-vresland.kit.com/ca8cf4363e/index.js"></script>
 </head>
 
 <body>
@@ -79,6 +76,7 @@ gtag('config', 'G-1J8YCYENMQ');
     </div>
     <div class="grid grid-2">
 
+      <!-- The Iliad Decoded -->
       <article class="card animate-on-scroll">
         <div class="card-img-wrap">
           <img src="assets/homer-iliad.jpg" alt="The Iliad Decoded book cover" class="card-img" loading="lazy">
@@ -90,13 +88,14 @@ gtag('config', 'G-1J8YCYENMQ');
             <a class="btn btn-primary btn-sm" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener">
               Unlock the Hidden Meaning →
             </a>
-            <a class="btn btn-secondary btn-sm" href="#" onclick="openEmailModal('iliad'); return false;">
+            <a class="btn btn-secondary btn-sm" href="https://drive.google.com/file/d/1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9/view?usp=sharing" target="_blank">
               Read Chapter 1 Free
             </a>
           </div>
         </div>
       </article>
 
+      <!-- The Odyssey Decoded -->
       <article class="card animate-on-scroll stagger-1">
         <div class="card-img-wrap">
           <img src="assets/homer-odyssey.png" alt="The Odyssey Decoded book cover" class="card-img" loading="lazy">
@@ -108,7 +107,7 @@ gtag('config', 'G-1J8YCYENMQ');
             <a class="btn btn-primary btn-sm" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">
               Begin the Return Journey →
             </a>
-            <a class="btn btn-secondary btn-sm" href="#" onclick="openEmailModal('odyssey'); return false;">
+            <a class="btn btn-secondary btn-sm" href="https://drive.google.com/file/d/1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9/view?usp=sharing" target="_blank">
               Read Chapter 1 Free
             </a>
           </div>
@@ -153,19 +152,6 @@ gtag('config', 'G-1J8YCYENMQ');
   </div>
 </footer>
 
-<!-- Email Capture Modal (ConvertKit) -->
-<div id="emailModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeEmailModal()">&times;</span>
-    <h2>Get Your Free Chapter</h2>
-    <p id="modalBookTitle">Enter your email to receive the first chapter instantly.</p>
-    <!-- ConvertKit Form -->
-    https://drive.google.com/open?id=1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9&usp=drive_fs
-    
-    <p class="modal-note">No spam. Unsubscribe anytime.</p>
-  </div>
-</div>
-
 <script>
 function toggleMenu() {
   const nav = document.getElementById('mobileNav');
@@ -186,35 +172,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
-// Email Modal Functions
-function openEmailModal(bookType) {
-  const modal = document.getElementById('emailModal');
-  const bookTitle = document.getElementById('modalBookTitle');
-  
-  if (bookType === 'iliad') {
-    bookTitle.textContent = 'The Iliad Decoded — Chapter 1 Free';
-  } else if (bookType === 'odyssey') {
-    bookTitle.textContent = 'The Odyssey Decoded — Chapter 1 Free';
-  }
-  
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeEmailModal() {
-  const modal = document.getElementById('emailModal');
-  modal.style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById('emailModal');
-  if (event.target === modal) {
-    closeEmailModal();
-  }
-}
 </script>
 
 </body>
