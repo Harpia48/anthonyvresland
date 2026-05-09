@@ -76,7 +76,6 @@ gtag('config', 'G-1J8YCYENMQ');
     </div>
     <div class="grid grid-2">
 
-      <!-- The Iliad Decoded -->
       <article class="card animate-on-scroll">
         <div class="card-img-wrap">
           <img src="assets/homer-iliad.jpg" alt="The Iliad Decoded book cover" class="card-img" loading="lazy">
@@ -84,18 +83,10 @@ gtag('config', 'G-1J8YCYENMQ');
         <div class="card-body">
           <h3>The Iliad Decoded</h3>
           <p>The war of Troy as the architecture of the soul.</p>
-          <div class="button-group">
-            <a class="btn btn-primary btn-sm" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener">
-              Unlock the Hidden Meaning →
-            </a>
-            <a class="btn btn-secondary btn-sm" href="https://drive.google.com/file/d/1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9/view?usp=sharing" target="_blank">
-              Read a Chapter for Free
-            </a>
-          </div>
+          <a class="btn btn-primary btn-sm" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener">Amazon</a>
         </div>
       </article>
 
-      <!-- The Odyssey Decoded -->
       <article class="card animate-on-scroll stagger-1">
         <div class="card-img-wrap">
           <img src="assets/homer-odyssey.png" alt="The Odyssey Decoded book cover" class="card-img" loading="lazy">
@@ -103,14 +94,7 @@ gtag('config', 'G-1J8YCYENMQ');
         <div class="card-body">
           <h3>The Odyssey Decoded</h3>
           <p>The soul's return — the journey through illusion to home.</p>
-          <div class="button-group">
-            <a class="btn btn-primary btn-sm" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">
-              Begin the Return Journey →
-            </a>
-            <a class="btn btn-secondary btn-sm" href="https://drive.google.com/file/d/1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9/view?usp=sharing" target="_blank">
-              Read a Chapter for Free
-            </a>
-          </div>
+          <a class="btn btn-primary btn-sm" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">Amazon</a>
         </div>
       </article>
 
@@ -148,23 +132,31 @@ gtag('config', 'G-1J8YCYENMQ');
 
 <footer class="site-footer">
   <div class="container">
-    
-    <!-- Social & Contact Links -->
-    <div class="footer-links">
-      <a href="mailto:anthonyvresland@gmail.com" class="footer-link">
-        Email Me
-      </a>
-      <span class="separator">|</span>
-      <a href="https://youtube.com/@AnthonyVresland" target="_blank" rel="noopener" class="footer-link">
-        YouTube Channel
-      </a>
-      <span class="separator">|</span>
-      <a href="https://www.amazon.com/stores/author/B08XYZ..." target="_blank" rel="noopener" class="footer-link">
-        Amazon Author Page
-      </a>
-    </div>
-
-    <!-- Copyright -->
-    <p class="copyright">© 2026 Anthony Vresland — All rights reserved</p>
+    <p>© 2026 Anthony Vresland — All rights reserved</p>
   </div>
 </footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
