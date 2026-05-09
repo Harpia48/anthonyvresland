@@ -607,4 +607,46 @@ h1, h2, h3, h4, h5, h6 {
   .explore-title {
     font-size: 1.5rem;
   }
+}/* Footer Links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.separator {
+  color: var(--border);
+  font-size: 0.8rem;
+}
+
+.copyright {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Mobile adjustment for footer */
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .separator {
+    display: none;
+  }
 }
