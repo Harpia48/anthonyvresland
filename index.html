@@ -148,31 +148,23 @@ gtag('config', 'G-1J8YCYENMQ');
 
 <footer class="site-footer">
   <div class="container">
-    <p>© 2026 Anthony Vresland — All rights reserved</p>
+    
+    <!-- Social & Contact Links -->
+    <div class="footer-links">
+      <a href="mailto:anthonyvresland@gmail.com" class="footer-link">
+        Email Me
+      </a>
+      <span class="separator">|</span>
+      <a href="https://youtube.com/@AnthonyVresland" target="_blank" rel="noopener" class="footer-link">
+        YouTube Channel
+      </a>
+      <span class="separator">|</span>
+      <a href="https://www.amazon.com/stores/author/B08XYZ..." target="_blank" rel="noopener" class="footer-link">
+        Amazon Author Page
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="copyright">© 2026 Anthony Vresland — All rights reserved</p>
   </div>
 </footer>
-
-<script>
-function toggleMenu() {
-  const nav = document.getElementById('mobileNav');
-  const btn = document.querySelector('.mobile-menu-btn');
-  const isOpen = nav.classList.toggle('open');
-  btn.setAttribute('aria-expanded', isOpen);
-}
-
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
