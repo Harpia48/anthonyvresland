@@ -492,4 +492,57 @@ h1, h2, h3, h4, h5, h6 {
   .explore-title {
     font-size: 1.5rem;
   }
+}/* === ADD THIS AT THE END OF YOUR styles.css === */
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+}
+
+/* Footer Contact */
+.footer-contact {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.separator {
+  margin: 0 8px;
+  color: var(--border);
+}
+
+/* Mobile adjustment for button group */
+@media (max-width: 640px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button-group .btn {
+    width: 100%;
+  }
 }
