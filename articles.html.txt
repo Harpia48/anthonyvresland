@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Mystic Library | Anthony Vresland</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#0b0f16;
+  --text:#e5e7eb;
+  --muted:#8a97aa;
+  --accent:#f7a400;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Crimson Pro',serif;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  color:white;
+  text-decoration:none;
+  font-family:'Cinzel',serif;
+  letter-spacing:.15em;
+}
+
+nav{
+  display:flex;
+  gap:24px;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+}
+
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1{
+  font-family:'Cinzel',serif;
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:1.2rem;
+  line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="logo">Anthony Vresland</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="books.html">Books</a>
+<a href="about.html">About</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<h1>The Mystic Library</h1>
+
+<p>
+A collection of essays exploring Homer, Plato,
+Sacred Geometry, VEC and the hidden architecture of myth.
+</p>
+
+</section>
+
+</body>
+</html>
