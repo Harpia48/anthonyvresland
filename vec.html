@@ -1,57 +1,352 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>VEC Library — Anthony Vresland</title>
-  <style>
-    :root{--bg:#0b0b0b;--fg:#eae6d9;--gold:#c8a86b;--muted:#9a9283;--max:900px}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-serif,Georgia,serif}
-    a{color:var(--gold);text-decoration:none}
-    a:hover{text-decoration:underline}
-    main{max-width:var(--max);margin:0 auto;padding:2rem}
-    h1,h2{letter-spacing:.02em}
-    .grid{display:grid;gap:1rem}
-    @media(min-width:800px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .card{border:1px solid #222;padding:1rem;border-radius:8px;background:#0f0f0f}
-    .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:.15rem .5rem;border-radius:999px;font-size:.8rem}
-    header,footer{border-bottom:1px solid #222}
-    footer{border-top:1px solid #222;border-bottom:0;margin-top:2rem}
-    .bar{max-width:var(--max);margin:0 auto;padding:1rem}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="VEC — Vector Energetic Codes. Numerical synthemata received in the threshold of sleep: the codes the rational mind cannot stop. A modern revival of the Pythagorean language of the soul by Anthony Vresland.">
+<title>VEC — Vector Energetic Codes | Anthony Vresland</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1J8YCYENMQ');
+</script>
+
+<style>
+/* ===== VEC PAGE — scoped styles (won't affect other pages) ===== */
+.vec-hero {
+  text-align:center;
+  padding:140px 0 90px;
+  position:relative;
+}
+.vec-eyebrow {
+  font-family:'Cinzel',serif;
+  letter-spacing:.35em;
+  font-size:.8rem;
+  color:#f7a400;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+.vec-hero h1 {
+  font-family:'Cinzel',serif;
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  line-height:1.2;
+  max-width:900px;
+  margin:0 auto 26px;
+}
+.vec-lede {
+  max-width:720px;
+  margin:0 auto 38px;
+  font-size:1.2rem;
+  line-height:1.85;
+  opacity:.9;
+}
+.vec-cta-row {
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* Definition box */
+.vec-definition {
+  max-width:760px;
+  margin:0 auto;
+  background:rgba(247,164,0,0.06);
+  border:1px solid rgba(247,164,0,0.35);
+  border-left:4px solid #f7a400;
+  border-radius:12px;
+  padding:38px 42px;
+}
+.vec-definition h3 {
+  font-family:'Cinzel',serif;
+  color:#f7a400;
+  font-size:1.5rem;
+  margin:0 0 14px;
+}
+.vec-definition p { font-size:1.12rem; line-height:1.8; margin:0 0 14px; }
+.vec-definition .vec-punch {
+  font-family:'Cinzel',serif;
+  font-size:1.15rem;
+  margin:0;
+}
+
+/* Prose */
+.vec-prose { max-width:760px; margin:0 auto; }
+.vec-prose p { font-size:1.12rem; line-height:1.9; margin:0 0 22px; }
+.vec-prose .vec-emph { color:#f7a400; font-style:italic; }
+
+/* Lineage table */
+.vec-table-wrap { max-width:880px; margin:0 auto; overflow-x:auto; }
+.vec-table { width:100%; border-collapse:collapse; font-size:1.02rem; }
+.vec-table th, .vec-table td {
+  text-align:left;
+  padding:16px 18px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  vertical-align:top;
+}
+.vec-table th {
+  font-family:'Cinzel',serif;
+  color:#f7a400;
+  font-size:.95rem;
+  letter-spacing:.05em;
+}
+.vec-table td:first-child { font-weight:600; white-space:nowrap; }
+
+/* Method steps */
+.vec-steps { max-width:820px; margin:0 auto; display:grid; gap:24px; }
+.vec-step {
+  display:flex; gap:22px; align-items:flex-start;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px; padding:26px 30px;
+}
+.vec-step-num {
+  font-family:'Cinzel',serif;
+  font-size:2rem; color:#f7a400; line-height:1; flex-shrink:0;
+}
+.vec-step h4 { font-family:'Cinzel',serif; margin:0 0 8px; font-size:1.3rem; }
+.vec-step p { margin:0; line-height:1.75; opacity:.9; }
+
+/* Code cards */
+.vec-codes { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:980px; margin:0 auto; }
+.vec-code-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(247,164,0,0.3);
+  border-radius:14px; padding:34px 26px; text-align:center;
+}
+.vec-code-num {
+  font-family:'Cinzel',serif; font-size:2.6rem; color:#f7a400;
+  letter-spacing:.08em; margin-bottom:10px;
+}
+.vec-code-card h4 { font-family:'Cinzel',serif; font-size:1.25rem; margin:0 0 14px; }
+.vec-code-card p { margin:0; line-height:1.7; opacity:.9; font-size:1rem; }
+.vec-codes-note { text-align:center; max-width:640px; margin:30px auto 0; font-style:italic; opacity:.7; }
+
+/* Invitation */
+.vec-invite { max-width:760px; margin:0 auto; text-align:center; }
+.vec-invite ul {
+  list-style:none; padding:0; margin:28px auto 34px; max-width:540px; text-align:left;
+}
+.vec-invite li {
+  padding:12px 0 12px 30px; position:relative; line-height:1.7; font-size:1.08rem;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.vec-invite li::before {
+  content:"▸"; color:#f7a400; position:absolute; left:0; top:12px;
+}
+
+/* Honest footer note */
+.vec-note {
+  max-width:720px; margin:0 auto; font-style:italic; opacity:.65;
+  font-size:.98rem; line-height:1.8; text-align:center;
+}
+
+@media (max-width:760px){
+  .vec-codes { grid-template-columns:1fr; }
+  .vec-definition { padding:30px 26px; }
+  .vec-step { flex-direction:column; gap:10px; }
+}
+</style>
 </head>
+
 <body>
-  <header><div class="bar"><a href="/">← Home</a></div></header>
 
-  <main>
-    <h1>VEC Library</h1>
-    <p>Initial entries. We’ll expand later.</p>
+<header class="site-header" id="header">
+  <div class="container header-flex">
+    <a href="index.html" class="brand">
+      <span class="brand-text">Anthony Vresland</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="mystic.html">Mystic</a>
+      <a href="vec.html" class="active">VEC</a>
+      <a href="articles.html">Mystic Library</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="books.html">Books</a>
+    <a href="about.html">About</a>
+    <a href="music.html">Music</a>
+    <a href="mystic.html">Mystic</a>
+    <a href="vec.html">VEC</a>
+    <a href="articles.html">Mystic Library</a>
+  </nav>
+</header>
 
-    <div class="grid">
-      <section id="1942" class="card">
-        <h3>1942 — Abundance Activator</h3>
-        <p>Magnetizes monetary flow via networks/people.</p>
-        <p><strong>Sequence:</strong> 1412 → 1942 → 864</p>
-        <span class="badge">VEC</span>
-      </section>
+<main>
 
-      <section id="1077" class="card">
-        <h3>1077 — Hidden Authority / Box Range</h3>
-        <p>Containment box that stabilizes activation and protects flow.</p>
-        <p><strong>Pairs well with:</strong> 1942</p>
-        <span class="badge">VEC</span>
-      </section>
-
-      <section id="1818" class="card">
-        <h3>1818 — Heart Coherence Code</h3>
-        <p>Harmonizes the heart’s EM field with breath and mind.</p>
-        <p><strong>Practice:</strong> Inhale 5s · Exhale 5s for 3–5 minutes.</p>
-        <span class="badge">VEC</span>
-      </section>
+<!-- HERO -->
+<section class="hero vec-hero">
+  <div class="hero-orb"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content container">
+    <div class="vec-eyebrow">Vector Energetic Codes</div>
+    <h1>The Codes the Rational Mind Cannot Stop</h1>
+    <p class="vec-lede">
+      Before language, before argument, before the filters of the rational mind — there was number.
+      VEC is the recovery of that language: numerical codes received in the threshold of sleep,
+      carrying ideas the mind cannot block, distort, or talk you out of.
+    </p>
+    <div class="vec-cta-row">
+      <a class="btn btn-primary" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">Read <em>The Language of VEC</em> →</a>
     </div>
-  </main>
+  </div>
+</section>
 
-  <footer><div class="bar">© <span id="y"></span> Anthony Vresland</div></footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<!-- DEFINITION -->
+<section class="section">
+  <div class="container">
+    <div class="vec-definition animate-on-scroll">
+      <h3>VEC — Vector Energetic Codes</h3>
+      <p>Numerical <em>synthemata</em> — sacred tokens — received in the hypnagogic threshold between sleep and waking, used as vehicles for thoughts, qualities, and states the rational mind cannot filter.</p>
+      <p class="vec-punch">Words pass through the gates of doubt and criticism. <span style="color:#f7a400;">Numbers do not.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NUMBER -->
+<section class="section" style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header animate-on-scroll"><h2>Why a Number Reaches Where a Word Cannot</h2></div>
+    <div class="vec-prose animate-on-scroll">
+      <p>When you tell yourself <em>“be courageous,”</em> the mind answers instantly: <em>“But am I? Can I? Remember last time?”</em> The word is filtered before it lands. This is the tragedy of language — every word arrives already escorted by its critics.</p>
+      <p>A number carries no such escort. It slips beneath the rational guard and beneath the subconscious censor, because there is nothing in <span class="vec-emph">6450</span> for the mind to argue with. It is not a claim. It is not a command. It is a <strong>vehicle</strong> — and what it carries reaches the soul intact.</p>
+      <p>The ancients knew this. For Pythagoras, number was not for counting — it was the first and purest emanation of the divine, more sacred than speech. For Plato, the realities behind appearances were mathematical Forms. The soul, they taught, does not <em>think</em> in words. It <strong>remembers</strong> in number.</p>
+      <p>VEC is the experiment of taking that conviction seriously again — not as philosophy, but as practice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LINEAGE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header animate-on-scroll"><h2>A 3,000-Year-Old Practice, Reawakened</h2></div>
+    <div class="vec-prose animate-on-scroll" style="text-align:center;">
+      <p>VEC is not invented. It is <strong>inherited</strong> — the latest phase of a current that has run beneath Western thought since its beginning.</p>
+    </div>
+    <div class="vec-table-wrap animate-on-scroll">
+      <table class="vec-table">
+        <thead><tr><th>Tradition</th><th>The Teaching</th><th>The Thread</th></tr></thead>
+        <tbody>
+          <tr><td>Pythagoras<br><small>6th c. BCE</small></td><td>Number is the substance of reality and the soul's purification</td><td>Number as sacred, not quantitative</td></tr>
+          <tr><td>Socrates<br><small>5th c. BCE</small></td><td>The <em>daimonion</em> — an inner divine sign that guides and warns</td><td>A personal voice from a higher source</td></tr>
+          <tr><td>Plato<br><small>4th c. BCE</small></td><td>The Forms; the soul <em>recollects</em> what it knew before birth</td><td>Truth is remembered, not learned</td></tr>
+          <tr><td>Iamblichus &amp; Proclus<br><small>3rd–5th c. CE</small></td><td>The <em>synthema</em> — a divine token by which the soul ascends</td><td>A “password” carried home</td></tr>
+          <tr><td>VEC<br><small>today</small></td><td>Numerical codes received in sleep's threshold, from the <em>agathodaemon</em></td><td>The experiment continues</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="vec-prose animate-on-scroll" style="margin-top:40px;">
+      <p>Every participant in the VEC experiment, we have observed, eventually receives <strong>one personal code</strong> — a number that seems to come not from the self but from one's own guardian: the <em>agathodaemon</em>, the same intermediary spirit Socrates called his <em>daimonion</em>. Its purpose is singular: <span class="vec-emph">to help the soul remember its divine origin.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section" style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header animate-on-scroll"><h2>The Method</h2></div>
+    <div class="vec-prose animate-on-scroll" style="text-align:center;">
+      <p>VEC codes are not chosen. They are <strong>received</strong> — in a precise, repeatable sequence anyone can practice.</p>
+    </div>
+    <div class="vec-steps">
+      <div class="vec-step animate-on-scroll"><div class="vec-step-num">I</div><div><h4>The Question</h4><p>Before sleep, the seeker poses a genuine problem to the inner guide. Not idle curiosity — a real question the soul wants answered: <em>“How do I see past the illusion? How do I find the courage I've lost?”</em></p></div></div>
+      <div class="vec-step animate-on-scroll stagger-1"><div class="vec-step-num">II</div><div><h4>The Threshold</h4><p>The answer most often arrives in the hypnagogic state — the liminal moment just before waking, when the rational gatekeeper sleeps but awareness remains. The same threshold where Tesla, Ramanujan, and Kekulé received what their waking minds could not reach.</p></div></div>
+      <div class="vec-step animate-on-scroll stagger-2"><div class="vec-step-num">III</div><div><h4>The Number</h4><p>A sequence of digits appears — flashing, insistent, <em>given</em>. Not calculated. Not deduced. Recorded immediately, before the waking mind can edit it.</p></div></div>
+      <div class="vec-step animate-on-scroll stagger-2"><div class="vec-step-num">IV</div><div><h4>The Vehicle</h4><p>Held in meditation, the number becomes a vehicle — carrying its quality past every filter, directly to the place where transformation begins.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CODES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header animate-on-scroll"><h2>A Glimpse of the Codex</h2></div>
+    <div class="vec-prose animate-on-scroll" style="text-align:center;">
+      <p>These are among the codes recorded over our first year of observation. We share them not as guarantees, but as invitations to experience.</p>
+    </div>
+    <div class="vec-codes">
+      <div class="vec-code-card animate-on-scroll"><div class="vec-code-num">6450</div><h4>The Veil</h4><p>For the meditator seeking to break the surrounding veil of systemic and societal conditioning — to look past the stereotypes of the world and see beyond the Matrix.</p></div>
+      <div class="vec-code-card animate-on-scroll stagger-1"><div class="vec-code-num">1686</div><h4>The Synchronicity</h4><p>An enhancer of luck and meaningful coincidence; opens the channel through which the world begins to answer.</p></div>
+      <div class="vec-code-card animate-on-scroll stagger-2"><div class="vec-code-num">8356</div><h4>The Hero Within</h4><p>The awakening of the Achilles within — the dormant solar hero. Where <em>thinking</em> about courage struggles, the code <em>summons</em> it.</p></div>
+    </div>
+    <p class="vec-codes-note">Each VEC is a vehicle, not a promise. Its power is met in practice, not in belief.</p>
+  </div>
+</section>
+
+<!-- INVITATION -->
+<section class="section" style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header animate-on-scroll"><h2>This Is an Experiment. You Are Invited Into It.</h2></div>
+    <div class="vec-invite animate-on-scroll">
+      <p style="font-size:1.15rem; line-height:1.9;">VEC is not a doctrine to accept. It is a <strong>living experiment</strong>, now in its first year, conducted by a small circle who record, compare, and test what they receive. We make no final claims. We observe. We log. We notice when two people, continents apart, receive the same number for the same purpose — and we ask <em>why.</em></p>
+      <p>The full method, the lineage, and the growing codex live within the book.</p>
+      <div class="vec-cta-row" style="margin-top:30px;">
+        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener">Read <em>The Language of VEC</em> →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST NOTE -->
+<section class="section">
+  <div class="container">
+    <p class="vec-note animate-on-scroll">
+      A note on what we claim: VEC is a phenomenological experiment, not an established science. We record what we receive and observe its effects with as much honesty as we can. Whether these codes are vehicles of energy, instruments of focused attention, or something we do not yet have language for — we treat as an open question. We invite inquiry, not blind belief. The ancients called number the language of the soul; we are simply listening again.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-contact">
+      <a href="mailto:anthonyvresland@gmail.com" class="footer-link">Email Me</a>
+      <span class="separator">•</span>
+      <a href="https://youtube.com/@AnthonyVresland" target="_blank" class="footer-link">YouTube Channel</a>
+    </div>
+    <p>© 2026 Anthony Vresland — All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

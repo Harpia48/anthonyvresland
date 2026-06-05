@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The VEC Library — the growing codex of Vector Energetic Codes recorded by Anthony Vresland and the VEC circle. Numerical synthemata for the awakening soul.">
+<title>VEC Library — The Codex | Anthony Vresland</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1J8YCYENMQ');
+</script>
+
+<style>
+/* ===== VEC LIBRARY — scoped styles (matches vec.html) ===== */
+.vec-hero {
+  text-align:center;
+  padding:140px 0 70px;
+  position:relative;
+}
+.vec-eyebrow {
+  font-family:'Cinzel',serif;
+  letter-spacing:.35em;
+  font-size:.8rem;
+  color:#f7a400;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+.vec-hero h1 {
+  font-family:'Cinzel',serif;
+  font-size:clamp(2.1rem,5vw,3.2rem);
+  line-height:1.2;
+  max-width:820px;
+  margin:0 auto 22px;
+}
+.vec-lede {
+  max-width:680px;
+  margin:0 auto 12px;
+  font-size:1.15rem;
+  line-height:1.8;
+  opacity:.9;
+}
+
+/* Codex grid */
+.vec-codex {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:1000px;
+  margin:0 auto;
+}
+.vec-lib-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(247,164,0,0.3);
+  border-radius:14px;
+  padding:30px 26px;
+  text-align:center;
+  transition:transform .25s ease, border-color .25s ease;
+}
+.vec-lib-card:hover {
+  transform:translateY(-4px);
+  border-color:rgba(247,164,0,0.7);
+}
+.vec-lib-num {
+  font-family:'Cinzel',serif;
+  font-size:2.6rem;
+  color:#f7a400;
+  letter-spacing:.08em;
+  margin-bottom:8px;
+}
+.vec-lib-card h3 {
+  font-family:'Cinzel',serif;
+  font-size:1.2rem;
+  margin:0 0 14px;
+}
+.vec-lib-card p {
+  margin:0 0 12px;
+  line-height:1.7;
+  opacity:.9;
+  font-size:1rem;
+}
+.vec-lib-meta {
+  font-size:.95rem;
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:12px;
+  margin-top:14px !important;
+}
+.vec-lib-meta strong { color:#f7a400; }
+.vec-badge {
+  display:inline-block;
+  border:1px solid #f7a400;
+  color:#f7a400;
+  padding:.2rem .7rem;
+  border-radius:999px;
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  margin-top:8px;
+}
+.vec-lib-note {
+  text-align:center;
+  max-width:640px;
+  margin:40px auto 0;
+  font-style:italic;
+  opacity:.7;
+}
+
+@media (max-width:760px){
+  .vec-codex { grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header" id="header">
+  <div class="container header-flex">
+    <a href="index.html" class="brand">
+      <span class="brand-text">Anthony Vresland</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="mystic.html">Mystic</a>
+      <a href="vec.html">VEC</a>
+      <a href="articles.html">Mystic Library</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="books.html">Books</a>
+    <a href="about.html">About</a>
+    <a href="music.html">Music</a>
+    <a href="mystic.html">Mystic</a>
+    <a href="vec.html">VEC</a>
+    <a href="articles.html">Mystic Library</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero vec-hero">
+  <div class="hero-orb"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content container">
+    <div class="vec-eyebrow">The Codex</div>
+    <h1>The VEC Library</h1>
+    <p class="vec-lede">The growing record of Vector Energetic Codes received and observed by the VEC circle. Each is a vehicle — met in practice, not in belief.</p>
+    <p class="vec-lede" style="opacity:.65;font-size:1rem;">New to VEC? <a href="vec.html" style="color:#f7a400;">Begin here →</a></p>
+  </div>
+</section>
+
+<!-- CODEX -->
+<section class="section">
+  <div class="container">
+    <div class="vec-codex">
+
+      <section id="1942" class="vec-lib-card animate-on-scroll">
+        <div class="vec-lib-num">1942</div>
+        <h3>Abundance Activator</h3>
+        <p>Magnetizes monetary flow through networks and people.</p>
+        <p class="vec-lib-meta"><strong>Sequence:</strong> 1412 → 1942 → 864</p>
+        <span class="vec-badge">VEC</span>
+      </section>
+
+      <section id="1077" class="vec-lib-card animate-on-scroll stagger-1">
+        <div class="vec-lib-num">1077</div>
+        <h3>Hidden Authority / Box Range</h3>
+        <p>A containment box that stabilizes activation and protects flow.</p>
+        <p class="vec-lib-meta"><strong>Pairs well with:</strong> 1942</p>
+        <span class="vec-badge">VEC</span>
+      </section>
+
+      <section id="1818" class="vec-lib-card animate-on-scroll stagger-2">
+        <div class="vec-lib-num">1818</div>
+        <h3>Heart Coherence Code</h3>
+        <p>Harmonizes the heart's electromagnetic field with breath and mind.</p>
+        <p class="vec-lib-meta"><strong>Practice:</strong> Inhale 5s · Exhale 5s for 3–5 minutes.</p>
+        <span class="vec-badge">VEC</span>
+      </section>
+
+    </div>
+    <p class="vec-lib-note">Initial entries. The codex will expand as the experiment continues.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-contact">
+      <a href="mailto:anthonyvresland@gmail.com" class="footer-link">Email Me</a>
+      <span class="separator">•</span>
+      <a href="https://youtube.com/@AnthonyVresland" target="_blank" class="footer-link">YouTube Channel</a>
+    </div>
+    <p>© 2026 Anthony Vresland — All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
