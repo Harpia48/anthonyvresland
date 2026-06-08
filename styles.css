@@ -545,4 +545,15 @@ h1, h2, h3, h4, h5, h6 {
   .button-group .btn {
     width: 100%;
   }
+}/* Homepage Banner */
+
+.home-banner{
+    width:100%;
+    overflow:hidden;
+    background:#000;
+}
+
+.home-banner img{
+    width:100%;
+    display:block;
 }

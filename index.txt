@@ -57,10 +57,7 @@ gtag('config', 'G-1J8YCYENMQ');
 </header>
 
 <main>
-<section class="home-banner">
-    <img src="assets/hero.jpg"
-         alt="Anthony Vresland - Decoding the Hidden Wisdom of Ancient Greece">
-</section>
+
 <section class="hero">
   <div class="hero-orb"></div>
   <div class="hero-grain"></div>
