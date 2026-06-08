@@ -558,4 +558,34 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     display: block;
 }
+/* Hero Banner Styles */
+.hero-banner-wrapper {
+    width: 100%;
+    max-width: 1000px; /* Adjust this to match your site's width */
+    margin: 0 auto;    /* This centers the banner */
+    padding: 20px 0;   /* Adds a little space above and below */
+    text-align: center;
+}
 
+.hero-image {
+    width: 100%;       /* Makes image responsive */
+    height: auto;      /* Keeps aspect ratio */
+    display: block;    /* Removes bottom gap */
+    border-radius: 4px; /* Optional: slight rounded corners */
+/* Hero Banner Styles */
+.home-banner {
+    width: 100%;
+    max-width: 1000px; /* Matches the width of your other content */
+    margin: 40px auto; /* 'auto' on left/right centers it perfectly */
+    text-align: center;
+    padding: 0 20px; /* Adds breathing room on mobile phones */
+}
+
+.home-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Gives it nice smooth corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds a subtle shadow for depth */
+}
+}
