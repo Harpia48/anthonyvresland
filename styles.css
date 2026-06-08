@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 80vh; /* Reduced from 100vh to close the gap */
+  min-height: 40vh; /* Reduced from 100vh to close the gap */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,15 +545,17 @@ h1, h2, h3, h4, h5, h6 {
   .button-group .btn {
     width: 100%;
   }
-}/* Homepage Banner */
 
-.home-banner{
-    width:100%;
-    overflow:hidden;
-    background:#000;
+/* Homepage Banner */
+.home-banner {
+    width: 100%;
+    overflow: hidden;
+    background: #000;
 }
 
-.home-banner img{
-    width:100%;
-    display:block;
+.home-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
+
