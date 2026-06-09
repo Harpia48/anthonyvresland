@@ -553,10 +553,12 @@ h1, h2, h3, h4, h5, h6 {
     background: #000;
 }
 
-.home-banner img {
+.home-banner {
     width: 100%;
-    height: auto;
-    display: block;
+    max-width: 1000px;
+    margin: 115px auto 40px auto;
+    text-align: center;
+    padding: 0 20px;
 }
 /* Hero Banner Styles */
 .hero-banner-wrapper {
@@ -588,4 +590,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px; /* Gives it nice smooth corners */
     box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds a subtle shadow for depth */
 }
+.brand {
+    display: none !important;
 }
