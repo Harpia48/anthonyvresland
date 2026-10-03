@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Anthony Vresland | Author, Philosopher, Founder of Attention Coupling Academy</title>
 <meta name="description" content="Anthony Vresland — Author, philosopher, and architect decoding the hidden architecture of the ancient world from Athens, Greece. Founder of Attention Coupling Academy.">
-<link rel="canonical" href="https://anthonyvresland.com/about.html">
+<link rel="canonical" href="https://anthonyvresland.com/about">
 <meta property="og:title" content="About — Anthony Vresland">
 <meta property="og:description" content="Author, philosopher, and architect decoding the hidden architecture of the ancient world from Athens, Greece. Founder of Attention Coupling Academy.">
 <meta property="og:type" content="profile">
-<meta property="og:url" content="https://anthonyvresland.com/about.html">
+<meta property="og:url" content="https://anthonyvresland.com/about">
 <meta property="og:site_name" content="Anthony Vresland">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About — Anthony Vresland">
@@ -19,7 +19,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Anthony Vresland",
-  "url": "https://anthonyvresland.com/about.html",
+  "url": "https://anthonyvresland.com/about",
   "jobTitle": "Author, Philosopher, Architect",
   "description": "Anthony Vresland was trained as an architect and in the Fine Arts in New York. Now living in Athens, Greece, he writes about the hidden architecture of the ancient world.",
   "address": {
@@ -27,22 +27,27 @@
     "addressLocality": "Athens",
     "addressCountry": "GR"
   },
-  "founder": {
-    "@type": "Organization",
-    "name": "Attention Coupling Academy",
-    "url": "https://attentioncouplingacademy.com"
-  },
   "worksFor": {
     "@type": "Organization",
     "name": "Attention Coupling Academy",
-    "url": "https://attentioncouplingacademy.com"
+    "url": "https://attentioncouplingacademy.com",
+    "founder": {
+      "@id": "https://anthonyvresland.com/about#person"
+    }
   },
-  "knowsAbout": ["Homer", "Plato", "Alexander the Great", "Ancient Greek Philosophy", "Sacred Geometry", "VEC (Vector Energetic Codes)", "Attention Coupling Academy"],
+  "knowsAbout": [
+    "Homer",
+    "Plato",
+    "Alexander the Great",
+    "Ancient Greek Philosophy",
+    "Sacred Geometry",
+    "VEC (Vector Energetic Codes)",
+    "Attention Coupling Academy"
+  ],
   "sameAs": [
-    "https://youtube.com/@AnthonyCresland",
-    "https://anthonyvresland.com/books.html",
-    "https://attentioncouplingacademy.com"
-  ]
+    "https://youtube.com/@AnthonyCresland"
+  ],
+  "@id": "https://anthonyvresland.com/about#person"
 }
 </script>
 <script type="application/ld+json">
@@ -50,8 +55,22 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "item": {"@id": "https://anthonyvresland.com", "name": "Home"}},
-    {"@type": "ListItem", "position": 2, "item": {"@id": "https://anthonyvresland.com/about.html", "name": "About"}}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "https://anthonyvresland.com",
+        "name": "Home"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@id": "https://anthonyvresland.com/about",
+        "name": "About"
+      }
+    }
   ]
 }
 </script>
@@ -213,22 +232,24 @@ gtag('config', 'G-1J8YCYENMQ');
   }
 }
 </style>
+
+<link rel="icon" href="/assets/sigil-gold.png" type="image/png">
 </head>
 
 <body>
 
 <header class="site-header" id="header">
   <div class="container header-flex">
-    <a href="index.html" class="brand">
+    <a href="/" class="brand">
       <span class="brand-text">Anthony Vresland</span>
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="books.html">Books</a>
-      <a href="about.html" class="active">About</a>
-      <a href="music.html">Music</a>
-      <a href="mystic.html">Mystic</a>
-      <a href="vec.html">VEC</a>
+      <a href="/">Home</a>
+      <a href="/books">Books</a>
+      <a href="/about" class="active">About</a>
+      <a href="/music">Music</a>
+      <a href="/mystic">Mystic</a>
+      <a href="/vec">VEC</a>
     </nav>
     <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -239,12 +260,12 @@ gtag('config', 'G-1J8YCYENMQ');
     </button>
   </div>
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="about.html">About</a>
-    <a href="music.html">Music</a>
-    <a href="mystic.html">Mystic</a>
-    <a href="vec.html">VEC</a>
+    <a href="/">Home</a>
+    <a href="/books">Books</a>
+    <a href="/about">About</a>
+    <a href="/music">Music</a>
+    <a href="/mystic">Mystic</a>
+    <a href="/vec">VEC</a>
   </nav>
 </header>
 
