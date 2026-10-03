@@ -1,0 +1,4 @@
+# Cloudflare Pages handles clean URLs for existing HTML files automatically.
+/iliad-manual-for-the-soul /homer-the-educator 301
+/iliad-manual-for-the-soul.html /homer-the-educator 301
+/iliad-manual-for-the-soul/ /homer-the-educator 301
