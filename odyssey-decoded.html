@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  if (window.location.hostname === 'www.anthonyvresland.com') {
+    window.location.href = 'https://anthonyvresland.com' + window.location.pathname + window.location.search;
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Odyssey Decoded — The Soul's Return | Anthony Vresland</title>
+<meta name="description" content="The Odyssey is not merely a collection of adventures — it is a map of the soul's return. An inner reading of Homer's epic through desire, illusion and awakening.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://anthonyvresland.com/odyssey-decoded">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anthony Vresland">
+<meta property="og:title" content="The Odyssey Decoded — The Soul's Return">
+<meta property="og:description" content="A visible voyage across Homer's sea — and an inner journey through desire, illusion, identity, memory and awakening.">
+<meta property="og:url" content="https://anthonyvresland.com/odyssey-decoded">
+<meta property="og:image" content="https://anthonyvresland.com/assets/homer-odyssey.jpeg">
+<meta property="og:image:alt" content="The Odyssey Decoded — book cover">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Odyssey Decoded — The Soul's Return">
+<meta name="twitter:description" content="The Odyssey is not merely a collection of adventures — it is a map of the soul's return.">
+<meta name="twitter:image" content="https://anthonyvresland.com/assets/homer-odyssey.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="assets/homer-odyssey.jpeg" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1J8YCYENMQ');
+</script>
+
+<style>
+/* Page-specific styles — tokens mirror styles.css so the page inherits the site identity */
+:root {
+  --od-panel: #0e1524;
+}
+
+/* ── Hero ── */
+.od-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  overflow: hidden;
+}
+
+.od-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('assets/homer-odyssey.jpeg') center 30% / cover no-repeat;
+  filter: brightness(0.3) saturate(0.7);
+  transform: scale(1.04);
+  z-index: 0;
+}
+
+.od-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(245, 158, 11, 0.07) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(10, 14, 26, 0.25) 0%, rgba(10, 14, 26, 0.92) 78%, var(--bg-dark) 100%);
+  z-index: 1;
+}
+
+.od-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease both;
+}
+
+.od-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+}
+
+.od-hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8);
+}
+
+.od-hero-lead {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.8;
+  color: var(--text-primary);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.od-hero-lead em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.od-cta-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Hero prose (the two voyages) ── */
+.od-prose {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.od-label {
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2rem;
+}
+
+.od-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.od-prose p {
+  font-size: 1.18rem;
+  line-height: 2;
+  color: #c8d2de;
+  margin-bottom: 1.4rem;
+}
+
+.od-prose p:last-of-type { margin-bottom: 0; }
+
+.od-pull-quote {
+  border-left: 3px solid var(--accent);
+  padding: 1.4rem 1.8rem;
+  margin: 2.6rem 0 0;
+  background: rgba(245, 158, 11, 0.04);
+  border-radius: 0 12px 12px 0;
+}
+
+.od-pull-quote p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #e5e7eb;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Interpretation ── */
+.od-interpretation {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 0 3rem;
+}
+
+.od-interpretation .section-header p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-top: 1.4rem;
+  margin-bottom: 3rem;
+}
+
+.od-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.od-card {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.2rem 2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.od-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.od-card .od-num {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  color: var(--accent);
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.od-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.od-card .od-sub {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 1.1rem;
+}
+
+.od-card p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.od-note {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+
+/* ── Book callout ── */
+.od-book {
+  padding: 4rem 0;
+}
+
+.od-book-inner {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.od-book-inner img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.od-tag {
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 4px;
+  padding: 4px 12px;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.od-book-body h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.od-book-body .od-book-sub {
+  color: var(--accent);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.od-book-body p {
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  line-height: 1.85;
+  margin-bottom: 1.8rem;
+}
+
+.od-book-body .od-cta-row { justify-content: flex-start; }
+
+/* ── Author ── */
+.od-author {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0;
+}
+
+.od-author-inner {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.od-author-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.od-author-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.od-author-caption {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.od-author-caption .od-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.od-author-body h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.od-author-body .od-roles {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.od-quote-block {
+  background: var(--bg-dark);
+  border-left: 3px solid var(--accent);
+  padding: 1.5rem 1.8rem;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .od-book-inner,
+  .od-author-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .od-book-inner img { max-width: 230px; margin: 0 auto; }
+  .od-author-photo { max-width: 250px; margin: 0 auto; }
+  .od-quote-block { text-align: left; }
+  .od-grid { grid-template-columns: 1fr; }
+  .od-hero { padding: 7rem 1.5rem 4rem; }
+}
+
+@media (max-width: 640px) {
+  .od-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .od-cta-row .btn { width: 100%; }
+  .od-cta-row .btn:last-child { margin-right: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header" id="header">
+  <div class="container header-flex">
+      <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="mystic.html">Mystic</a>
+      <a href="vec.html">VEC</a>
+      <a href="articles.html">Mystic Library</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="books.html">Books</a>
+    <a href="about.html">About</a>
+    <a href="music.html">Music</a>
+    <a href="mystic.html">Mystic</a>
+    <a href="vec.html">VEC</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ── HERO ── -->
+<section class="od-hero">
+  <div class="od-hero-bg" aria-hidden="true"></div>
+  <div class="od-hero-overlay" aria-hidden="true"></div>
+  <div class="od-hero-content">
+    <p class="od-eyebrow">The Homer Decoded Series</p>
+    <h1>THE ODYSSEY DECODED</h1>
+    <p class="od-hero-lead">
+      The Odyssey is not merely a collection of adventures.<br>
+      <em>It is a map of the soul's return.</em>
+    </p>
+    <div class="od-cta-row">
+      <a class="btn btn-secondary"
+         href="https://drive.google.com/file/d/1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9/view?usp=sharing"
+         target="_blank"
+         data-cta="read-chapter-free" data-cta-placement="hero">
+        Read a Chapter Free
+      </a>
+      <a class="btn btn-secondary"
+         href="#interpretation"
+         data-cta="discover-interpretation" data-cta-placement="hero">
+        Discover the Interpretation
+      </a>
+      <a class="btn btn-primary"
+         href="https://www.amazon.com/dp/B0GYQ52SSW"
+         target="_blank" rel="noopener"
+         data-cta="buy-amazon" data-cta-placement="hero">
+        Buy on Amazon
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE TWO VOYAGES ── -->
+<section class="od-prose">
+  <p class="od-label">The Two Voyages</p>
+  <p>
+    Odysseus' journey can be read on two levels: the visible voyage across Homer's sea,
+    and an inner journey through desire, illusion, identity, memory and awakening.
+  </p>
+  <p>
+    The Cyclops, Circe, Calypso, the Sirens, the descent into Hades and finally Ithaca
+    become more than episodes in an ancient story. They become stages in the struggle of
+    consciousness to remember what it is&mdash;and where it belongs.
+  </p>
+  <div class="od-pull-quote">
+    <p>
+      What if Homer was describing not only a journey home,
+      but the conditions required for the soul to return to itself?
+    </p>
+  </div>
+</section>
+
+<!-- ── INTERPRETATION ── -->
+<section class="od-interpretation" id="interpretation">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2>The Interpretation</h2>
+      <p>Four stations of the return &mdash; read as stages of consciousness.</p>
+    </div>
+
+    <div class="od-grid">
+
+      <div class="od-card animate-on-scroll">
+        <span class="od-num">I</span>
+        <h3>The Cyclops</h3>
+        <span class="od-sub">The Single Eye</span>
+        <p>
+          The condition of consciousness trapped in appetite, immediacy and a single perspective.
+        </p>
+      </div>
+
+      <div class="od-card animate-on-scroll stagger-1">
+        <span class="od-num">II</span>
+        <h3>Circe</h3>
+        <span class="od-sub">Transformation and Forgetfulness</span>
+        <p>
+          The danger of forgetting one's nature and becoming absorbed by the conditions
+          of the material world.
+        </p>
+      </div>
+
+      <div class="od-card animate-on-scroll stagger-1">
+        <span class="od-num">III</span>
+        <h3>The Sirens</h3>
+        <span class="od-sub">The Capturing Voice</span>
+        <p>
+          Knowledge, desire and fascination can attract attention so completely that
+          the journey itself is forgotten.
+        </p>
+      </div>
+
+      <div class="od-card animate-on-scroll stagger-2">
+        <span class="od-num">IV</span>
+        <h3>Ithaca</h3>
+        <span class="od-sub">The Return</span>
+        <p>
+          Homecoming is not simply geographical. The traveller who returns is no longer
+          the consciousness that departed.
+        </p>
+      </div>
+
+    </div>
+
+    <p class="od-note">
+      These readings are offered as exploration and reflection &mdash; one interpretive
+      lens on the poem, not established Homeric scholarship.
+    </p>
+  </div>
+</section>
+
+<!-- ── THE BOOK ── -->
+<section class="od-book" id="the-book">
+  <div class="container">
+    <div class="od-book-inner animate-on-scroll">
+      <img src="assets/homer-odyssey.jpeg" alt="The Odyssey Decoded book cover" width="1600" height="2560" loading="lazy">
+      <div class="od-book-body">
+        <span class="od-tag">The Homer Decoded Series &middot; Now Available</span>
+        <h2>The Odyssey Decoded</h2>
+        <p class="od-book-sub">The soul's return &mdash; the journey through illusion to home.</p>
+        <p>
+          Begin with a free chapter, or begin the return journey today.
+          Layer by layer, the voyage across Homer's sea opens into the map it was always
+          carrying &mdash; the conditions required for the soul to come back to itself.
+        </p>
+        <div class="od-cta-row">
+          <a class="btn btn-secondary"
+             href="https://drive.google.com/file/d/1GeMmF2A8eluWeVp9MQrIaCoUFNHiyHH9/view?usp=sharing"
+             target="_blank"
+             data-cta="read-chapter-free" data-cta-placement="book-callout">
+            Read a Chapter Free
+          </a>
+          <a class="btn btn-primary"
+             href="https://www.amazon.com/dp/B0GYQ52SSW"
+             target="_blank" rel="noopener"
+             data-cta="buy-amazon" data-cta-placement="book-callout">
+            Buy on Amazon
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AUTHOR ── -->
+<section class="od-author" id="author">
+  <div class="container">
+    <div class="od-author-inner">
+      <div class="animate-on-scroll">
+        <div class="od-author-photo">
+          <img src="assets/author-photo.jpg" alt="Anthony Vresland" width="1500" height="2000" loading="lazy">
+        </div>
+        <div class="od-author-caption">
+          <div class="od-name">ANTHONY VRESLAND</div>
+        </div>
+      </div>
+      <div class="od-author-body animate-on-scroll stagger-1">
+        <h2>Anthony Vresland</h2>
+        <p class="od-roles">Homer &middot; Plato &middot; Consciousness &middot; The Ancient Greek Tradition</p>
+        <div class="od-quote-block">
+          "The ancient world did not leave us myths. It left us instructions &mdash; encoded
+          in the only language that could survive three thousand years intact: story."
+        </div>
+        <a class="btn btn-secondary btn-sm" href="about.html">More About Anthony &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-contact">
+      <a href="/cdn-cgi/l/email-protection#e68788928e89889f909483958a878882a6818b878f8ac885898b" class="footer-link">Email Me</a>
+      <span class="separator">•</span>
+      <a href="https://youtube.com/@AnthonyCresland" target="_blank" class="footer-link">YouTube Channel</a>
+      <span class="separator">•</span>
+      <a href="https://attentioncouplingacademy.com" target="_blank" class="footer-link">Attention Coupling Academy</a>
+    </div>
+    <p>© 2026 Anthony Vresland — All rights reserved</p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+/* ── CTA tracking (GA4) ──
+   Distinct event names so they appear in GA4 reports without extra configuration:
+   - odyssey_free_chapter_click
+   - odyssey_interpretation_click
+   - odyssey_amazon_click
+   Params: event_category = 'odyssey-decoded-landing', event_label = placement. */
+(function () {
+  var EVENT_NAME = {
+    'read-chapter-free': 'odyssey_free_chapter_click',
+    'discover-interpretation': 'odyssey_interpretation_click',
+    'buy-amazon': 'odyssey_amazon_click'
+  };
+  document.querySelectorAll('a[data-cta]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (typeof gtag !== 'function') return;
+      gtag('event', EVENT_NAME[a.getAttribute('data-cta')] || 'cta_click', {
+        event_category: 'odyssey-decoded-landing',
+        event_label: a.getAttribute('data-cta-placement') || '',
+        cta_text: (a.textContent || '').replace(/\s+/g, ' ').trim(),
+        link_url: a.href,
+        transport_type: 'beacon'
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
