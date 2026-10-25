@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/assets/book-pages.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J8YCYENMQ"></script>
@@ -39,7 +40,8 @@ gtag('config', 'G-1J8YCYENMQ');
 </script>
 </head>
 
-<body>
+<body class="publishing-home">
+<a class="publishing-skip" href="#main-content">Skip to content</a>
 
 <header class="site-header" id="header">
   <div class="container header-flex">
@@ -70,13 +72,24 @@ gtag('config', 'G-1J8YCYENMQ');
   </nav>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
 <h1 style="text-align:center; margin:120px 20px 0;">Anthony Vresland</h1>
 
 <!-- HERO BANNER - ONLY ONE INSTANCE -->
 <section style="width: 100%; max-width: 1000px; margin: 40px auto; text-align: center; padding: 0 20px;">
     <img src="assets/hero.jpg" alt="Anthony Vresland - Ancient Greece Wisdom" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
 </section>
+
+<!-- publishing:feature:start -->
+<section class="publishing-feature" aria-labelledby="featured-plato-title">
+  <div class="publishing-container"><div class="publishing-feature-inner">
+    <img src="/assets/cave-cover.jpg" alt="Plato&#x27;s Allegory of the Cave — book cover" width="625" height="1000" loading="lazy">
+    <div><p class="publishing-eyebrow">Featured book</p><h2 id="featured-plato-title">Plato&#x27;s Allegory of the Cave</h2><p class="publishing-lead">The awakening from illusion.</p>
+      <div class="publishing-actions"><a class="publishing-button publishing-button-primary" href="/platos-cave">Explore the book</a><a class="publishing-button publishing-button-secondary" href="https://a.co/d/04YjtUK8" target="_blank" rel="noopener noreferrer">Buy on Amazon <span class="publishing-new-tab">(opens in a new tab)</span></a></div>
+    </div>
+  </div></div>
+</section>
+<!-- publishing:feature:end -->
 
 <!-- FEATURED BOOKS SECTION -->
 <section class="section" id="books">

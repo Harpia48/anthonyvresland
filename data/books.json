@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "siteUrl": "https://anthonyvresland.com",
+  "author": {
+    "name": "Anthony Vresland",
+    "roles": "Author · Philosopher · Architect",
+    "aboutPath": "/about"
+  },
+  "featuredBook": "platos-cave",
+  "books": [
+    {
+      "id": "platos-cave",
+      "title": "Plato's Allegory of the Cave",
+      "description": "The awakening from illusion.",
+      "cover": "/assets/cave-cover.jpg",
+      "coverWidth": 625,
+      "coverHeight": 1000,
+      "amazonUrl": "https://a.co/d/04YjtUK8",
+      "catalogueAnchor": "platos-cave",
+      "landingSlug": "platos-cave",
+      "related": [
+        "platos-chariot",
+        "platos-myth-of-er",
+        "plato-core-myths"
+      ],
+      "sources": [
+        "books.html: first Plato catalogue card",
+        "assets/cave-cover.jpg: existing artwork"
+      ],
+      "relatedHeading": "Continue with Plato"
+    },
+    {
+      "id": "platos-chariot",
+      "title": "Plato's Allegory of the Chariot",
+      "description": "The structure of the soul.",
+      "cover": "/assets/chariot-cover.jpg",
+      "amazonUrl": "https://a.co/d/04fO26JI",
+      "catalogueAnchor": "platos-chariot",
+      "sources": [
+        "books.html: existing Chariot catalogue card"
+      ]
+    },
+    {
+      "id": "platos-myth-of-er",
+      "title": "Plato's Myth of Er",
+      "description": "A journey through the afterlife and back.",
+      "cover": "/assets/myth-of-er-cover.jpg",
+      "amazonUrl": "https://a.co/d/0cBwiyV3",
+      "catalogueAnchor": "platos-myth-of-er",
+      "sources": [
+        "books.html: existing Myth of Er catalogue card"
+      ]
+    },
+    {
+      "id": "plato-core-myths",
+      "title": "Plato: The Core Myths",
+      "description": "The complete symbolic system of Plato.",
+      "cover": "/assets/plato-core-myths.jpg",
+      "amazonUrl": "https://a.co/d/01Dz7HrT",
+      "catalogueAnchor": "plato-core-myths",
+      "sources": [
+        "books.html: existing Core Myths catalogue card"
+      ]
+    }
+  ]
+}
