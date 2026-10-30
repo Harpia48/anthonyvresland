@@ -1,6 +1,8 @@
 /* Publishing prototype: scoped additions; existing Odyssey and shared styles are unchanged. */
 .publishing-skip { position:fixed; left:1rem; top:1rem; z-index:2000; padding:.8rem 1.1rem; background:#f59e0b; color:#0a0e1a; transform:translateY(-180%); font-weight:700; }
 .publishing-skip:focus { transform:translateY(0); }
+/* Keep the homepage readable before JavaScript runs and when it fails. */
+.publishing-home .animate-on-scroll { opacity:1; transform:none; }
 .book-page { overflow-x:visible; }
 .publishing-container { width:min(1120px, calc(100% - 4rem)); margin-inline:auto; }
 .publishing-header { border-bottom:1px solid #303541; background:#0a0e1a; }
@@ -86,6 +88,6 @@
   .publishing-actions .publishing-button { width:100%; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .book-page { scroll-behavior:auto; }
+  html { scroll-behavior:auto; }
   .book-page *, .publishing-feature * { animation:none !important; transition:none !important; }
 }

@@ -20,6 +20,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Respect motion preferences without removing content or hover/focus feedback. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html .animate-on-scroll,
+  html .animate-on-scroll.visible { opacity: 1; transform: none; transition: none; }
+  html .hero h1, html .hero-tagline { animation: none; }
+  html .site-header, html .card, html .card-img, html .btn, html .btn-primary::after,
+  html .explore-card, html .desktop-nav a, html .desktop-nav a::after,
+  html .footer-link { transition: none; }
+  html .card:hover, html .card:hover .card-img, html .btn:hover,
+  html .explore-card:hover { transform: none; }
+  html .btn-primary::after { display: none; }
+}
+
 body {
   font-family: var(--font-body);
   background: var(--bg-dark);

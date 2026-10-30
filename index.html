@@ -69,6 +69,7 @@ gtag('config', 'G-1J8YCYENMQ');
     <a href="/music">Music</a>
     <a href="/mystic">Mystic</a>
     <a href="/vec">VEC</a>
+    <a href="/articles">Mystic Library</a>
   </nav>
 </header>
 
@@ -212,13 +213,7 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+// Homepage content is visible by default, including when scripts are unavailable.
 </script>
 
 </body>
