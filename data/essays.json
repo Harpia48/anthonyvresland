@@ -1,0 +1,36 @@
+{
+  "articles": [
+    {
+      "labels": [],
+      "categories": [],
+      "isNews": false,
+      "major": false,
+      "title": "Kollyva: The Offering at the Gates of Hades",
+      "url": "https://fatlots.blogspot.com/2026/11/kollyva-offering-at-gates-of-hades-from.html",
+      "published": "2026-11-02T23:27:14.329-08:00",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNYL-F7LD3KWAYJN2xsUrOqjjGz1dB3yKasENd7Cii_W8D80rnEsaUgv7rnmydZ0SAsdETijPKKxDyBpY6KiPMUB8vezJ1K_yICK38cE_pzz9Kd5yB6WgrZEcki_tWjTOlzrJhCKL7SiM0ylZLvZaaY9CosHNmOrOKo0k4IQy7vlr2A0YKKzJBFmmt9XAJ/s1600/image.png",
+      "alt": "Illustration accompanying “Kollyva: The Offering at the Gates of Hades”",
+      "subtitle": "From Cerberus and Charon to the Ancient Greek Mystery of Remembrance.",
+      "description": "An offering of wheat, an act of remembrance: tracing the ancient Greek mysteries behind a living tradition.",
+      "titleSource": "content-block",
+      "isKollyva": true
+    },
+    {
+      "labels": [],
+      "categories": [],
+      "isNews": false,
+      "major": false,
+      "title": "The Day Achilles Remembered He Was Human",
+      "url": "https://fatlots.blogspot.com/2026/11/the-day-achilles-remembered-he-was-human.html",
+      "published": "2026-11-01T08:09:20.291-08:00",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4Qe13ODmzzDvSg_En8Sos09nGWtevctqvOizbBjBTorlqO-rZ9j6E1tI9iVZQFI5AULYPjvEm4pq_NC5pG9vd2gJUU1sZpyy9aohIQcRSWCfI_1MhzUFx-lbnLEi_4L1D5qCdU-jIzgg3XipbQjoi524-KVt57egDc_qaHCWENZRQEQtOvKbHwSgDp8z4/w502-h334/image.png",
+      "alt": "Illustration accompanying “The Day Achilles Remembered He Was Human”",
+      "subtitle": "",
+      "description": "Homer, Priam, and the moment when compassion conquered the greatest warrior of Greece",
+      "titleSource": "feed",
+      "isKollyva": false
+    }
+  ],
+  "news": [],
+  "retrievedAt": "2026-11-03T20:43:36.204Z"
+}
