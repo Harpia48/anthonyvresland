@@ -121,12 +121,34 @@
       font-size:0.75rem;
     }
 
-    /* Ion cover is slightly narrower than 2:3; contain avoids trimming its title and author. */
+    /* Cover proportions: slightly narrow covers are contained, never cropped. */
     #euripides-ion img{height:auto;object-fit:contain;}
-    .book-more{margin-bottom:6px;text-align:left;font-size:0.88rem;}
-    .book-more summary{cursor:pointer;color:var(--accent);font-size:0.8rem;padding:8px 0;min-height:36px;}
-    .book-more p{line-height:1.45;margin-bottom:10px;}
-    .book-more .book-meta{font-size:0.72rem;letter-spacing:0.02em;color:#9aa7b8;}
+    .book-more-btn{
+      align-self:flex-start;background:none;border:0;padding:8px 0;margin:0;
+      min-height:36px;color:var(--accent);font-family:inherit;font-size:0.8rem;
+      cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-align:left;
+    }
+    .book-more-btn::before{content:"\25B8";font-size:0.7rem;}
+    .book-more-btn:hover{text-decoration:underline;}
+    .book-more-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
+    .book-dialog{width:calc(100% - 32px);max-width:560px;margin:auto;padding:0;border:1px solid rgba(247,164,0,0.35);border-radius:14px;background:var(--panel);color:var(--text);box-shadow:0 24px 80px rgba(0,0,0,0.65);}
+    .book-dialog::backdrop{background:rgba(4,7,12,0.8);}
+    .book-dialog-inner{position:relative;max-height:80vh;overflow:auto;padding:28px 26px;}
+    .book-dialog-eyebrow{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .book-dialog h2{font-family:'Cinzel',serif;font-size:1.2rem;line-height:1.35;margin:0 36px 6px 0;}
+    .book-dialog-subtitle{font-style:italic;color:var(--muted);margin-bottom:14px;}
+    .book-dialog-body{font-size:0.95rem;line-height:1.6;color:#c8d2de;}
+    .book-dialog-body p{margin-bottom:10px;}
+    .book-dialog-meta{font-size:0.72rem;color:#9aa7b8;letter-spacing:0.02em;}
+    .book-dialog-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,0.04);color:var(--accent);font-size:1.3rem;line-height:1;cursor:pointer;}
+    .book-dialog-close:hover{background:rgba(247,164,0,0.12);}
+    .book-dialog-close:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+    .book-dialog .btn{display:block;margin-top:18px;text-align:center;font-size:0.8rem;padding:10px;}
+    body.dialog-open{overflow:hidden;}
+    @media (max-width:520px){
+      .book-dialog{width:100%;max-width:none;margin:auto 0 0;border-radius:16px 16px 0 0;border-bottom:0;}
+      .book-dialog-inner{max-height:88vh;padding:24px 20px 28px;}
+    }
   </style>
 <link rel="stylesheet" href="/assets/book-pages.css">
 
@@ -166,6 +188,7 @@
   <img src="assets/cave-cover.jpg" alt="Plato&#x27;s Allegory of the Cave — book cover" loading="lazy">
   <h2>Plato's Allegory of the Cave</h2>
   <p>The awakening from illusion.</p>
+  <button type="button" class="book-more-btn" data-book="platos-cave" aria-haspopup="dialog">About this book</button>
 <!-- publishing:catalogue-detail:start -->
 <a class="publishing-catalogue-detail" href="/platos-cave">Explore this book</a>
 <!-- publishing:catalogue-detail:end -->
@@ -176,6 +199,7 @@
   <img src="assets/chariot-cover.jpg" alt="Plato&#x27;s Allegory of the Chariot — book cover" loading="lazy">
   <h2>Plato's Allegory of the Chariot</h2>
   <p>The structure of the soul.</p>
+  <button type="button" class="book-more-btn" data-book="platos-chariot" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/04fO26JI" target="_blank" rel="noopener noreferrer" aria-label="Buy Plato&#x27;s Allegory of the Chariot on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
@@ -183,88 +207,100 @@
   <img src="assets/plato-core-myths.jpg" alt="Plato: The Core Myths — book cover" loading="lazy">
   <h2>Plato: The Core Myths</h2>
   <p>The complete symbolic system of Plato.</p>
+  <button type="button" class="book-more-btn" data-book="plato-core-myths" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/01Dz7HrT" target="_blank" rel="noopener noreferrer" aria-label="Buy Plato: The Core Myths on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
 <!-- VEC SERIES -->
-<article class="book-card">
+<article class="book-card" id="homer-secret-language">
   <img src="assets/homer-the-sacred-language.jpg" alt="Homer The Secret Language — book cover" loading="lazy">
   <h2>Homer The Secret Language</h2>
   <p>VEC and the Soul's Descent. The final volume of the Homer Decoded series.</p>
+  <button type="button" class="book-more-btn" data-book="homer-secret-language" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0f08XsKC" target="_blank" rel="noopener noreferrer" aria-label="Buy Homer The Secret Language on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="titan-proxies">
   <img src="assets/proxies.jpg" alt="The Titan Proxies — book cover" loading="lazy">
   <h2>The Titan Proxies</h2>
   <p>The forces draining human energy.</p>
+  <button type="button" class="book-more-btn" data-book="titan-proxies" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/04AwjkGb" target="_blank" rel="noopener noreferrer" aria-label="Buy The Titan Proxies on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
 <!-- HISTORY -->
-<article class="book-card">
+<article class="book-card" id="alexander-mystic">
   <img src="assets/alexander-mystic.jpg" alt="Alexander the Great Mystic — book cover" loading="lazy">
   <h2>Alexander the Great Mystic</h2>
   <p>The initiated conqueror.</p>
+  <button type="button" class="book-more-btn" data-book="alexander-mystic" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/070wbFDZ" target="_blank" rel="noopener noreferrer" aria-label="Buy Alexander the Great Mystic on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="leonidas">
   <img src="assets/leonidas.jpg" alt="Leonidas: The Mission — book cover" loading="lazy">
   <h2>Leonidas: The Mission</h2>
   <p>The stand at Thermopylae decoded.</p>
+  <button type="button" class="book-more-btn" data-book="leonidas" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0bhuWqzq" target="_blank" rel="noopener noreferrer" aria-label="Buy Leonidas: The Mission on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="back-to-salamis">
   <img src="assets/salamis-cover.jpg" alt="Back to Salamis — book cover" loading="lazy">
   <h2>Back to Salamis</h2>
   <p>A crossing of time and consciousness.</p>
+  <button type="button" class="book-more-btn" data-book="back-to-salamis" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0iXLPmoR" target="_blank" rel="noopener noreferrer" aria-label="Buy Back to Salamis on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
 <!-- PRACTICE -->
-<article class="book-card">
+<article class="book-card" id="sacred-geometry">
   <img src="assets/sacred-geography.jpg" alt="Sacred Geometry — book cover" loading="lazy">
   <h2>Sacred Geometry</h2>
   <p>The code of creation.</p>
+  <button type="button" class="book-more-btn" data-book="sacred-geometry" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0aPPMh0s" target="_blank" rel="noopener noreferrer" aria-label="Buy Sacred Geometry on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="walking-sideways">
   <img src="assets/walking-sideways.jpg" alt="Walking Sideways — book cover" loading="lazy">
   <h2>Walking Sideways</h2>
   <p>The parallel current.</p>
+  <button type="button" class="book-more-btn" data-book="walking-sideways" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/02j3XUws" target="_blank" rel="noopener noreferrer" aria-label="Buy Walking Sideways on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
 <!-- "Abundance Decoded" -->
-<article class="book-card">
+<article class="book-card" id="abundance-repracticed">
   <img src="assets/abundance-decoded.jpg" alt="Abundance Decoded cover">
   <h2>Abundance Repracticed</h2>
   <p>Rediscover, Redefine, Renew, Your Path to Prosperity. Ancient Greek secrets of Ether, soul, and prosperity. Abundance is not earned — it is remembered.</p>
+  <button type="button" class="book-more-btn" data-book="abundance-repracticed" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/07cLfJzD" target="_blank" rel="noopener noreferrer" aria-label="Buy Abundance Repracticed on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
 <!-- HOMER SERIES -->
-<article class="book-card">
+<article class="book-card" id="iliad-decoded">
   <img src="assets/homer-iliad.jpg" alt="The Iliad Decoded — book cover" loading="lazy">
   <h2>The Iliad Decoded</h2>
   <p>The War of Troy as the Architecture of the Soul.</p>
+  <button type="button" class="book-more-btn" data-book="iliad-decoded" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0brpMjZl" target="_blank" rel="noopener noreferrer" aria-label="Buy The Iliad Decoded on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="odyssey-decoded">
   <img src="assets/homer-odyssey.jpeg" alt="The Odyssey Decoded — book cover" loading="lazy">
   <h2>The Odyssey Decoded</h2>
   <p>The Soul's Return.</p>
+  <button type="button" class="book-more-btn" data-book="odyssey-decoded" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://www.amazon.com/dp/B0GYQ52SSW" target="_blank" rel="noopener noreferrer" aria-label="Buy The Odyssey Decoded on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="sacred-economics">
   <img src="assets/homer-sacred-economics.jpg" alt="Homer: The Sacred Economics — book cover" loading="lazy">
   <h2>Homer: The Sacred Economics</h2>
   <p>Decoding Wealth, Consciousness &amp; Civilization Through the Iliad and Odyssey.</p>
+  <button type="button" class="book-more-btn" data-book="sacred-economics" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://www.amazon.com/dp/B0H2YRH3ND" target="_blank" rel="noopener noreferrer" aria-label="Buy Homer: The Sacred Economics on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
@@ -272,14 +308,16 @@
   <img src="assets/myth-of-er-cover.jpg" alt="Plato&#x27;s Myth of Er — book cover" loading="lazy">
   <h2>Plato's Myth of Er</h2>
   <p>A journey through the afterlife and back.</p>
+  <button type="button" class="book-more-btn" data-book="platos-myth-of-er" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0cBwiyV3" target="_blank" rel="noopener noreferrer" aria-label="Buy Plato&#x27;s Myth of Er on Amazon (opens in a new tab)">Amazon</a>
 </article>
-<article class="book-card">
+<article class="book-card" id="automedon">
     <img src="assets/automedon.jpeg" alt="AUTOMEDON cover">
 
     <h2>AUTOMEDON</h2>
 
     <p>The World's First Self-Improvement Manual Hidden in Homer's Iliad.</p>
+  <button type="button" class="book-more-btn" data-book="automedon" aria-haspopup="dialog">About this book</button>
 
     <a class="btn"
        href="https://a.co/d/06gWx5vx"
@@ -288,10 +326,11 @@
     </a>
 </article>
 
-<article class="book-card">
+<article class="book-card" id="oracle-attention">
   <img src="assets/Homers_Oracle_of_Attention_KDP.jpg" alt="Homer&#x27;s Oracle of Attention — book cover" loading="lazy">
   <h2>Homer's Oracle of Attention</h2>
   <p>The prophetic insight into attention and consciousness through Homer.</p>
+  <button type="button" class="book-more-btn" data-book="oracle-attention" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://a.co/d/0f3RzCzs" target="_blank" rel="noopener noreferrer" aria-label="Buy Homer&#x27;s Oracle of Attention on Amazon (opens in a new tab)">Amazon</a>
 </article>
 
@@ -299,6 +338,7 @@
   <img src="assets/euripides-cyclops.jpg" alt="Euripides’ Cyclops — book cover" loading="lazy">
   <h2>EURIPIDES’ CYCLOPS</h2>
   <p>Decoding the One-Eyed Consciousness</p>
+  <button type="button" class="book-more-btn" data-book="euripides-cyclops" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://www.amazon.com/dp/B0HPKWKM9B" target="_blank" rel="noopener noreferrer" aria-label="View Euripides’ Cyclops on Amazon (opens in a new tab)">View on Amazon</a>
 </article>
 
@@ -306,6 +346,7 @@
   <img src="assets/platos-meno.jpg" alt="Plato’s Meno — book cover" loading="lazy">
   <h2>Plato’s Meno</h2>
   <p>The Soul That Remembers</p>
+  <button type="button" class="book-more-btn" data-book="platos-meno" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://www.amazon.com/dp/B0HQ5BHLZZ" target="_blank" rel="noopener noreferrer" aria-label="View Plato’s Meno on Amazon (opens in a new tab)">View on Amazon</a>
 </article>
 
@@ -313,13 +354,7 @@
   <img src="assets/euripides-ion.jpg" alt="Euripides’ Ion: The Mystery of the Divine Child by Anthony Vresland — book cover" width="700" height="1113" loading="lazy">
   <h2>EURIPIDES’ ION</h2>
   <p>The Mystery of the Divine Child</p>
-  <details class="book-more">
-    <summary>About this book</summary>
-    <p>In <em>Euripides’ Ion — The Divine Child</em>, Anthony Vresland ventures beyond the familiar dramatic narrative to explore the philosophical mysteries concealed within one of Euripides’ most remarkable plays.</p>
-    <p>Through the journey of Ion, the concealed identity of his mother Creusa, and the illuminating intervention of Athena, the ancient drama becomes an exploration of the soul’s descent into generation, its search for its forgotten origin, and its eventual recognition of its divine purpose.</p>
-    <p>Drawing upon Platonic, Pythagorean, and Neoplatonic thought, the author presents an original philosophical interpretation of the drama, inviting readers to encounter Euripides not merely as a playwright, but as a profound teacher of the human soul.</p>
-    <p class="book-meta">Published November 2026 · Ancient Greek Philosophy / Classical Literature / Philosophical Interpretation</p>
-  </details>
+  <button type="button" class="book-more-btn" data-book="euripides-ion" aria-haspopup="dialog">About this book</button>
   <a class="btn" href="https://www.amazon.com/dp/B0HR21DQFQ" target="_blank" rel="noopener noreferrer" aria-label="View Euripides’ Ion on Amazon (opens in a new tab)">View on Amazon</a>
 </article>
 </div>
@@ -333,5 +368,65 @@
   <p style="font-size:0.8rem;color:#555;margin-top:10px;">© 2026 Anthony Vresland — All rights reserved</p>
 </footer>
 
+
+<dialog id="book-dialog" class="book-dialog" aria-labelledby="book-dialog-title">
+  <div class="book-dialog-inner">
+    <button type="button" class="book-dialog-close" aria-label="Close book description">×</button>
+    <p class="book-dialog-eyebrow">About this book</p>
+    <h2 id="book-dialog-title"></h2>
+    <p class="book-dialog-subtitle" id="book-dialog-subtitle"></p>
+    <div class="book-dialog-body" id="book-dialog-body"></div>
+    <a class="btn" id="book-dialog-amazon" href="#" target="_blank" rel="noopener noreferrer">View on Amazon <span aria-hidden="true">(opens in a new tab)</span></a>
+  </div>
+</dialog>
+
+<script type="application/json" id="book-descriptions">{"platos-cave": "<p>What if everything you believe is only a shadow on a wall? Anthony Vresland reads Plato's Allegory of the Cave as a living map of the soul rather than a classroom parable. Moving from Socrates walking barefoot in Piraeus to Plotinus turning inward toward the One, and to Proclus guarding the flame as Athens falls, the book follows the thinkers who lived the Cave as transformation. It examines the Sun, the chains, the fire and the difficult ascent, and asks why the hardest step is not escape but returning to awaken others. Part storytelling, part philosophical inquiry, it invites readers to test their own certainties.</p>", "platos-chariot": "<p>Plato pictured the soul as a charioteer driving two winged horses through the heavens, straining toward the eternal Forms. Anthony Vresland treats that image not as decoration but as an initiation. Through poetic contemplation and philosophical commentary, the book follows the charioteer's struggle to hold impulse and aspiration in balance long enough to glimpse Truth, Justice and Beauty. It presents ascent and fall as movements of the inner life rather than events in the sky, and memory as the soul's way of recovering what it once beheld. For readers who sense that Plato's myths are instructions rather than ornaments.</p>", "plato-core-myths": "<p>Three of Plato's most enduring visions — the Cave, the Chariot and the Myth of Er — gathered into a single volume. Anthony Vresland approaches them not as separate dialogues to be studied but as one connected map of awakening: the Cave showing how belief becomes a prison, the Chariot dramatising the conflict between impulse and vision, and the Myth of Er asking what the soul chooses before it lives. The omnibus moves through Neoplatonic and Pythagorean currents, the mysteries of Eleusis and the guiding daimonion, presenting Plato as a guide for readers seeking clarity rather than a distant academic figure.</p>", "homer-secret-language": "<p>For thirty centuries, Vresland argues, we have read Homer and missed his syntax. The final volume of the Homer Decoded tetralogy names what the earlier books were quietly using: the vibrational-energetic codes operating beneath the epics. Here Homer appears not only as poet but as theurgist, a transmitter of the operational language of the soul. The book draws the Iliad, the Odyssey and The Sacred Economics into a single argument about descent, forgetting and return, and asks whether the epics were composed as instruction rather than entertainment. It is the culminating statement of a four-volume decoding project.</p>", "titan-proxies": "<p>Not a self-help book but an initiation, Vresland writes. This volume names eight Titan Proxies — mytho-energetic patterns derived from the bound Titans of Greek cosmology — and describes them as invisible forces feeding on guilt, fear, time, health and creative power in modern life. Against them it sets the VEC codes: sacred numbers received at the threshold of sleep and tested, the author says, in struggles over property, health and destiny. The book moves between Sounion's olive groves, Brooklyn lofts, Tuscan vineyards and Tokyo rooftops, presenting the codes as keys to breaking stagnation and restoring sovereignty rather than as affirmations or magic.</p>", "alexander-mystic": "<p>Alexander the Great is usually remembered as a conqueror. Anthony Vresland looks at the seeker behind the campaign: the student of Aristotle, the claimant of divine descent, the man whose ambitions seemed to reach beyond territory toward some universal truth. Weaving historical narrative with spiritual reflection, the book follows Alexander from his rise through his eastern campaigns to his death and the myths that gathered around him. It asks how far his conquests were an outward expression of an inner quest, and what his example still suggests about leadership, destiny and the desire to become more than human.</p>", "leonidas": "<p>Long after Thermopylae, Leonidas awakens — not in Hades, but in a realm beyond death. There the Spartan king is drawn into a hidden war for the soul of humanity, joined by none other than Socrates. Anthony Vresland turns the stand at the pass into a cosmic odyssey, setting the discipline and sacrifice of the Spartan ideal against forces that threaten what the Greeks understood as harmony between the human and the divine. The novel blends historical detail, myth and esoteric speculation, asking what a warrior's courage means when the battlefield is no longer a place on any map.</p>", "back-to-salamis": "<p>Timoleon Varnas, a brilliant Athenian lawyer, finds an artifact linked to Athena Promachus and begins to experience visions he cannot explain. Drawn by synchronicities and a calling he can no longer ignore, he is carried back to 480 BC, when Xerxes' armada threatens Greece and the foundation of the Western world. There Themistocles stands nearly alone, and the man from the future becomes an unlikely ally — one who knows what is coming and needs to make peace with his own fragmented soul. A historical novel of war, strategy, wisdom and metaphysics, set at the hinge of the Persian Wars.</p>", "sacred-geometry": "<p>Architect Tony trusts clean lines and precise angles until his work takes him to the ancient ruins of Greece. There he discovers ley lines — pathways of energy linking sacred sites — and, one evening, watches a line of light trace an unbroken path from the temple of Poseidon to the sanctuary of Athena at Sounion. His scepticism gives way to awe, then to sorrow at what has been lost from the wounded sanctuaries. Travelling from temple to temple, he becomes a bridge between the earthly and the divine — a philosophical narrative of discovery, and a spiritual awakening woven through sacred geometry.</p>", "walking-sideways": "<p>Abundance, Vresland argues, is not something to be seized but a current to be felt. Drawing on Heraclitus, Plato, the Orphic mysteries and the Eleusinian rites, he suggests that the modern pursuit of prosperity keeps us carrying the wrong vessel — feeding the very machinery of urgency, fear and comparison that withholds what we want. His remedy is not another technique or affirmation but release: learning to move through the world at a slight angle, neither rebelling nor complying. The book describes the proxies that thrive on need, and proposes that walking sideways is a more durable way of inhabiting abundance.</p>", "abundance-repracticed": "<p>A world obsessed with scarcity has forgotten what the ancient Greeks knew: abundance is not earned but remembered. Anthony Vresland frames prosperity as the soul's natural condition — peace, beauty, health and material sufficiency — and treats its loss as a kind of forgetting rather than a moral failure. Rooted in Plato, Pythagoras, Socrates and the Neoplatonists, the book presents the soul as a living energy system capable of alignment with the creative forces of the universe. It is not a manifesting formula and promises no profits; it is a philosophical and practical meditation on recollection, right relationship and renewal.</p>", "iliad-decoded": "<p>For nearly three thousand years the Iliad has been read as a tale of wrath, war and heroic glory. Vresland asks whether Troy is also the interior landscape of the soul. In his reading Achilles becomes the burning will of the self, Hector the defender of mortal identity, Priam the humbled king within, and Automedon the silent principle that continues when identity collapses. Through symbolic analysis the book examines the structure beneath Achilles' wrath, the two springs of choice and necessity, grief as transformation, and the gods as inner psychic forces. This is not a retelling but a decoding of an initiation text concealed in epic.</p>", "odyssey-decoded": "<p>For nearly three thousand years the Odyssey has been read as an adventure: a hero, a sea, monsters, a faithful wife, a long way home. Anthony Vresland reads it instead as a map of the soul's exile and return, drawing on Porphyry, Plotinus and Proclus, who treated Homer as instruction rather than literature. The Cyclops becomes the ego that cannot see beyond itself; Circe, the crisis that precedes ascent; the Sirens, the fatal allure of knowledge without wisdom. The second volume of the Homer Decoded series follows the voyage from Troy to Ithaca as the journey every life makes through distraction toward recognition.</p>", "sacred-economics": "<p>Ancient Greeks did not picture wealth as a hoard of gold but as a divine river that must circulate or die. Starting from that image, Anthony Vresland reads the Iliad and Odyssey as a study of wealth, consciousness and civilisation — of how value moves between people, gods and generations, and what happens when it is withheld. The third volume of the Homer Decoded series argues that Homer's epics encode an economics of circulation and reciprocity rather than accumulation, and that their account of gift, ransom, hospitality and return still describes the conditions under which a society flourishes.</p>", "platos-myth-of-er": "<p>Plato ended the Republic not with a theory of justice but with a soldier's account of the afterlife. Er, killed in battle, witnesses souls being judged, choosing their next lives, and drinking from the river of forgetting before returning to birth. Anthony Vresland reads the Myth of Er as the first recorded near-death experience — philosophy offered as testimony rather than fantasy — and examines what it says about responsibility, memory and the freedom to choose. He connects Plato's vision to the Neoplatonic and Pythagorean currents that later interpreted it, and asks what it means to choose a life knowingly.</p>", "automedon": "<p>In the Iliad, Automedon is Achilles' charioteer — a name most readers pass over. Anthony Vresland argues that he is the key to a philosophical code hidden in the epic for twenty-seven hundred years: the operating principle that continues when identity, reputation and even the hero have collapsed. Reading through Plato, Aristotle, Plotinus, Proclus and Iamblichus, the book presents Automedon as a manual for self-mastery, not through triumph but through steady service to what must be done. It is the fourth volume of the Homer Decoded series and a study of what remains of a person when everything else is stripped away.</p>", "oracle-attention": "<p>What if the Odyssey was never only a story about a man trying to get home? Anthony Vresland reads all twenty-four books through what he calls the Mind's Attention Principle, following the recurring relationship between attention and transformation. The voyage from Troy to Ithaca becomes the journey every human being makes: we leave, we become distracted, we forget, and we return. Drawing on Homeric myth, Greek philosophy and the poem's symbolic architecture, the book treats the Odyssey as an oracle still capable of revealing something about consciousness, identity and truth. Neither conventional commentary nor retelling, it is an invitation to read differently.</p>", "euripides-cyclops": "<p>Euripides brought Polyphemus onto the Athenian stage as something Homer's giant was not: a creature who could argue, reason and defend his cruelty with a philosophy of his own. Anthony Vresland reconstructs that surviving satyr play and reads it as a study of the one-eyed consciousness — the mind imprisoned in a single way of seeing reality. Across fifteen chapters he explores ego, appetite and desire, moving between the drama's world and modern life, where the Cyclops reappears in systems and selves that cannot imagine another perspective. The book blends historical storytelling, myth and Platonic philosophy.</p>", "platos-meno": "<p>Can virtue be taught? A young Thessalian aristocrat puts the question to Socrates, and the conversation that follows becomes one of antiquity's most remarkable inquiries. Anthony Vresland retells Plato's Meno through historical storytelling, weaving in passages from the original Greek dialogue and following the famous experiment in which an uneducated slave is led to solve a geometrical problem. From that episode emerges the doctrine of anamnesis — the possibility that learning is recollection, and that the soul already possesses knowledge deeper than experience. The fourth volume of The Core Myths of Plato.</p>", "euripides-ion": "<p>In <em>Euripides’ Ion — The Divine Child</em>, Anthony Vresland ventures beyond the familiar dramatic narrative to explore the philosophical mysteries concealed within one of Euripides’ most remarkable plays.</p><p>Through the journey of Ion, the concealed identity of his mother Creusa, and the illuminating intervention of Athena, the ancient drama becomes an exploration of the soul’s descent into generation, its search for its forgotten origin, and its eventual recognition of its divine purpose.</p><p>Drawing upon Platonic, Pythagorean, and Neoplatonic thought, the author presents an original philosophical interpretation of the drama, inviting readers to encounter Euripides not merely as a playwright, but as a profound teacher of the human soul.</p><p class=\"book-dialog-meta\">Published November 2026 · Ancient Greek Philosophy / Classical Literature / Philosophical Interpretation</p>"}</script>
+
+<script>
+(function(){
+  var dialog=document.getElementById('book-dialog');
+  if(!dialog||typeof dialog.showModal!=='function') return;
+  var data=JSON.parse(document.getElementById('book-descriptions').textContent);
+  var titleEl=document.getElementById('book-dialog-title');
+  var subtitleEl=document.getElementById('book-dialog-subtitle');
+  var bodyEl=document.getElementById('book-dialog-body');
+  var amazonEl=document.getElementById('book-dialog-amazon');
+  var closeBtn=dialog.querySelector('.book-dialog-close');
+  var lastTrigger=null;
+  document.querySelectorAll('.book-more-btn').forEach(function(btn){
+    var heading=btn.closest('.book-card').querySelector('h2');
+    if(heading) btn.setAttribute('aria-label','About '+heading.textContent);
+    btn.addEventListener('click',function(){
+      var card=btn.closest('.book-card');
+      var html=data[btn.dataset.book];
+      if(!card||!html) return;
+      var title=card.querySelector('h2');
+      var subtitle=card.querySelector('h2 + p');
+      var amazon=card.querySelector('a.btn');
+      titleEl.textContent=title?title.textContent:'';
+      subtitleEl.textContent=subtitle?subtitle.textContent:'';
+      bodyEl.innerHTML=html;
+      amazonEl.href=amazon?amazon.href:'#';
+      amazonEl.setAttribute('aria-label','View '+(title?title.textContent:'this book')+' on Amazon (opens in a new tab)');
+      lastTrigger=btn;
+      dialog.showModal();
+      document.body.classList.add('dialog-open');
+      closeBtn.focus();
+    });
+  });
+  function finishClose(){
+    document.body.classList.remove('dialog-open');
+    if(lastTrigger) lastTrigger.focus();
+  }
+  function closeDialog(){
+    if(dialog.open) dialog.close();
+    finishClose();
+  }
+  closeBtn.addEventListener('click',closeDialog);
+  dialog.addEventListener('click',function(e){if(e.target===dialog)closeDialog();});
+  dialog.addEventListener('cancel',function(){setTimeout(finishClose,0);});
+  dialog.addEventListener('close',finishClose);
+})();
+</script>
 </body>
 </html>
